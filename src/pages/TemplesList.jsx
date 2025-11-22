@@ -287,8 +287,9 @@ const TemplesList = () => {
         <div className="container mx-auto px-4">
           {/* Region Filter */}
           <div className="mb-4">
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Region:</label>
+            
             <div className="flex flex-wrap justify-center gap-3">
+            
               {regions.map((region) => (
                 <button
                   key={region.value}
@@ -308,7 +309,7 @@ const TemplesList = () => {
 
           {/* Category Filter */}
           <div className="mb-4">
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Category:</label>
+            
             <div className="flex flex-wrap justify-center gap-3">
               {categories.map((category) => (
                 <button
@@ -329,7 +330,7 @@ const TemplesList = () => {
 
           {/* Popularity Filter */}
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Popularity:</label>
+          
             <div className="flex flex-wrap justify-center gap-3">
               {popularityOptions.map((option) => (
                 <button

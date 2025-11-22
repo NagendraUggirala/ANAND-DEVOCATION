@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const BookingPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [bookingId, setBookingId] = useState(null);
@@ -139,12 +141,29 @@ const BookingPage = () => {
   // Success Page
   if (isSubmitted && bookingId) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-orange-50 flex items-center justify-center py-12">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="bg-white p-8 md:p-12 rounded-2xl shadow-2xl max-w-2xl w-full mx-4"
-        >
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-orange-50 py-12">
+        <div className="container mx-auto px-4">
+          {/* Back Button */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="mb-6"
+          >
+            <button
+              onClick={() => navigate('/')}
+              className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-semibold transition-colors"
+            >
+              <FaArrowLeft className="text-lg" />
+              <span>Back to Home</span>
+            </button>
+          </motion.div>
+
+          <div className="flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-white p-8 md:p-12 rounded-2xl shadow-2xl max-w-2xl w-full"
+            >
           <div className="text-center mb-8">
             <div className="text-6xl mb-4">🎉</div>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-2">
@@ -199,7 +218,9 @@ const BookingPage = () => {
               Back to Home
             </Link>
           </div>
-        </motion.div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -207,6 +228,21 @@ const BookingPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-orange-50 py-8 md:py-12">
       <div className="container mx-auto px-4">
+        {/* Back Button */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="mb-6"
+        >
+          <button
+            onClick={() => navigate('/')}
+            className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-semibold transition-colors"
+          >
+            <FaArrowLeft className="text-lg" />
+            <span>Back to Home</span>
+          </button>
+        </motion.div>
+
         {/* 1️⃣ Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

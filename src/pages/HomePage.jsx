@@ -435,7 +435,7 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-orange-500 mb-4 leading-tight">
               Devotional Themes for Every <span className="text-blue-500">Pilgrimage</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -497,7 +497,7 @@ const HomePage = () => {
       </section>
 
       {/* 3️⃣ Featured Temples Section */}
-      <section className="pt-0 pb-16 md:pb-24 bg-gray-100">
+      <section className="pt-5 pb-5 md:pb-24 bg-gray-100">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -506,7 +506,7 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-blue-500 mb-4 leading-tight">
               Popular Sacred <span className="text-orange-500">Temples</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -536,14 +536,14 @@ const HomePage = () => {
                     </div>
                     
                     {/* Colored Section with Content */}
-                    <div className="bg-blue-600 p-5 md:p-6 relative">
+                    <div className="text-blue p-5 md:p-6 relative">
                       {/* Orange Strip at Top */}
                       <div className="absolute top-0 left-0 right-0 h-1 "></div>
                       
-                      <h3 className="text-xl md:text-2xl font-display font-bold mb-3 text-white leading-tight">
+                      <h3 className="text-xl md:text-2xl font-display font-bold mb-3 text-blue leading-tight">
                         {temple.name}
                       </h3>
-                      <p className="text-sm md:text-base mb-5 leading-relaxed text-white opacity-90">
+                      <p className="text-sm md:text-base mb-5 leading-relaxed text-blue opacity-90">
                         {temple.history.length > 80 ? `${temple.history.substring(0, 80)}...` : temple.history}
                       </p>
                       <div className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm md:text-base font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg inline-block cursor-pointer">
@@ -559,7 +559,7 @@ const HomePage = () => {
       </section>
 
       {/* 4️⃣ Packages Preview Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-blue-100 via-white to-yellow-50">
+      <section className="py-5 md:py-5 bg-gradient-to-br from-blue-100 via-white to-yellow-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -568,7 +568,7 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-blue-600 mb-4 leading-tight">
               Popular Devotional <span className="text-orange-500">Packages</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -630,7 +630,7 @@ const HomePage = () => {
       </section>
 
       {/* 5️⃣ Why Choose Us Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white via-blue-50 to-white">
+      <section className="py-5 md:py-5 bg-gradient-to-b from-white via-blue-50 to-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -639,7 +639,7 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-orange-600 mb-4 leading-tight">
               Why Devotees Love <span className="text-blue-500">Anand Devocation</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -670,7 +670,7 @@ const HomePage = () => {
       </section>
 
       {/* 6️⃣ Reviews/Testimonial Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-orange-50 via-yellow-50 to-white">
+      <section className="py-5 md:py-10 bg-gradient-to-b from-orange-50 via-yellow-50 to-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -738,7 +738,7 @@ const HomePage = () => {
       </section>
 
       {/* 7️⃣ How It Works Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white via-blue-50 to-white">
+      <section className="py-5 md:py-24 bg-gradient-to-b from-white via-blue-50 to-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -747,7 +747,7 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-orange-500 mb-4 leading-tight">
               How It <span className="text-blue-500">Works</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -782,7 +782,7 @@ const HomePage = () => {
       </section>
 
       {/* 8️⃣ Customer Testimonial Card Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+      <section className="py-5 md:py-24 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
@@ -850,7 +850,7 @@ const HomePage = () => {
       </section>
 
       {/* 9️⃣ Additional Why Choose Us Cards Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white via-blue-50 to-white">
+      <section className="py-5 md:py-24 bg-gradient-to-b from-white via-blue-50 to-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -859,7 +859,7 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-orange-500 mb-4 leading-tight">
               Why Choose <span className="text-blue-500">Anand Devocation</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -940,7 +940,7 @@ const HomePage = () => {
       </section>
 
       {/* 🔟 Footer CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-blue-400 via-blue-500 to-indigo-600 text-white relative overflow-hidden">
+      <section className="py-5 md:py-24 bg-gradient-to-br from-blue-400 via-blue-500 to-indigo-600 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-200 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-200 rounded-full blur-3xl"></div>
