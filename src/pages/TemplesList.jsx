@@ -1,13 +1,32 @@
-import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useMemo, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { 
+  FaOm, 
+  FaHeart, 
+  FaRegHeart, 
+  FaStar, 
+  FaFire, 
+  FaLeaf, 
+  FaPrayingHands, 
+  FaBook 
+} from 'react-icons/fa';
 
 const TemplesList = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
   const [regionFilter, setRegionFilter] = useState('all');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [popularityFilter, setPopularityFilter] = useState('all');
   const [wishlist, setWishlist] = useState([]);
+
+  // Update search query when URL param changes
+  useEffect(() => {
+    const searchParam = searchParams.get('search');
+    if (searchParam) {
+      setSearchQuery(searchParam);
+    }
+  }, [searchParams]);
 
   const temples = [
     {
@@ -216,7 +235,7 @@ const TemplesList = () => {
   const popularTemples = temples.filter(t => t.popularity === 'most-visited').slice(0, 4);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-orange-50">
+    <div className="min-h-screen bg-gray-50">
       {/* 1️⃣ Page Hero Section */}
       <section className="relative py-16 md:py-24 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1600')] bg-cover bg-center opacity-20"></div>
@@ -264,7 +283,7 @@ const TemplesList = () => {
       </section>
 
       {/* 3️⃣ Filter Section */}
-      <section className="py-6 bg-gradient-to-r from-blue-50 to-orange-50">
+      <section className="py-6 bg-gray-100">
         <div className="container mx-auto px-4">
           {/* Region Filter */}
           <div className="mb-4">
@@ -273,8 +292,9 @@ const TemplesList = () => {
               {regions.map((region) => (
                 <button
                   key={region.value}
+                  type="button"
                   onClick={() => setRegionFilter(region.value)}
-                  className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 ${
+                  className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
                     regionFilter === region.value
                       ? 'bg-blue-600 text-white shadow-lg transform scale-105'
                       : 'bg-white text-blue-700 hover:bg-blue-100 border border-blue-200'
@@ -293,8 +313,9 @@ const TemplesList = () => {
               {categories.map((category) => (
                 <button
                   key={category.value}
+                  type="button"
                   onClick={() => setCategoryFilter(category.value)}
-                  className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 ${
+                  className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
                     categoryFilter === category.value
                       ? 'bg-orange-500 text-white shadow-lg transform scale-105'
                       : 'bg-white text-orange-700 hover:bg-orange-100 border border-orange-200'
@@ -313,8 +334,9 @@ const TemplesList = () => {
               {popularityOptions.map((option) => (
                 <button
                   key={option.value}
+                  type="button"
                   onClick={() => setPopularityFilter(option.value)}
-                  className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 ${
+                  className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
                     popularityFilter === option.value
                       ? 'bg-yellow-500 text-white shadow-lg transform scale-105'
                       : 'bg-white text-yellow-700 hover:bg-yellow-100 border border-yellow-200'
@@ -337,13 +359,14 @@ const TemplesList = () => {
             </h2>
             {(searchQuery || regionFilter !== 'all' || categoryFilter !== 'all' || popularityFilter !== 'all') && (
               <button
+                type="button"
                 onClick={() => {
                   setSearchQuery('');
                   setRegionFilter('all');
                   setCategoryFilter('all');
                   setPopularityFilter('all');
                 }}
-                className="text-blue-600 hover:text-blue-700 font-semibold"
+                className="text-blue-600 hover:text-blue-700 font-semibold cursor-pointer"
               >
                 Clear All Filters
               </button>
@@ -352,7 +375,7 @@ const TemplesList = () => {
 
           {filteredTemples.length === 0 ? (
             <div className="text-center py-16">
-              <div className="text-6xl mb-4">🕉️</div>
+              <FaOm className="text-6xl mb-4 text-gray-400 mx-auto" />
               <h3 className="text-2xl font-bold text-gray-700 mb-2">No Temples Found</h3>
               <p className="text-gray-500">Try adjusting your search or filters</p>
             </div>
@@ -378,26 +401,31 @@ const TemplesList = () => {
                       
                       {/* Wishlist Button */}
                       <button
+                        type="button"
                         onClick={(e) => {
                           e.preventDefault();
                           toggleWishlist(temple.id);
                         }}
-                        className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-all shadow-lg z-10"
+                        className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-all shadow-lg z-10 cursor-pointer"
                       >
-                        <span className={`text-xl ${wishlist.includes(temple.id) ? 'text-red-500' : 'text-gray-400'}`}>
-                          {wishlist.includes(temple.id) ? '❤️' : '🤍'}
-                        </span>
+                        {wishlist.includes(temple.id) ? (
+                          <FaHeart className="text-xl text-red-500" />
+                        ) : (
+                          <FaRegHeart className="text-xl text-gray-400" />
+                        )}
                       </button>
 
                       {/* Popularity Badge */}
                       {temple.popularity === 'most-visited' && (
-                        <div className="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                          ⭐ Most Visited
+                        <div className="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
+                          <FaStar className="text-xs" />
+                          Most Visited
                         </div>
                       )}
                       {temple.popularity === 'trending' && (
-                        <div className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                          🔥 Trending
+                        <div className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
+                          <FaFire className="text-xs" />
+                          Trending
                         </div>
                       )}
 
@@ -507,7 +535,7 @@ const TemplesList = () => {
             transition={{ duration: 0.8 }}
             className="bg-gradient-to-br from-white to-blue-50 p-8 md:p-12 rounded-2xl max-w-4xl mx-auto text-center shadow-xl border border-blue-100"
           >
-            <div className="text-5xl mb-4">🕉️</div>
+            <FaOm className="text-5xl mb-4 text-blue-600 mx-auto" />
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-4 text-gray-800">
               Why Visit Sacred Temples?
             </h2>
@@ -519,17 +547,17 @@ const TemplesList = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
               <div className="bg-blue-100 p-4 rounded-xl">
-                <div className="text-3xl mb-2">🧘</div>
+                <FaLeaf className="text-3xl mb-2 text-blue-600 mx-auto" />
                 <h3 className="font-bold text-blue-800 mb-1">Inner Peace</h3>
                 <p className="text-sm text-blue-700">Find tranquility and mental clarity</p>
               </div>
               <div className="bg-orange-100 p-4 rounded-xl">
-                <div className="text-3xl mb-2">🙏</div>
+                <FaPrayingHands className="text-3xl mb-2 text-orange-600 mx-auto" />
                 <h3 className="font-bold text-orange-800 mb-1">Divine Blessings</h3>
                 <p className="text-sm text-orange-700">Receive spiritual grace and protection</p>
               </div>
               <div className="bg-yellow-100 p-4 rounded-xl">
-                <div className="text-3xl mb-2">📖</div>
+                <FaBook className="text-3xl mb-2 text-yellow-600 mx-auto" />
                 <h3 className="font-bold text-yellow-800 mb-1">Cultural Heritage</h3>
                 <p className="text-sm text-yellow-700">Connect with ancient traditions</p>
               </div>

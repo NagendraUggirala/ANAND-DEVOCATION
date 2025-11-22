@@ -60,9 +60,9 @@ const ContactAdvancedWithMapBottom = () => {
       ),
       title: "Email Us",
       description: "Get detailed responses",
-      details: ["info@anandrealtyy.com"],
+      details: ["info@anandDevocation.com"],
       action: "Send Email",
-      link: "mailto:info@anandrealtyy.com",
+      link: "mailto:info@anandDevocation.com",
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
       borderColor: "border-purple-200",
@@ -303,7 +303,7 @@ const ContactAdvancedWithMapBottom = () => {
                       <h4 className="font-semibold text-slate-800 mb-3 text-sm">Follow Us</h4>
                       <div className="flex space-x-3">
                         <a 
-                          href="https://linkedin.com/company/anandrealtyy" 
+                          href="https://linkedin.com/company/anandDevocation" 
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-2 rounded-lg transition-all duration-300 hover:shadow-md hover:scale-105"
@@ -314,7 +314,7 @@ const ContactAdvancedWithMapBottom = () => {
                           </svg>
                         </a>
                         <a 
-                          href="https://twitter.com/anandrealtyy" 
+                          href="https://twitter.com/anandDevocation" 
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-gradient-to-r from-sky-500 to-sky-600 text-white p-2 rounded-lg transition-all duration-300 hover:shadow-md hover:scale-105"
@@ -336,7 +336,7 @@ const ContactAdvancedWithMapBottom = () => {
                           </svg>
                         </a>
                         <a 
-                          href="mailto:info@anandrealtyy.com" 
+                          href="mailto:info@anandDevocation.com" 
                           className="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-2 rounded-lg transition-all duration-300 hover:shadow-md hover:scale-105"
                           aria-label="Send us an email"
                         >
@@ -557,7 +557,7 @@ const ContactAdvancedWithMapBottom = () => {
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Anand Realtyy Office Location"
+                    title="Anand Devocation Office Location"
                     className="absolute inset-0"
                   />
                 ) : (

@@ -734,7 +734,7 @@ const Projects = () => {
             className="max-w-6xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-4">
-              Why Choose Anand Realtyy Plots?
+              Why Choose Anand Devocation Plots?
             </h2>
             <p className="text-lg text-blue-700 mb-12 max-w-2xl mx-auto">
               We offer the most secure and profitable land investment opportunities with complete transparency
@@ -815,7 +815,7 @@ const Projects = () => {
         </Link>
         <a 
           href="./images/Brochure.png" 
-          download="Anand-Realtyy-Brochure.png"
+          download="Anand-Devocation-Brochure.png"
           className="border-2 border-white text-white hover:bg-white hover:text-cyan-600 px-8 py-3 rounded-lg font-semibold transition-colors"
         >
           Download Brochure

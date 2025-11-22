@@ -156,7 +156,7 @@ const Footer = () => {
         <div class="space-y-4">
           <div class="bg-green-50 border border-green-200 rounded-lg p-4">
             <h4 class="text-lg font-semibold text-green-800 mb-2">Registered with RERA</h4>
-            <p class="text-green-700">Anand Realtyy is a registered real estate agent under RERA regulations, ensuring transparency and consumer protection in all our transactions.</p>
+            <p class="text-green-700">Anand Devocation is a registered real estate agent under RERA regulations, ensuring transparency and consumer protection in all our transactions.</p>
           </div>
 
           <div>
@@ -213,7 +213,7 @@ const Footer = () => {
                     <div className="w-14 h-14">
                       <img
                         src="/images/Anandhlogo.png"
-                        alt="Anand Realtyy"
+                        alt="Anand Devocation"
                         className="w-full h-full object-contain"
                       />
                     </div>
@@ -221,7 +221,7 @@ const Footer = () => {
                   <div className="text-left">
                     <h2 className="text-2xl font-bold">
                       <span className="text-orange-400">ANAND</span> 
-                      <span className="text-white"> Realtyy</span>
+                      <span className="text-white"> Devocation</span>
                     </h2>
                     <p className="text-orange-200 text-sm italic">"Dharmo Rakshati Rakshitah"</p>
                   </div>
@@ -318,7 +318,7 @@ const Footer = () => {
               {/* Copyright */}
               <div className="text-center md:text-left">
                 <p className="text-gray-400 text-sm">
-                  © {currentYear} <span className="text-orange-400 font-semibold">Anand Realtyy</span>. All rights reserved.
+                  © {currentYear} <span className="text-orange-400 font-semibold">Anand Devocation</span>. All rights reserved.
                 </p>
               </div>
 

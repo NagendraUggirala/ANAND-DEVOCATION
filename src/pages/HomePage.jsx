@@ -1,12 +1,49 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  FaOm, 
+  FaBell, 
+  FaWineBottle, 
+  FaLeaf, 
+  FaMonument, 
+  FaMountain, 
+  FaStar, 
+  FaHotel, 
+  FaCheckCircle, 
+  FaPhone, 
+  FaMoneyBillWave, 
+  FaMosque, 
+  FaCalendar, 
+  FaPrayingHands,
+  FaQuoteLeft
+} from 'react-icons/fa';
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [selectedGalleryImage, setSelectedGalleryImage] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Handle search functionality
+  const handleSearch = (e) => {
+    e?.preventDefault();
+    if (searchQuery.trim()) {
+      // Navigate to temples page with search query
+      navigate(`/temples?search=${encodeURIComponent(searchQuery.trim())}`);
+    } else {
+      // If empty, just navigate to temples page
+      navigate('/temples');
+    }
+  };
+
+  // Handle Enter key press in search input
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch(e);
+    }
+  };
 
   // Hero slides - Temple images
   const heroSlides = [
@@ -92,7 +129,7 @@ const HomePage = () => {
       name: "Vedic Theme",
       description: "Nature, pure simplicity, and traditional Vedic ambiance",
       image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80",
-      icon: "🌿",
+      icon: FaLeaf,
       color: "from-green-100 to-emerald-50"
     },
     {
@@ -100,7 +137,7 @@ const HomePage = () => {
       name: "South Indian Temple Theme",
       description: "Brass, stone, lamps - authentic Dravidian temple experience",
       image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80",
-      icon: "🏛️",
+      icon: FaMonument,
       color: "from-amber-100 to-yellow-50"
     },
     {
@@ -108,7 +145,7 @@ const HomePage = () => {
       name: "Himalayan Spiritual Theme",
       description: "Meditation, wood & chill ambiance - mountain spirituality",
       image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80",
-      icon: "⛰️",
+      icon: FaMountain,
       color: "from-blue-100 to-cyan-50"
     },
     {
@@ -116,7 +153,7 @@ const HomePage = () => {
       name: "Ayurvedic Wellness Theme",
       description: "Herbs, nature, healing - holistic spiritual wellness",
       image: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800&q=80",
-      icon: "🌿",
+      icon: FaLeaf,
       color: "from-orange-100 to-amber-50"
     }
   ];
@@ -164,32 +201,32 @@ const HomePage = () => {
   // Why Choose Us
   const whyChooseUs = [
     {
-      icon: "🕉️",
+      icon: FaOm,
       title: "Curated Temple-Based Themes",
       description: "Each stay reflects the authentic spirit of the temple"
     },
     {
-      icon: "✨",
+      icon: FaStar,
       title: "Authentic Spiritual Experiences",
       description: "Genuine rituals and traditions preserved with devotion"
     },
     {
-      icon: "🏨",
+      icon: FaHotel,
       title: "Clean & Comfortable Stays",
       description: "Devotional stays with modern amenities and temple ambiance"
     },
     {
-      icon: "✅",
+      icon: FaCheckCircle,
       title: "Verified Pooja Services",
       description: "All pooja services performed by certified temple priests"
     },
     {
-      icon: "📞",
+      icon: FaPhone,
       title: "24/7 Support",
       description: "Round-the-clock assistance throughout your journey"
     },
     {
-      icon: "💰",
+      icon: FaMoneyBillWave,
       title: "Affordable Pricing",
       description: "Transparent pricing with no hidden charges"
     }
@@ -203,7 +240,7 @@ const HomePage = () => {
       location: "Delhi",
       rating: 5,
       comment: "The Tirupati package was well-organized and peaceful. Every detail was taken care of.",
-      avatar: "👨‍💼",
+      avatar: "https://i.pravatar.cc/150?img=12",
       temple: "Tirupati"
     },
     {
@@ -212,7 +249,7 @@ const HomePage = () => {
       location: "Mumbai",
       rating: 5,
       comment: "Loved the themed rooms—felt divine and pure. The stay location had complete temple information.",
-      avatar: "👩‍💼",
+      avatar: "https://i.pravatar.cc/150?img=47",
       temple: "Srisailam"
     },
     {
@@ -221,7 +258,7 @@ const HomePage = () => {
       location: "Gujarat",
       rating: 5,
       comment: "Booking poojas was super easy! The Rudrabhishekam was performed with such devotion.",
-      avatar: "👨‍💻",
+      avatar: "https://i.pravatar.cc/150?img=33",
       temple: "Kashi Vishwanath"
     },
     {
@@ -230,7 +267,7 @@ const HomePage = () => {
       location: "Hyderabad",
       rating: 5,
       comment: "Anand Devocation made our pilgrimage truly meaningful. Highly recommended!",
-      avatar: "👩‍🏫",
+      avatar: "https://i.pravatar.cc/150?img=68",
       temple: "Yadadri"
     }
   ];
@@ -241,19 +278,19 @@ const HomePage = () => {
       step: 1,
       title: "Choose a Temple or Package",
       description: "Browse our curated temples and devotional packages",
-      icon: "🛕"
+      icon: FaMosque
     },
     {
       step: 2,
       title: "Select Date & Details",
       description: "Pick your preferred date and fill in your details",
-      icon: "📅"
+      icon: FaCalendar
     },
     {
       step: 3,
       title: "Experience Devotion with Peace",
       description: "Enjoy your spiritual journey with complete guidance",
-      icon: "🙏"
+      icon: FaPrayingHands
     }
   ];
 
@@ -294,23 +331,39 @@ const HomePage = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-orange-50">
       {/* 1️⃣ Hero Section */}
       <section className="relative h-screen md:h-[90vh] overflow-hidden">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentHeroSlide}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 1.5 }}
-            className="absolute inset-0"
+        {/* Background Video */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div 
+            className="absolute top-1/2 left-1/2 w-full h-full"
+            style={{
+              transform: 'translate(-50%, -50%) scale(1.2)',
+              minWidth: '100%',
+              minHeight: '100%',
+              width: '177.77777778vh',
+              height: '56.25vw'
+            }}
           >
-            <img
-              src={heroSlides[currentHeroSlide].image}
-              alt={heroSlides[currentHeroSlide].title}
-              className="w-full h-full object-cover"
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/t7qYk_HwJQw?autoplay=1&loop=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&playlist=t7qYk_HwJQw&enablejsapi=1&iv_load_policy=3"
+              title="Background Video"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              frameBorder="0"
+              style={{
+                pointerEvents: 'none'
+              }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30" />
-          </motion.div>
-        </AnimatePresence>
+          </div>
+          {/* Fallback image if video doesn't load */}
+          <img
+            src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=1600&q=80"
+            alt="Temple background"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ zIndex: -1 }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30 z-10" />
+        </div>
 
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="container mx-auto px-4 text-center">
@@ -319,33 +372,37 @@ const HomePage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="flex justify-center space-x-4 mb-6">
-                <span className="text-3xl">🕉️</span>
-                <span className="text-3xl">🔔</span>
-                <span className="text-3xl">🏺</span>
-                <span className="text-3xl">🪷</span>
+              <div className="flex justify-center space-x-6 mb-6">
+                <FaOm className="text-4xl md:text-5xl text-yellow-300" />
+                <FaBell className="text-4xl md:text-5xl text-yellow-300" />
+                <FaWineBottle className="text-4xl md:text-5xl text-yellow-300" />
+                <FaLeaf className="text-4xl md:text-5xl text-yellow-300" />
               </div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4 md:mb-6">
-                {heroSlides[currentHeroSlide].title}
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4 md:mb-6 leading-tight">
+                Experience Pilgrimage, the Divine Way
               </h1>
-              <p className="text-xl md:text-2xl lg:text-3xl text-yellow-100 mb-8 md:mb-12 font-light">
-                {heroSlides[currentHeroSlide].subtitle}
+              <p className="text-xl md:text-2xl lg:text-3xl text-yellow-100 mb-8 md:mb-12 font-light leading-relaxed px-4">
+                Explore sacred destinations with spiritual themes, curated stays, and guided devotion
               </p>
 
               {/* Search Bar */}
               <div className="max-w-2xl mx-auto mb-8">
-                <div className="flex flex-col md:flex-row gap-3 bg-white/95 backdrop-blur-sm rounded-full p-2 shadow-2xl">
+                <form onSubmit={handleSearch} className="flex flex-col md:flex-row gap-3 bg-white/95 backdrop-blur-sm rounded-full p-2 shadow-2xl">
                   <input
                     type="text"
                     placeholder="Search temples or pooja packages..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyPress={handleKeyPress}
                     className="flex-1 px-6 py-4 rounded-full border-none outline-none text-gray-700 text-lg"
                   />
-                  <button className="bg-gradient-to-r from-orange-400 to-yellow-400 text-white px-8 py-4 rounded-full font-semibold hover:from-orange-500 hover:to-yellow-500 transition-all transform hover:scale-105">
+                  <button 
+                    type="submit"
+                    className="bg-gradient-to-r from-orange-400 to-yellow-400 text-white px-8 py-4 rounded-full font-semibold hover:from-orange-500 hover:to-yellow-500 transition-all transform hover:scale-105"
+                  >
                     Search
                   </button>
-                </div>
+                </form>
               </div>
 
               {/* CTA Buttons */}
@@ -366,25 +423,10 @@ const HomePage = () => {
             </motion.div>
           </div>
         </div>
-
-        {/* Navigation Dots */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
-          {heroSlides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentHeroSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                index === currentHeroSlide
-                  ? 'bg-yellow-300 w-8'
-                  : 'bg-white/50 hover:bg-white/75'
-              }`}
-            />
-          ))}
-        </div>
       </section>
 
       {/* 2️⃣ Themes Preview Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white via-blue-50 to-white">
+      <section className="pt-16 md:pt-24 pb-5 bg-gradient-to-b from-white via-blue-50 to-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -393,15 +435,31 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4 leading-tight">
               Devotional Themes for Every <span className="text-blue-500">Pilgrimage</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Curated spiritual experiences inspired by the authentic essence of each temple
             </p>
           </motion.div>
 
-          <div className="overflow-x-auto pb-4">
+          <div 
+            className="overflow-x-auto pb-4 scroll-smooth" 
+            style={{ 
+              scrollbarWidth: 'none', 
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}
+          >
+            <style>{`
+              .overflow-x-auto::-webkit-scrollbar {
+                display: none;
+              }
+              .overflow-x-auto {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+              }
+            `}</style>
             <div className="flex gap-6 md:gap-8" style={{ minWidth: 'max-content' }}>
               {themes.map((theme, index) => (
                 <motion.div
@@ -414,11 +472,13 @@ const HomePage = () => {
                   className="min-w-[280px] md:min-w-[320px] bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
                 >
                   <div className={`relative h-48 bg-gradient-to-br ${theme.color} p-6`}>
-                    <div className="text-5xl mb-3">{theme.icon}</div>
-                    <h3 className="text-xl font-display font-bold text-gray-800">{theme.name}</h3>
+                    <div className="mb-3">
+                      {React.createElement(theme.icon, { className: "text-5xl md:text-6xl text-gray-700" })}
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-display font-bold text-gray-800">{theme.name}</h3>
                   </div>
                   <div className="p-6">
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">{theme.description}</p>
+                    <p className="text-gray-600 text-sm mb-5 leading-relaxed">{theme.description}</p>
                     <Link
                       to="/themes"
                       className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors"
@@ -437,7 +497,7 @@ const HomePage = () => {
       </section>
 
       {/* 3️⃣ Featured Temples Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white via-orange-50 to-white">
+      <section className="pt-0 pb-16 md:pb-24 bg-gray-100">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -446,53 +506,54 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4 leading-tight">
               Popular Sacred <span className="text-orange-500">Temples</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Discover India's most revered pilgrimage destinations
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {featuredTemples.map((temple, index) => (
-              <motion.div
-                key={temple.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={temple.image}
-                    alt={temple.name}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <h3 className="text-xl md:text-2xl font-display font-bold mb-1">{temple.name}</h3>
-                    <p className="text-sm text-yellow-200">{temple.location}</p>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="mb-3">
-                    <span className="text-blue-500 font-semibold text-sm">Deity: </span>
-                    <span className="text-gray-700">{temple.deity}</span>
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-3">{temple.history}</p>
-                  <p className="text-gray-500 text-xs italic mb-4">{temple.significance}</p>
-                  <Link
-                    to={`/temples/${temple.id}`}
-                    className="inline-block w-full text-center bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all"
+            {featuredTemples.map((temple, index) => {
+              return (
+                <Link to={`/temples/${temple.id}`} key={temple.id}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
                   >
-                    Explore Temple
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+                    {/* Image Section */}
+                    <div className="relative h-56 md:h-64 overflow-hidden">
+                      <img
+                        src={temple.image}
+                        alt={temple.name}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                    
+                    {/* Colored Section with Content */}
+                    <div className="bg-blue-600 p-5 md:p-6 relative">
+                      {/* Orange Strip at Top */}
+                      <div className="absolute top-0 left-0 right-0 h-1 "></div>
+                      
+                      <h3 className="text-xl md:text-2xl font-display font-bold mb-3 text-white leading-tight">
+                        {temple.name}
+                      </h3>
+                      <p className="text-sm md:text-base mb-5 leading-relaxed text-white opacity-90">
+                        {temple.history.length > 80 ? `${temple.history.substring(0, 80)}...` : temple.history}
+                      </p>
+                      <div className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm md:text-base font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg inline-block cursor-pointer">
+                        Tap to know more
+                      </div>
+                    </div>
+                  </motion.div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -507,10 +568,10 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4 leading-tight">
               Popular Devotional <span className="text-orange-500">Packages</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Choose from our thoughtfully curated spiritual packages
             </p>
           </motion.div>
@@ -537,9 +598,9 @@ const HomePage = () => {
                   </div>
                 </div>
                 <div className="p-5">
-                  <h3 className="text-lg font-display font-bold text-gray-800 mb-2">{pkg.name}</h3>
-                  <p className="text-gray-600 text-sm mb-3">{pkg.description}</p>
-                  <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-display font-bold text-gray-800 mb-3 leading-tight">{pkg.name}</h3>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{pkg.description}</p>
+                  <div className="flex items-center justify-between mb-5">
                     <span className="text-gray-400 line-through text-sm">{pkg.originalPrice}</span>
                     <span className="text-orange-500 font-bold text-lg">{pkg.price}</span>
                   </div>
@@ -578,10 +639,10 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4 leading-tight">
               Why Devotees Love <span className="text-blue-500">Anand Devocation</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Experience the difference of authentic spiritual journeys
             </p>
           </motion.div>
@@ -597,9 +658,11 @@ const HomePage = () => {
                 whileHover={{ y: -5 }}
                 className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100"
               >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-display font-bold text-gray-800 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                <div className="mb-4">
+                  {React.createElement(item.icon, { className: "text-4xl md:text-5xl text-blue-500" })}
+                </div>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-gray-800 mb-3 leading-tight">{item.title}</h3>
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -616,10 +679,10 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4 leading-tight">
               Devotee <span className="text-orange-500">Testimonials</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Hear from devotees who have experienced divine journeys with us
             </p>
           </motion.div>
@@ -635,15 +698,21 @@ const HomePage = () => {
                 className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl"
               >
                 <StarRating rating={testimonials[currentTestimonial].rating} />
-                <blockquote className="text-xl md:text-2xl text-gray-700 italic mb-6 text-center leading-relaxed mt-4">
+                <blockquote className="text-xl md:text-2xl text-gray-700 italic mb-8 text-center leading-relaxed mt-6 px-4">
                   "{testimonials[currentTestimonial].comment}"
                 </blockquote>
-                <div className="flex items-center justify-center space-x-4">
-                  <div className="text-4xl">{testimonials[currentTestimonial].avatar}</div>
-                  <div className="text-center">
-                    <div className="font-bold text-gray-800 text-lg">{testimonials[currentTestimonial].name}</div>
-                    <div className="text-gray-600">{testimonials[currentTestimonial].location}</div>
-                    <div className="text-orange-500 font-semibold text-sm mt-1">
+                <div className="flex items-center justify-center space-x-6">
+                  <div className="flex-shrink-0">
+                    <img
+                      src={testimonials[currentTestimonial].avatar}
+                      alt={testimonials[currentTestimonial].name}
+                      className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-4 border-orange-200 shadow-lg"
+                    />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-bold text-gray-800 text-lg mb-1">{testimonials[currentTestimonial].name}</div>
+                    <div className="text-gray-600 mb-1">{testimonials[currentTestimonial].location}</div>
+                    <div className="text-orange-500 font-semibold text-sm">
                       Visited: {testimonials[currentTestimonial].temple}
                     </div>
                   </div>
@@ -678,10 +747,10 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4 leading-tight">
               How It <span className="text-blue-500">Works</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Simple steps to begin your spiritual journey
             </p>
           </motion.div>
@@ -697,22 +766,180 @@ const HomePage = () => {
                 className="text-center"
               >
                 <div className="relative mb-6">
-                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center text-4xl shadow-lg">
-                    {step.icon}
+                  <div className="w-20 h-20 md:w-24 md:h-24 mx-auto bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                    {React.createElement(step.icon, { className: "text-3xl md:text-4xl text-white" })}
                   </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center text-white font-bold text-sm md:text-base">
                     {step.step}
                   </div>
                 </div>
-                <h3 className="text-xl font-display font-bold text-gray-800 mb-2">{step.title}</h3>
-                <p className="text-gray-600 text-sm">{step.description}</p>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-gray-800 mb-3 leading-tight">{step.title}</h3>
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed">{step.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 8️⃣ Footer CTA Section */}
+      {/* 8️⃣ Customer Testimonial Card Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <img
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Left Side - Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative h-96 lg:h-[500px] rounded-xl overflow-hidden shadow-2xl"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800&q=80"
+                alt="Temple and Lotus"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            {/* Right Side - Testimonial Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="mb-6">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 leading-tight">
+                  Customer <span className="text-orange-500">Testimonials</span>
+                </h2>
+                <div className="w-20 h-1 bg-orange-500 mb-3"></div>
+                <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-3">
+                  Where relationships are built on trust.
+                </p>
+                <div className="w-20 h-1 bg-orange-500"></div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 md:p-10 shadow-2xl relative">
+                <FaQuoteLeft className="text-6xl md:text-7xl text-orange-500 absolute top-4 left-6 opacity-20" />
+                <div className="relative z-10">
+                  <p className="text-gray-800 font-semibold text-lg mb-4 leading-relaxed">Dear Anand Devocation,</p>
+                  <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
+                    For many years I and my community have enjoyed Anand Devocation's very high standards of efficiency and courtesy in all aspects of travel. I have no hesitation in appreciating and recommending them as a professional service that offers genuinely personal attention.
+                  </p>
+                  <p className="text-gray-800 font-semibold text-lg mb-2 leading-relaxed">Laurence Freeman OSB</p>
+                  <p className="text-orange-500 font-semibold text-sm md:text-base leading-relaxed">
+                    WCCM (The World Community for Christian Meditation)
+                  </p>
+                  <div className="mt-6 flex justify-end">
+                    <button className="px-6 py-2 border-2 border-orange-500 text-orange-500 font-semibold rounded-lg hover:bg-orange-500 hover:text-white transition-all">
+                      READ MORE
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 9️⃣ Additional Why Choose Us Cards Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-white via-blue-50 to-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-4 leading-tight">
+              Why Choose <span className="text-blue-500">Anand Devocation</span>
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Discover what makes us the preferred choice for spiritual journeys
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all text-white"
+            >
+              <div className="mb-4">
+                <FaOm className="text-5xl md:text-6xl text-yellow-300" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-display font-bold mb-3 leading-tight">Spiritual Excellence</h3>
+              <p className="text-blue-100 text-sm md:text-base leading-relaxed">
+                Deeply rooted in spiritual traditions, ensuring authentic and meaningful experiences
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all text-white"
+            >
+              <div className="mb-4">
+                <FaStar className="text-5xl md:text-6xl text-yellow-300" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-display font-bold mb-3 leading-tight">Premium Quality</h3>
+              <p className="text-orange-100 text-sm md:text-base leading-relaxed">
+                Curated experiences with attention to every detail for your comfort and satisfaction
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all text-white"
+            >
+              <div className="mb-4">
+                <FaCheckCircle className="text-5xl md:text-6xl text-yellow-300" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-display font-bold mb-3 leading-tight">Trusted Service</h3>
+              <p className="text-green-100 text-sm md:text-base leading-relaxed">
+                Years of experience serving devotees with integrity and dedication
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all text-white"
+            >
+              <div className="mb-4">
+                <FaPrayingHands className="text-5xl md:text-6xl text-yellow-300" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-display font-bold mb-3 leading-tight">Devotional Care</h3>
+              <p className="text-purple-100 text-sm md:text-base leading-relaxed">
+                Personalized care and support throughout your entire spiritual journey
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🔟 Footer CTA Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-blue-400 via-blue-500 to-indigo-600 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-200 rounded-full blur-3xl"></div>
@@ -726,10 +953,10 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 leading-tight">
               Begin Your Devotional Journey Today
             </h2>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8">
+            <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
               Experience pilgrimage in its truest and most meaningful form
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

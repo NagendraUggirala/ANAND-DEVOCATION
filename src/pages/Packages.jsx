@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -7,6 +7,7 @@ const Packages = () => {
   const [priceRange, setPriceRange] = useState('all');
   const [sortBy, setSortBy] = useState('popular');
   const [selectedPackage, setSelectedPackage] = useState(null);
+  const scrollContainerRef = useRef(null);
 
   // Pooja Packages
   const poojaPackages = [
@@ -648,38 +649,89 @@ const Packages = () => {
               Special <span className="text-orange-600">Offers</span>
             </h2>
           </motion.div>
-          <div className="overflow-x-auto pb-4">
-            <div className="flex gap-6" style={{ minWidth: 'max-content' }}>
-              {allPackages.filter(p => p.popular).slice(0, 5).map((pkg, index) => (
-                <motion.div
-                  key={pkg.id}
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="min-w-[300px] bg-white rounded-xl overflow-hidden shadow-lg"
-                >
-                  <div className="relative h-40">
-                    <img src={pkg.image} alt={pkg.name} className="w-full h-full object-cover" />
-                    <div className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
-                      Special Offer
+          
+          <div className="relative">
+            {/* Left Scroll Button */}
+            <button
+              onClick={() => {
+                if (scrollContainerRef.current) {
+                  scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+                }
+              }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-orange-50 transition-all hover:scale-110 border-2 border-orange-200"
+              aria-label="Scroll left"
+            >
+              <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Right Scroll Button */}
+            <button
+              onClick={() => {
+                if (scrollContainerRef.current) {
+                  scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+                }
+              }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-orange-50 transition-all hover:scale-110 border-2 border-orange-200"
+              aria-label="Scroll right"
+            >
+              <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Scrollable Container */}
+            <div 
+              ref={scrollContainerRef}
+              className="overflow-x-auto scroll-smooth scrollbar-hide px-12"
+              style={{ 
+                scrollbarWidth: 'none', 
+                msOverflowStyle: 'none',
+                WebkitOverflowScrolling: 'touch'
+              }}
+            >
+              <style>{`
+                .scrollbar-hide::-webkit-scrollbar {
+                  display: none;
+                }
+                .scrollbar-hide {
+                  -ms-overflow-style: none;
+                  scrollbar-width: none;
+                }
+              `}</style>
+              <div className="flex gap-6" style={{ minWidth: 'max-content' }}>
+                {allPackages.filter(p => p.popular).slice(0, 5).map((pkg, index) => (
+                  <motion.div
+                    key={pkg.id}
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                    className="min-w-[300px] bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
+                  >
+                    <div className="relative h-40">
+                      <img src={pkg.image} alt={pkg.name} className="w-full h-full object-cover" />
+                      <div className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                        Special Offer
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-bold text-gray-800 mb-2">{pkg.name}</h3>
-                    <div className="flex items-center justify-between">
-                      <span className="text-blue-600 font-bold">₹{pkg.price.toLocaleString()}</span>
-                      <Link
-                        to="/book"
-                        className="bg-orange-500 text-white px-4 py-1 rounded-lg text-sm font-semibold hover:bg-orange-600"
-                      >
-                        Book Now
-                      </Link>
+                    <div className="p-4">
+                      <h3 className="font-bold text-gray-800 mb-2 leading-tight">{pkg.name}</h3>
+                      <div className="flex items-center justify-between">
+                        <span className="text-blue-600 font-bold text-lg">₹{pkg.price.toLocaleString()}</span>
+                        <Link
+                          to="/book"
+                          className="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-600 transition-all transform hover:scale-105"
+                        >
+                          Book Now
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
