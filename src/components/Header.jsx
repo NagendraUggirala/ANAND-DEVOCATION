@@ -17,8 +17,10 @@ const Header = () => {
 
   const navItems = [
     { path: "/", label: "Home" },
+    { path: "/temples", label: "Temples" },
+    { path: "/themes", label: "Themes" },
+    { path: "/packages", label: "Packages" },
     { path: "/about", label: "About" },
-    { path: "/projects", label: "Projects" },
     { path: "/contact", label: "Contact" },
   ];
 
@@ -33,17 +35,16 @@ const Header = () => {
     <header
       className={`sticky top-0 z-40 transition-all duration-300 
       bg-white border-b 
-      ${isScrolled ? "shadow-md border-gray-200" : "border-gray-100"}`}
+      ${isScrolled ? "shadow-md border-saffron/20" : "border-gray-100"}`}
     >
       <div className="container mx-auto px-4">
-        {/* Row */}
         <div className="flex justify-between items-center py-3 md:py-4">
-          {/* Logo - Improved Mobile Alignment */}
+          {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 md:space-x-3 group">
-            <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-orange-200 overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300">
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-saffron/30 overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300">
               <img
                 src="./images/image.png"
-                alt="Founder"
+                alt="Anand Devocation Logo"
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -52,22 +53,22 @@ const Header = () => {
               <div className="flex items-center space-x-2">
                 <img
                   src="./images/Anandhlogo.png"
-                  alt="Anand Logo"
+                  alt="Anand Devocation"
                   className="w-8 h-10 md:w-10 md:h-12 object-contain"
                 />
                 <div className="flex flex-col items-start">
-                  <h1 className="text-lg md:text-xl font-bold text-blue-800">
-                    <span className="text-orange-500">ANAND </span>REALTYY
+                  <h1 className="text-lg md:text-xl font-display font-bold text-orange-500">
+                    <span className="text-blue-500">ANAND </span>DEVOCATION
                   </h1>
-                  <p className="text-xs text-gray-600 italic mt-1">
-                    "Dharmo Rakshati Rakshitah"
+                  <p className="text-xs text-earth-light italic mt-1">
+                    Sacred Journeys, Divine Experiences
                   </p>
                 </div>
               </div>
             </div>
           </Link>
 
-          {/* Desktop Navigation - Increased Size */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-3">
             {navItems.map((item) => (
               <Link
@@ -75,28 +76,28 @@ const Header = () => {
                 to={item.path}
                 className={`px-4 py-2.5 rounded-lg text-base font-semibold transition-all duration-200 ${
                   isActiveLink(item.path)
-                    ? "text-blue-700 bg-blue-100 border border-blue-200"
-                    : "text-blue-800 hover:bg-blue-50 hover:text-blue-700"
+                    ? "text-saffron bg-saffron/10 border border-saffron/30"
+                    : "text-earth-dark hover:bg-sage hover:text-saffron"
                 }`}
               >
                 {item.label}
               </Link>
             ))}
 
-            {/* Land Information Button - Increased Size */}
-            <button
-              onClick={handleLandInfoClick}
-              className="px-6 py-3 rounded-lg text-base font-semibold bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center space-x-2"
+            {/* Book Now Button */}
+            <Link
+              to="/book"
+              className="px-6 py-3 rounded-lg text-base font-semibold bg-blue-500 text-white hover:shadow-xl transition-all duration-300 shadow-lg transform hover:scale-105 flex items-center space-x-2"
             >
-              <span className="text-lg">📄</span>
-              <span>Land Information Form</span>
-            </button>
+              
+              <span>Book Now</span>
+            </Link>
           </nav>
 
-          {/* Mobile menu button - Improved Size */}
+          {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 md:p-3 text-blue-800 hover:bg-blue-50 rounded-lg transition-all duration-200"
+            className="lg:hidden p-2 md:p-3 text-earth-dark hover:bg-sage rounded-lg transition-all duration-200"
           >
             {isMenuOpen ? (
               <svg
@@ -130,7 +131,7 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu - Improved Alignment */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden border-t border-gray-200 pb-4">
             <nav className="space-y-2 pt-3">
@@ -141,22 +142,23 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
                     isActiveLink(item.path)
-                      ? "bg-blue-100 text-blue-700 border border-blue-200"
-                      : "text-blue-800 hover:bg-blue-50 hover:text-blue-700"
+                      ? "bg-saffron/10 text-saffron border border-saffron/30"
+                      : "text-earth-dark hover:bg-sage hover:text-saffron"
                   }`}
                 >
                   {item.label}
                 </Link>
               ))}
 
-              {/* Mobile Land Info Button */}
-              <button
-                onClick={handleLandInfoClick}
-                className="w-full text-left px-4 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white text-base font-semibold rounded-lg mt-2 hover:from-green-700 hover:to-green-800 transition-all duration-300 flex items-center space-x-2"
+              {/* Mobile Book Now Button */}
+              <Link
+                to="/book"
+                onClick={() => setIsMenuOpen(false)}
+                className="w-full text-left px-4 py-3 bg-sacred-gradient text-white text-base font-semibold rounded-lg mt-2 hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
               >
-                <span className="text-lg">📄</span>
-                <span>Land Information Form</span>
-              </button>
+                <span className="text-lg">🕉️</span>
+                <span>Book Now</span>
+              </Link>
             </nav>
           </div>
         )}

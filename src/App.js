@@ -1,30 +1,36 @@
 // App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ModalProvider } from './context/ModalContext'; // Import the ModalProvider
+import { ModalProvider } from './context/ModalContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
-import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
-import Landinformation from './pages/Landinformation';
-import ScrollToTop from './components/ScrollToTop'; // Import the ScrollToTop component
+import TemplesList from './pages/TemplesList';
+import TempleDetails from './pages/TempleDetails';
+import Themes from './pages/Themes';
+import Packages from './pages/Packages';
+import BookingPage from './pages/BookingPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <ModalProvider> {/* Wrap everything with ModalProvider */}
+    <ModalProvider>
       <Router>
-        <div className="min-h-screen bg-white">
-          <ScrollToTop /> {/* Add ScrollToTop component here */}
+        <div className="min-h-screen bg-cream">
+          <ScrollToTop />
           <Header />
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/temples" element={<TemplesList />} />
+              <Route path="/temples/:id" element={<TempleDetails />} />
+              <Route path="/themes" element={<Themes />} />
+              <Route path="/packages" element={<Packages />} />
+              <Route path="/book" element={<BookingPage />} />
               <Route path="/about" element={<AboutPage />} />
-              <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/Landinfo" element={<Landinformation />} />
             </Routes>
           </main>
           <Footer />
