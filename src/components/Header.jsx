@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useMultiFormModal } from "../context/ModalContext";
-import RealEstateForm from "../pages/Landinformation";
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +18,7 @@ const Header = () => {
   const navItems = [
     { path: "/", label: "Home" },
     { path: "/temples", label: "Temples" },
-    { path: "/themes", label: "Themes" },
+    { path: "/themes", label: "Special Poojas" },
     { path: "/packages", label: "Packages" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
@@ -26,10 +26,7 @@ const Header = () => {
 
   const isActiveLink = (path) => location.pathname === path;
 
-  const handleLandInfoClick = () => {
-    openModal(<RealEstateForm />);
-    setIsMenuOpen(false);
-  };
+
 
   return (
     <header
@@ -156,7 +153,7 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className="w-full text-left px-4 py-3 bg-sacred-gradient text-white text-base font-semibold rounded-lg mt-2 hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
               >
-                <span className="text-lg">🕉️</span>
+                <span className="text-lg bg-blue-500 px-3 py-3 rounded-full">Book Now</span>
                 <span>Book Now</span>
               </Link>
             </nav>

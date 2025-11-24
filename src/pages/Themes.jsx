@@ -36,7 +36,7 @@ const Themes = () => {
       id: 1,
       title: 'Lord Shiva',
       description: 'Explore temples dedicated to Lord Shiva across India, including the twelve Jyotirlingas',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+      image: 'https://t3.ftcdn.net/jpg/15/30/45/52/360_F_1530455267_qa1BaPVGLT1Akqs0KUx7q365kWKBoBd1.jpg',
       icon: FaBolt,
       temples: ['Kashi Vishwanath', 'Somnath', 'Kedarnath', 'Rameshwaram'],
       color: 'from-blue-500 to-indigo-600'
@@ -45,7 +45,7 @@ const Themes = () => {
       id: 2,
       title: 'Lord Vishnu',
       description: 'Divine temples of Vishnu & his avatars, including Char Dham and Divya Desams',
-      image: 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
+      image: 'https://png.pngtree.com/thumb_back/fh260/background/20250909/pngtree-lord-vishnu-resting-on-sheshnag-with-cosmic-background-image_19077337.webp',
       icon: FaOm,
       temples: ['Tirupati Balaji', 'Jagannath Puri', 'Badrinath', 'Ranganathaswamy'],
       color: 'from-purple-500 to-blue-600'
@@ -54,7 +54,7 @@ const Themes = () => {
       id: 3,
       title: 'Lord Ganesha',
       description: 'Famous Ganesha temples & rituals for removing obstacles and seeking wisdom',
-      image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
+      image: 'https://apkamart.com/cdn/shop/articles/Lord-Ganesha--The-lord-of-new-beginnings.jpg?v=1586850939&width=1000',
       icon: FaPrayingHands,
       temples: ['Siddhivinayak', 'Ganpatipule', 'Ranthambore', 'Dhodh Ganesh'],
       color: 'from-orange-500 to-yellow-500'
@@ -63,7 +63,7 @@ const Themes = () => {
       id: 4,
       title: 'Goddess Durga',
       description: 'Shakti Peethas & Devi temples dedicated to the divine feminine energy',
-      image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
+      image: 'https://akm-img-a-in.tosshub.com/sites/dailyo//story/embed/201803/daag_031918022301.jpg',
       icon: FaOm,
       temples: ['Vaishno Devi', 'Kamakhya', 'Kalighat', 'Meenakshi Amman'],
       color: 'from-pink-500 to-rose-600'
@@ -72,7 +72,7 @@ const Themes = () => {
       id: 5,
       title: 'Hanuman',
       description: 'Strength & devotion temples of Hanuman, the symbol of loyalty and courage',
-      image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
+      image: 'https://www.shutterstock.com/shutterstock/photos/2610479149/display_1500/stock-photo-realistic-child-hanuman-is-trying-to-eat-sun-with-open-mouth-2610479149.jpg',
       icon: FaPrayingHands,
       temples: ['Hanuman Garhi', 'Sankat Mochan', 'Mehandipur Balaji', 'Salasar Balaji'],
       color: 'from-orange-600 to-red-600'
@@ -81,7 +81,7 @@ const Themes = () => {
       id: 6,
       title: 'Lord Krishna',
       description: 'Temples celebrating the divine love and teachings of Lord Krishna',
-      image: 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
+      image: 'https://w0.peakpx.com/wallpaper/158/542/HD-wallpaper-jai-shree-krishna-bhagwan-lord-radhe-shree-krishna-shri-krishna.jpg',
       icon: FaDrum,
       temples: ['ISKCON', 'Dwarkadhish', 'Guruvayur', 'Udupi Krishna'],
       color: 'from-blue-400 to-indigo-600'
@@ -90,7 +90,7 @@ const Themes = () => {
       id: 7,
       title: 'Goddess Lakshmi',
       description: 'Temples of prosperity and abundance, seeking blessings for wealth',
-      image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
+      image: 'https://as2.ftcdn.net/v2/jpg/16/29/18/95/1000_F_1629189589_1i788BYbrha4MpraxGvCah7SHNKoUWEf.jpg',
       icon: FaMoneyBillWave,
       temples: ['Mahalakshmi', 'Ashtalakshmi', 'Kolhapur Mahalakshmi', 'Sripuram'],
       color: 'from-yellow-400 to-amber-500'
@@ -99,7 +99,7 @@ const Themes = () => {
       id: 8,
       title: 'Lord Rama',
       description: 'Temples dedicated to Lord Rama, the embodiment of righteousness',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+      image: 'https://www.wallsnapy.com/img_gallery/lord-ram-face-ai-wallpaper-4k-hd-free-download-524315.jpg',
       icon: FaMosque,
       temples: ['Ayodhya Ram Temple', 'Rameshwaram', 'Bhadrachalam', 'Ramanathaswamy'],
       color: 'from-blue-600 to-cyan-600'
@@ -112,7 +112,7 @@ const Themes = () => {
       id: 1,
       title: 'Navratri Specials',
       description: 'Special darshan and rituals during the nine nights of Navratri',
-      image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
+      image: 'https://as1.ftcdn.net/v2/jpg/06/54/17/10/1000_F_654171090_swvbvZlsvgzPnsQtDsETqVSmhtwMEKx3.jpg',
       icon: FaOm,
       color: 'from-purple-500 to-pink-600'
     },
@@ -252,7 +252,7 @@ const Themes = () => {
       id: 1,
       title: 'South India Temples',
       description: 'Explore the magnificent Dravidian architecture and spiritual heritage',
-      image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
+      image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihbY9q-92gOtuDP2qYFMCbT7wYHHnJ3-9TzD3EhEijtP5-6Fap5sOloTRQ1C4ylQZMua5xHQGo3ot__66OEBkU1VaRoRWR1yFcV2oacUqDY6rV7erqvhNl9wzE46Islw4Q_IrdUApELCfvRA9vuUjO6y8gUH4_fotEzrizuBuiSIb60VO_ze4GvsD2dU5J/w640-h400-rw/IndianTemplesList%20Blog%20HD%20Image.webp',
       icon: FaMonument,
       color: 'from-blue-500 to-cyan-600'
     },
@@ -260,7 +260,7 @@ const Themes = () => {
       id: 2,
       title: 'North India Temples',
       description: 'Discover the ancient temples of the northern regions',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+      image: 'https://www.bespokeindiaholidays.com/wp-content/uploads/2013/05/North-India-Tours.gif',
       icon: FaMountain,
       color: 'from-indigo-500 to-purple-600'
     },
@@ -268,7 +268,7 @@ const Themes = () => {
       id: 3,
       title: 'Hill Temples',
       description: 'Sacred abodes in the mountains - Tirumala, Sabarimala, Vaishno Devi',
-      image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
+      image: 'https://www.ramadakatra.com/blog/admin/assets/img/post/image_2025-07-18-11-33-50_687a311ead86e.jpg',
       icon: FaMountainIcon,
       color: 'from-green-500 to-emerald-600'
     },
@@ -276,7 +276,7 @@ const Themes = () => {
       id: 4,
       title: 'River Temples',
       description: 'Temples on the banks of sacred rivers - Ganga, Yamuna, Godavari',
-      image: 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
+      image: 'https://blog.zenithholidays.com/wp-content/uploads/2024/11/A-glimpse-into-nature_s-lifeline-explore-the-rivers-of-India.jpg.webp',
       icon: FaWater,
       color: 'from-cyan-500 to-blue-600'
     }
@@ -288,7 +288,7 @@ const Themes = () => {
       id: 1,
       title: 'Most Visited Temples',
       description: 'Top pilgrimage destinations visited by millions',
-      image: 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
+      image: 'https://www.indiapilgrimtours.com/articles/wp-content/uploads/2018/09/Sree-Padmanabhaswamy-Temple-1.jpg',
       visits: '10M+',
       color: 'from-yellow-500 to-orange-500'
     },
@@ -296,7 +296,7 @@ const Themes = () => {
       id: 2,
       title: 'Highly Rated Temples',
       description: 'Temples with highest devotee ratings and reviews',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+      image: 'https://www.tripsavvy.com/thmb/3Nr1GxKOrB4NvBsAm5rRTbV4QEc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-140824086-58dd02593df78c5162898c0a.jpg',
       rating: '4.9/5',
       color: 'from-blue-500 to-indigo-600'
     },
@@ -304,7 +304,7 @@ const Themes = () => {
       id: 3,
       title: 'Viral This Week',
       description: 'Temples trending on social media this week',
-      image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
+      image: 'https://c.ndtvimg.com/2024-01/cttj2n2_ram-temple-mandir_625x300_22_January_24.jpeg?downsize=773:435',
       trend: 'Trending',
       color: 'from-orange-500 to-red-600'
     },
@@ -312,7 +312,7 @@ const Themes = () => {
       id: 4,
       title: 'Top 10 This Month',
       description: 'Most popular temples this month',
-      image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
+      image: 'https://lp-cms-production.imgix.net/2025-04/Shutterstock374175955.jpg?auto=format,compress&q=72&w=1024&h=810&fit=crop',
       rank: '#1',
       color: 'from-purple-500 to-pink-600'
     }
@@ -418,7 +418,7 @@ const Themes = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-4">
-              Explore Your Devotional Journey by <span className="text-yellow-400">Theme</span>
+              Explore Your Devotional Journey by <span className="text-yellow-400">Special Poojas</span>
             </h1>
             <p className="text-lg md:text-xl text-blue-100 mt-2">
               Discover temples, rituals, and spiritual experiences tailored to your needs and interests
@@ -435,7 +435,7 @@ const Themes = () => {
             <div className="relative mb-4">
               <input
                 type="text"
-                placeholder="Search for themes... (E.g., Shiva, Marriage, Navratri)"
+                placeholder="Search for Special Poojas... (E.g., Shiva, Marriage, Navratri)"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full border-2 border-blue-200 p-4 pl-12 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none text-gray-700"
@@ -482,7 +482,7 @@ const Themes = () => {
             className="text-center mb-8 md:mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">
-              Deity <span className="text-blue-600">Themes</span>
+              Deity <span className="text-blue-600">Special Poojas</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Explore temples dedicated to different gods and goddesses
@@ -509,10 +509,10 @@ const Themes = () => {
             className="text-center mb-8 md:mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">
-              Festival <span className="text-orange-600">Themes</span>
+              Festival <span className="text-orange-600">Divisions</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Special themes based on festivals and auspicious occasions
+              Special Poojas based on festivals and auspicious occasions
             </p>
           </motion.div>
 
@@ -663,7 +663,7 @@ const Themes = () => {
             className="text-center mb-8 md:mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">
-              Ritual & <span className="text-orange-600">Pooja Themes</span>
+              Ritual & <span className="text-orange-600">Special Poojas</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Explore temples offering specific rituals and pooja services

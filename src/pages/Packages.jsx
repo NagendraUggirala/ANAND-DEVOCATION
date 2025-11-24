@@ -23,7 +23,7 @@ const Packages = () => {
       rating: 4.8,
       reviews: 1250,
       includes: ['Priest', 'Materials', 'Prasadam', 'Video Call'],
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+      image: 'https://static.wixstatic.com/media/6642a4_8930a82d27434739a6aeaf5fc2d4e2fe~mv2.jpg/v1/fill/w_740,h_493,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/6642a4_8930a82d27434739a6aeaf5fc2d4e2fe~mv2.jpg',
       popular: true
     },
     {
@@ -38,7 +38,7 @@ const Packages = () => {
       rating: 4.6,
       reviews: 890,
       includes: ['Priest', 'Materials', 'Prasadam'],
-      image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
+      image: 'https://prachyam.store/cdn/shop/files/9S6A3484-min.jpg?v=1716245135&width=823',
       popular: false
     },
     {
@@ -53,7 +53,7 @@ const Packages = () => {
       rating: 4.7,
       reviews: 650,
       includes: ['Priest', 'Materials', 'Prasadam', 'Horoscope Analysis'],
-      image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
+      image: 'https://priestmurali.com/wp-content/uploads/2024/08/navagraha.png',
       popular: true
     },
     {
@@ -68,7 +68,7 @@ const Packages = () => {
       rating: 4.9,
       reviews: 1100,
       includes: ['Priest', 'Materials', 'Prasadam', 'Video Call'],
-      image: 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
+      image: 'https://teluguone.com/teluguoneUserFiles/laxmi%20pooja%201(1).png',
       popular: true
     },
     {
@@ -83,7 +83,7 @@ const Packages = () => {
       rating: 4.5,
       reviews: 750,
       includes: ['Priest', 'Materials', 'Prasadam'],
-      image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
+      image: 'https://d2vlk40wphb5v6.cloudfront.net/public/cms-images/blogs/1728027635_Ganesha%20Chaturthi%20Puja.jpg',
       popular: false
     },
     {
@@ -98,7 +98,7 @@ const Packages = () => {
       rating: 4.6,
       reviews: 520,
       includes: ['Priest', 'Materials', 'Prasadam'],
-      image: 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
+      image: 'https://www.poojn.in/wp-content/uploads/2025/06/Poojns-Guide-to-Saraswati-Puja-2025-A-Complete-Ritual-Guide.jpeg.jpg',
       popular: false
     }
   ];
@@ -117,7 +117,7 @@ const Packages = () => {
       rating: 4.9,
       reviews: 2100,
       includes: ['Darshan Ticket', 'Shuttle Service', 'Prasadam', 'Guide'],
-      image: 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
+      image: 'https://tirupatibalajitravels.co.in/wp-content/uploads/2025/09/Tirupati-Offline-VIP-Darshan-During-Brahmotsavam-768x471.jpg',
       popular: true
     },
     {
@@ -132,7 +132,7 @@ const Packages = () => {
       rating: 4.7,
       reviews: 980,
       includes: ['Transport', 'Pooja', 'Annaprasadam', 'Guide'],
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+      image: 'https://holidayszone.in/images/one-day-srisailam-malkiarjuna-temple-by-car-from-hyderabad.png',
       popular: true
     },
     {
@@ -147,7 +147,7 @@ const Packages = () => {
       rating: 4.8,
       reviews: 450,
       includes: ['Helicopter Service', 'Premium Stay', 'All Meals', 'Expert Guide'],
-      image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
+      image: 'https://i0.wp.com/www.opindia.com/wp-content/uploads/2021/09/train.jpg?resize=696%2C522&ssl=1',
       popular: true
     },
     {
@@ -162,7 +162,7 @@ const Packages = () => {
       rating: 4.8,
       reviews: 1650,
       includes: ['VIP Darshan', 'Ganga Aarti', 'Prasadam', 'Guide'],
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+      image: 'https://feeds.abplive.com/onecms/images/uploaded-images/2021/12/13/b25727c9398e5a8f88f4862a56d1d611_0.jpeg?impolicy=abp_cdn&imwidth=1200&height=675',
       popular: true
     }
   ];
@@ -181,7 +181,7 @@ const Packages = () => {
       rating: 4.9,
       reviews: 1850,
       includes: ['Lakshmi Pooja', 'Decorations', 'Prasadam', 'Video Call'],
-      image: 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
+      image: 'https://m.media-amazon.com/images/I/91YtToY3VRL._SX569_.jpg',
       popular: true
     },
     {
@@ -196,7 +196,7 @@ const Packages = () => {
       rating: 4.8,
       reviews: 1200,
       includes: ['Rudra Homam', 'Night Stay', 'Prasadam', 'Priest'],
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+      image: 'https://vidyaranyam.in/wp-content/uploads/2023/11/7.jpg',
       popular: true
     },
     {
@@ -211,7 +211,7 @@ const Packages = () => {
       rating: 4.7,
       reviews: 650,
       includes: ['21 Poojas', 'Materials', 'Prasadam', 'Daily Updates'],
-      image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
+      image: 'https://vigneshwarapoojakit.com/wp-content/uploads/2025/07/blog3-vigneshwara-pooja-kit.jpeg',
       popular: false
     },
     {
@@ -226,7 +226,7 @@ const Packages = () => {
       rating: 4.6,
       reviews: 890,
       includes: ['Daily Deepam', 'Prasadam', 'Monthly Report'],
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+      image: 'https://hindutone.com/wp-content/uploads/2025/10/karthika_masam_2025_complete_dates_start-8_11zon-1296x700.jpeg',
       popular: false
     }
   ];
@@ -245,7 +245,7 @@ const Packages = () => {
       rating: 4.9,
       reviews: 950,
       includes: ['Horoscope Reading', 'Pooja', 'Remedies', 'Consultation'],
-      image: 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
+      image: 'https://www.pavitrajyotish.com/wp-content/uploads/2016/02/Horoscope-Reading-PavitraJyotish.jpg',
       popular: true
     },
     {
@@ -260,7 +260,7 @@ const Packages = () => {
       rating: 4.8,
       reviews: 750,
       includes: ['Kundali Matching', 'Homam', 'Consultation', 'Report'],
-      image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
+      image: 'https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/AdobeStock_730071226-1920w.jpeg',
       popular: true
     },
     {
@@ -275,7 +275,7 @@ const Packages = () => {
       rating: 4.7,
       reviews: 680,
       includes: ['Career Analysis', 'Temple Seva', 'Remedies', 'Consultation'],
-      image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
+      image: 'https://shivastrologycentre.com/services/10.jpg',
       popular: false
     }
   ];
@@ -293,7 +293,7 @@ const Packages = () => {
       rating: 5.0,
       reviews: 2500,
       includes: ['Tax Receipt', 'Certificate', 'Photos'],
-      image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
+      image: 'https://eu.sadhguru.org/wp-content/uploads/2021/02/AnnadanamLP_1440%E2%80%8A%C3%97%E2%80%8A535-1-1.jpg',
       taxDeduction: true
     },
     {
@@ -307,7 +307,7 @@ const Packages = () => {
       rating: 4.9,
       reviews: 1800,
       includes: ['Tax Receipt', 'Certificate', 'Updates'],
-      image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
+      image: 'https://harekrishnamandir.org/uploads/charitable_program/copy-1111343-thumbnail2654329.webp',
       taxDeduction: true
     },
     {
@@ -321,7 +321,7 @@ const Packages = () => {
       rating: 4.8,
       reviews: 1200,
       includes: ['Tax Receipt', 'Certificate', 'Progress Report'],
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+      image: 'https://hinduismtoday.b-cdn.net/wp-content/uploads/2022/12/1-4-1024x490.jpg',
       taxDeduction: true
     }
   ];

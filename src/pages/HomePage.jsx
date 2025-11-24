@@ -70,7 +70,7 @@ const HomePage = () => {
       id: 1,
       name: "Tirumala Tirupati",
       location: "Andhra Pradesh",
-      image: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800&q=80",
+      image: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Tirumala_090615.jpg",
       deity: "Lord Venkateswara",
       history: "One of the richest and most visited temples in the world, attracting millions of devotees annually",
       significance: "Famous for its divine darshan and prasadam"
@@ -79,7 +79,7 @@ const HomePage = () => {
       id: 2,
       name: "Srisailam",
       location: "Andhra Pradesh",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
+      image: "https://www.poojn.in/wp-content/uploads/2025/06/Srisailam-Online-Booking-Made-Easy-Your-2025-Guide-to-Simple-Darshan-Bookings.jpeg.jpg",
       deity: "Lord Shiva",
       history: "Ancient Jyotirlinga temple located in the Nallamala Hills, one of the twelve sacred Jyotirlingas",
       significance: "Also a Shakti Peetha, making it doubly significant"
@@ -88,7 +88,7 @@ const HomePage = () => {
       id: 3,
       name: "Yadadri",
       location: "Telangana",
-      image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80",
+      image: "https://www.deccanchronicle.com/h-upload/2024/11/11/1861538-untitleddesign19.webp",
       deity: "Lord Narasimha",
       history: "Recently renovated temple known for its magnificent architecture and spiritual significance",
       significance: "One of the most beautiful modern temple complexes"
@@ -97,7 +97,7 @@ const HomePage = () => {
       id: 4,
       name: "Kanaka Durga Temple",
       location: "Vijayawada, Andhra Pradesh",
-      image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80",
+      image: "https://www.poojn.in/wp-content/uploads/2025/02/Kanaka-Durga-Temple-A-Guide-to-Your-Visit.jpeg.jpg",
       deity: "Goddess Kanaka Durga",
       history: "Situated on Indrakeeladri Hill, overlooking the Krishna River",
       significance: "Famous for Navratri celebrations and powerful Devi worship"
@@ -106,7 +106,7 @@ const HomePage = () => {
       id: 5,
       name: "Annavaram",
       location: "Andhra Pradesh",
-      image: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800&q=80",
+      image: "https://travellerkaka.com/wp-content/uploads/2024/09/Untitled-design-48-1024x536.png.webp",
       deity: "Lord Satyanarayana",
       history: "Dedicated to Lord Satyanarayana, known for Satyanarayana Vratam",
       significance: "One of the most visited temples in Andhra Pradesh"
@@ -115,7 +115,7 @@ const HomePage = () => {
       id: 6,
       name: "Rameswaram",
       location: "Tamil Nadu",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
+      image: "https://www.daiwikhotels.com/wp-content/uploads/2024/08/Bannerheader-1-1536x998.jpg",
       deity: "Lord Shiva",
       history: "One of the twelve Jyotirlingas and one of the Char Dham pilgrimage sites",
       significance: "Famous for its sacred water tanks and architectural beauty"
@@ -167,7 +167,7 @@ const HomePage = () => {
       originalPrice: "₹1,299",
       description: "Sacred abhishekam performed by temple priests",
       category: "Pooja",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80"
+      image: "https://static.wixstatic.com/media/6642a4_8930a82d27434739a6aeaf5fc2d4e2fe~mv2.jpg/v1/fill/w_740,h_493,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/6642a4_8930a82d27434739a6aeaf5fc2d4e2fe~mv2.jpg"
     },
     {
       id: 2,
@@ -176,7 +176,7 @@ const HomePage = () => {
       originalPrice: "₹1,999",
       description: "Special entry darshan with prasadam",
       category: "Darshan",
-      image: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800&q=80"
+      image: "https://assets.thehansindia.com/h-upload/2020/10/27/1007837-ttd.webp"
     },
     {
       id: 3,
@@ -185,7 +185,7 @@ const HomePage = () => {
       originalPrice: "₹2,499",
       description: "Complete 1-day trip with pooja and meals",
       category: "Tour",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80"
+      image: "https://www.poojn.in/wp-content/uploads/2025/06/Srisailam-Online-Booking-Made-Easy-Your-2025-Guide-to-Simple-Darshan-Bookings.jpeg.jpg"
     },
     {
       id: 4,
@@ -194,7 +194,7 @@ const HomePage = () => {
       originalPrice: "₹3,499",
       description: "9-day Navratri pooja and darshan package",
       category: "Festival",
-      image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80"
+      image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2022/09/unique-traditions-and-customs-of-navratri-in-india.jpg"
     }
   ];
 
@@ -386,7 +386,7 @@ const HomePage = () => {
               </p>
 
               {/* Search Bar */}
-              <div className="max-w-2xl mx-auto mb-8">
+              <div className="max-w-2xl mx-auto mb-8  hidden md:block" >
                 <form onSubmit={handleSearch} className="flex flex-col md:flex-row gap-3 bg-white/95 backdrop-blur-sm rounded-full p-2 shadow-2xl">
                   <input
                     type="text"
@@ -785,7 +785,7 @@ const HomePage = () => {
       <section className="py-5 md:py-24 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img
-            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
+            src="https://www.invoicesimple.com/wp-content/webp-express/webp-images/uploads/2025/04/E1-Featured-Image-Man-at-desk-with-customer-reviews-overlaid_-1200x631.jpg.webp"
             alt="Background"
             className="w-full h-full object-cover"
           />
@@ -801,7 +801,7 @@ const HomePage = () => {
               className="relative h-96 lg:h-[500px] rounded-xl overflow-hidden shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800&q=80"
+                src="https://as2.ftcdn.net/jpg/04/97/81/35/1000_F_497813542_mhI42VozemjwmfbU0Dve7h0JN2VPtV7W.jpg"
                 alt="Temple and Lotus"
                 className="w-full h-full object-cover"
               />
