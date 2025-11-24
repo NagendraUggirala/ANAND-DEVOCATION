@@ -27,7 +27,7 @@ const TempleDetails = () => {
       name: 'Tirupati Balaji',
       location: 'Andhra Pradesh',
       deity: 'Lord Venkateswara',
-      image: 'https://indiathrills.com/wp-content/uploads/2025/06/Tirupati-Balaji-Temple-history-location-timings-how-to-reach.webp',
+      image: 'https://media.istockphoto.com/id/1007659382/photo/the-tirupati-temple.jpg?s=612x612&w=0&k=20&c=wO069kCa1jUie6a-yBEJGErQ65L_RIwuEuwMEHosZxs=',
       history: 'The Tirumala Venkateswara Temple is a landmark Vaishnavite temple situated in the hill town of Tirumala at Tirupati in the Tirupati district of Andhra Pradesh, India. The temple is built on Venkata Hill, one of the seven peaks of the Tirumala Hills.',
       rituals: [
         'Suprabhatam - Early morning awakening',
@@ -44,7 +44,7 @@ const TempleDetails = () => {
         'https://i0.wp.com/www.rvatemples.com/wp-content/uploads/2018/03/tiru_0.jpg?fit=620%2C376&ssl=1',
         'https://i0.wp.com/www.rvatemples.com/wp-content/uploads/2018/03/tirupati-tirumala-purattasi-masam.jpg?fit=1040%2C689&ssl=1',
         'https://i0.wp.com/www.rvatemples.com/wp-content/uploads/2018/03/58925803.jpg?fit=400%2C300&ssl=1',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/The_Devine_Shrine_of_Thirupathi_Andhra_pradesh.jpg/960px-The_Devine_Shrine_of_Thirupathi_Andhra_pradesh.jpg?20170611034734'
+        'https://curlytales.com/wp-content/uploads/2024/08/Tokenless-Devotees-Can-Register-Aadhaar-Cards-And-Get-2-Laddu-Prasadams-At-Special-Counters-Tirumala-Tirupati-Devasthanams-800x450.jpg'
       ]
     },
     {
@@ -52,7 +52,7 @@ const TempleDetails = () => {
       name: 'Kashi Vishwanath',
       location: 'Varanasi, Uttar Pradesh',
       deity: 'Lord Shiva',
-      image: 'https://ayodhyavaranasitourism.com/wp-content/uploads/elementor/thumbs/Kashi-Vishwanath-Temple-Sugam-Darshan-r46s4eiuhjmvit3ksegdzzq2smwo69f78zg62rgv48.webp',
+      image: 'https://d26dp53kz39178.cloudfront.net/media/uploads/Travel_Guide_Images/Kashi_Vishwanath_Temple_1-1750491872856.webp',
       history: 'The Kashi Vishwanath Temple is one of the most famous Hindu temples dedicated to Lord Shiva. It is located in Vishwanath Gali, near Varanasi, the oldest living city in the world. The temple stands on the western bank of the holy river Ganga, and is one of the twelve Jyotirlingas, the holiest of Shiva temples.',
       rituals: [
         'Mangala Aarti - Early morning prayers at 3:30 AM',
@@ -64,12 +64,12 @@ const TempleDetails = () => {
       significance: 'One of the twelve Jyotirlingas, the holiest Shiva temples. Located on the banks of the Ganges, it is one of the most sacred pilgrimage sites.',
       bestTime: 'October to March',
       gallery: [
+        'https://5.imimg.com/data5/SELLER/Default/2023/1/MS/IM/FQ/4799208/shri-kashi-vishwanath-prasadam-kit-in-wooden-box-with-angwastram-1000x1000.jpg',
         'https://ayodhyavaranasitourism.com/wp-content/uploads/elementor/thumbs/Kashi-Vishwanath-Temple-Sugam-Darshan-r46s4eiuhjmvit3ksegdzzq2smwo69f78zg62rgv48.webp',
-        'https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=800',
-        'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800'
+        'https://dnu1blog.com/wp-content/uploads/2022/04/kv-shivalingam.jpeg',
+        'https://c.ndtvimg.com/2024-10/do6o0v6g_kashi-vishwanath-temple-_625x300_18_October_24.jpg?im=FeatureCrop,algorithm=dnn,width=773,height=435',
+        'https://www.jagranimages.com/images/newimg/14102024/14_10_2024-kashi_vishwanath_dham_3_23815278.webp',
+        'https://sanatansiddhi.com/wp-content/uploads/2024/09/Screenshot-2024-11-12-132647.png'
       ]
     },
     {
@@ -77,7 +77,7 @@ const TempleDetails = () => {
       name: 'Meenakshi Amman',
       location: 'Madurai, Tamil Nadu',
       deity: 'Goddess Meenakshi',
-      image: 'https://www.poojn.in/wp-content/uploads/2025/03/Meenakshi-Amman-Temple-FAQs-Essential-Visitor-Information.jpeg.jpg',
+      image: 'https://www.billiontrips.com/sites/default/files/2019-07/meenakshi-temple-banner.jpg',
       history: 'The Meenakshi Amman Temple is a historic Hindu temple located on the southern bank of the Vaigai River in the temple city of Madurai, Tamil Nadu, India. It is dedicated to Meenakshi, a form of Parvati, and her consort, Sundareshwarar, a form of Shiva. The temple was originally built by the Pandyan dynasty in the 6th century CE.',
       rituals: [
         'Thiruvanandal Pooja - Early morning worship',
@@ -89,12 +89,12 @@ const TempleDetails = () => {
       significance: 'Ancient temple dedicated to Goddess Meenakshi and Lord Sundareswarar. Known for its magnificent architecture and spiritual significance.',
       bestTime: 'October to March',
       gallery: [
-        'https://www.poojn.in/wp-content/uploads/2025/03/Meenakshi-Amman-Temple-FAQs-Essential-Visitor-Information.jpeg.jpg',
-        'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
-        'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800'
+        'https://vismaifood.com/storage/app/uploads/public/648/305/f9e/thumb__700_0_0_0_auto.jpg',
+        'https://avathioutdoors.gumlet.io/travelGuide/dev/madurai90129.jpg',
+        'https://www.fabhotels.com/blog/wp-content/uploads/2019/03/Meenakshi-Amman-Temple.jpg:cf-webp:w-848:h-551',
+        'https://avathioutdoors.gumlet.io/travelGuide/dev/madurai62544.jpg',
+        'https://avathioutdoors.gumlet.io/travelGuide/dev/madurai42842.jpg',
+        'https://avathioutdoors.gumlet.io/travelGuide/dev/madurai24811.jpg'
       ]
     },
     {
@@ -102,7 +102,7 @@ const TempleDetails = () => {
       name: 'Jagannath Puri',
       location: 'Puri, Odisha',
       deity: 'Lord Jagannath',
-      image: 'https://sp-ao.shortpixel.ai/client/q_glossy+w_720+to_auto+ret_img/thegreenfortune.com/wp-content/uploads/2025/09/Jagarnaath-ji-mandir.jpeg',
+      image: 'https://www.templedairy.in/wp-content/uploads/2020/11/Jagannath-Temple-banner.png',
       history: 'The Jagannath Temple is an important Hindu temple dedicated to Jagannath, a form of Vishnu, in Puri in the state of Odisha on the eastern coast of India. The present temple was rebuilt from the 10th century onwards, on the site of an earlier temple, and begun by Anantavarman Chodaganga Deva, the first king of the Eastern Ganga dynasty.',
       rituals: [
         'Mangala Alati - Early morning prayers',
@@ -114,12 +114,12 @@ const TempleDetails = () => {
       significance: 'One of the Char Dham pilgrimage sites. Famous for the annual Rath Yatra festival attracting millions of devotees.',
       bestTime: 'October to February',
       gallery: [
-        'https://sp-ao.shortpixel.ai/client/q_glossy+w_720+to_auto+ret_img/thegreenfortune.com/wp-content/uploads/2025/09/Jagarnaath-ji-mandir.jpeg',
-        'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
-        'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800'
+        'https://upload.wikimedia.org/wikipedia/commons/0/0c/PURI_JAGANATHA_TEMPLE%2C_PURI%2C_ORISSA%2C_INDIA%2C_ASIA.jpg',
+        'https://media.assettype.com/outlooktraveller%2F2024-06%2F3bda1730-ebd9-4bdb-9337-c04325b0528f%2F355511240_651216697042716_4316121301872961380_n.jpg?w=768&auto=format%2Ccompress&fit=max',
+        'https://media.assettype.com/outlooktraveller%2F2024-06%2Fde828084-2115-40b6-b425-0de2cd655f99%2FJagannathMahesh--dept%20of%20tourism%20wb-facebook.jpg?w=768&auto=format%2Ccompress',
+        'https://odisha.plus/wp-content/uploads/2024/10/OP-Wordpress-Thumbnail-21-1024x768.jpg',
+        'https://admin.stayatpurijagannatha.in/images/frontend/main-slider-1_1670308972.jpg',
+        'https://admin.stayatpurijagannatha.in/images/frontend/main-slider-2_1670308972.jpg'
       ]
     },
     {
@@ -127,7 +127,7 @@ const TempleDetails = () => {
       name: 'Somnath Temple',
       location: 'Gujarat',
       deity: 'Lord Shiva',
-      image: 'https://pravase.co.in/admin_pravase/uploads/yatradham/Sonath%20Temple_1558702865.JPG',
+      image: 'https://www.gujarattourism.com/content/dam/gujrattourism/images/religious-sites/somnath-temple/somnath-temple-banner.jpg',
       history: 'The Somnath temple, also called Somanātha temple or Deo Patan, is located in Prabhas Patan, Veraval in Gujarat, India. It is one of the most sacred pilgrimage sites for Hindus and is believed to be first among the twelve Jyotirlinga shrines of Shiva.',
       rituals: [
         'Mangala Aarti - Early morning prayers',
@@ -139,12 +139,12 @@ const TempleDetails = () => {
       significance: 'First among the twelve Jyotirlingas. Located on the western coast, it holds immense historical and spiritual importance.',
       bestTime: 'October to March',
       gallery: [
+        'https://static.toiimg.com/thumb/msid-81157663,imgsize-44323,width-400,height-225,resizemode-72/81157663.jpg',
+        'https://c9admin.cottage9.com/uploads/5838/somnath-jyotirlinga-temple.jpg',
         'https://pravase.co.in/admin_pravase/uploads/yatradham/Sonath%20Temple_1558702865.JPG',
-        'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
-        'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800'
+        'https://images.tv9gujarati.com/wp-content/uploads/2022/06/Somnath-Mahadev-Kesar-Mango-Prasad.jpg?w=400',
+        'https://c9admin.cottage9.com/uploads/5840/somaskanda-murti.jpg',
+        'https://thecommunemag.com/wp-content/uploads/2022/06/somnath-temple-768x432.jpg'
       ]
     },
     {
@@ -152,7 +152,7 @@ const TempleDetails = () => {
       name: 'Vaishno Devi',
       location: 'Jammu & Kashmir',
       deity: 'Goddess Vaishno Devi',
-      image: 'https://substackcdn.com/image/fetch/$s_!nMlI!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8b7931c1-b550-44b2-935e-80be13f08f29_826x508.jpeg',
+      image: 'https://akm-img-a-in.tosshub.com/indiatoday/images/story/202110/Grand_Decorations_during_Navra_0_1200x768.jpeg?size=690:388',
       history: 'Vaishno Devi, also known as Mata Rani, Trikuta, Ambe and Vaishnavi, is a manifestation of the Hindu Mother Goddess, Devi. The words "Maa" and "Mata" are commonly used in India for mother, and thus are often heavily used in connection with Vaishno Devi.',
       rituals: [
         'Morning Aarti - Early morning prayers',
@@ -164,12 +164,12 @@ const TempleDetails = () => {
       significance: 'Sacred cave shrine of the Mother Goddess located in the Trikuta Mountains. One of the most visited pilgrimage sites in India.',
       bestTime: 'March to October',
       gallery: [
-        'https://substackcdn.com/image/fetch/$s_!nMlI!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8b7931c1-b550-44b2-935e-80be13f08f29_826x508.jpeg',
-        'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
-        'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800'
+        'https://www.shutterstock.com/shutterstock/photos/2347965415/display_1500/stock-photo-october-at-vaishno-devi-jammu-india-crowd-of-devotees-at-ardhkuwari-2347965415.jpg',
+        'https://images.unsplash.com/photo-1719377678428-d9bcec6976f3?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://akm-img-a-in.tosshub.com/indiatoday/images/bodyeditor/202110/Grand_Decorations_during_Navra_1-1200x798.jpeg?DMMJPnVdWiXh5m1rpSfGSRGU1bw.X2Yd?size=750:*',
+        'https://akm-img-a-in.tosshub.com/indiatoday/images/bodyeditor/202110/Grand_Decorations_during_Navra-1200x694.jpeg?GLFwopPBJaBfxrN9a4R2DVwn2SGvyX4i?size=750:*',
+        'https://wallpapers.com/images/high/vaishno-devi-over-the-shrine-siwnz9qnilp3hwg4.webp',
+        'https://images.unsplash.com/photo-1664362657309-7dd53ca62b7e?q=80&w=1381&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       ]
     },
     {
@@ -177,7 +177,7 @@ const TempleDetails = () => {
       name: 'Rameshwaram',
       location: 'Tamil Nadu',
       deity: 'Lord Shiva',
-      image: 'https://sugamdarshan.com/Upload/Rameshwaram%20(Header)%2001.png',
+      image: 'https://rameshwaramtourism.co.in/images/headers/sri-ramanathaswamy-temple-rameshwaram-tourism-header.jpg',
       history: 'Ramanathaswamy Temple is a Hindu temple dedicated to the god Shiva located on Rameswaram island in the state of Tamil Nadu, India. It is also one of the twelve Jyotirlinga temples. It is one of the 275 Paadal Petra Sthalams, where the three of the most revered Nayanars, Appar, Sundarar and Tirugnana Sambandar, have glorified the temple with their songs.',
       rituals: [
         'Palliarai Pooja - Early morning worship',
@@ -189,12 +189,12 @@ const TempleDetails = () => {
       significance: 'One of the twelve Jyotirlingas and one of the Char Dham. Famous for its sacred water tanks and architectural beauty.',
       bestTime: 'October to April',
       gallery: [
-        'https://sugamdarshan.com/Upload/Rameshwaram%20(Header)%2001.png',
-        'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
-        'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800'
+        'https://www.avis.co.in/blog/wp-content/uploads/2024/03/image1-6-746x475.jpg',
+        'https://scontent.fhyd10-1.fna.fbcdn.net/v/t1.6435-9/133833111_706982056658635_8860902396547677819_n.jpg?stp=dst-jpg_s565x565_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=OPW4Jd3J2r8Q7kNvwFvyVTs&_nc_oc=AdkJMT3tzza48Bf8i47zrq8oot690CQBhfyBs3JGeAHm-LNDP4SFycgvFhR5BgG06Ys&_nc_zt=23&_nc_ht=scontent.fhyd10-1.fna&_nc_gid=RSe9zQa1KcvZMmtYoVpZaA&oh=00_Afhs-tBXhbsRRTnBKSgySg9pHJ2sgOUIj3cT-7-OTd8xog&oe=694B6E12',
+        'https://www.chardham-pilgrimage-tour.com/assets/images/rameshwaram-chardham-01.webp',
+        'https://sanatansiddhi.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-05-22-at-13.09.41.jpeg',
+        'https://www.chardham-pilgrimage-tour.com/assets/images/rameshwaram-chardham-temple-03.webp',
+        'https://www.chardham-pilgrimage-tour.com/assets/images/rameshwaram-island-06.webp'
       ]
     },
     {
@@ -202,7 +202,7 @@ const TempleDetails = () => {
       name: 'Kedarnath',
       location: 'Uttarakhand',
       deity: 'Lord Shiva',
-      image: 'https://www.poojn.in/wp-content/uploads/2025/03/Experiencing-the-Divine-A-Spiritual-Journey-to-Kedarnath-Your-Guide-to-Kedarnath.jpeg.jpg',
+      image: 'https://thekailashresidency.com/images/kedarnath-temple-banner.jpg',
       history: 'Kedarnath Temple is a Hindu temple dedicated to Lord Shiva. Located on the Garhwal Himalayan range near the Mandakini river, Kedarnath is the most remote of the four Chota Char Dham pilgrimage sites. The temple is not directly accessible by road and has to be reached by a 22 kilometres uphill trek from Gaurikund.',
       rituals: [
         'Maha Abhishekam - Sacred bath ritual',
@@ -214,12 +214,12 @@ const TempleDetails = () => {
       significance: 'One of the twelve Jyotirlingas located in the Himalayas. Part of the Char Dham Yatra, accessible through a challenging trek.',
       bestTime: 'May to October',
       gallery: [
-        'https://www.poojn.in/wp-content/uploads/2025/03/Experiencing-the-Divine-A-Spiritual-Journey-to-Kedarnath-Your-Guide-to-Kedarnath.jpeg.jpg',
-        'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
-        'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800'
+        'https://www.yatrabyhelicopter.in/blog/wp-content/uploads/2024/05/Kedarnath-Temple.jpg',
+        'https://www.yatrabyhelicopter.in/blog/wp-content/uploads/2024/05/Bhairav-Temple-Kedarnath-730x450.jpg',
+        'https://www.yatrabyhelicopter.in/blog/wp-content/uploads/2024/05/Triyuginarayan-Temple-768x478.jpg',
+        'https://cdn.shopify.com/s/files/1/0276/3951/files/shri_kedarnath_prasad_complete_photo_480x480.jpg?v=1595000001',
+        'https://www.yatrabyhelicopter.in/blog/wp-content/uploads/2024/05/Kalimath-Temple-768x512.jpg',
+        'https://thekailashresidency.com/images/kedarnath-temple-2.jpg'
       ]
     },
     {
@@ -227,7 +227,7 @@ const TempleDetails = () => {
       name: 'Srisailam',
       location: 'Andhra Pradesh',
       deity: 'Lord Shiva',
-      image: 'https://holaciti.com/assets/Articles/1756780765_unGIE8KKaY.webp',
+      image: 'https://www.srisailadevasthanam.org/static/media/sd-banner-3.2d2249a6.jpg',
       history: 'Srisailam is a census town in Nandyal district of the Indian state of Andhra Pradesh. It is the mandal headquarters of Srisailam mandal in Atmakur revenue division. It is located about 160 km from Kurnool and about 212 km from Hyderabad. The town is famous for the Mallikarjuna Jyotirlinga Temple and is one of the greatest Shaivite shrines in India.',
       rituals: [
         'Suprabhatam - Early morning awakening',
@@ -239,12 +239,12 @@ const TempleDetails = () => {
       significance: 'One of the twelve Jyotirlingas and also a Shakti Peetha. Located in the Nallamala Hills, it is a significant pilgrimage destination.',
       bestTime: 'October to March',
       gallery: [
-        'https://holaciti.com/assets/Articles/1756780765_unGIE8KKaY.webp',
-        'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800',
-        'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800',
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800'
+        'https://www.srisailadevasthanam.org/static/media/SD-gallery-02.1bf90b63.png',
+        'https://www.srisailadevasthanam.org/static/media/SD-gallery-01.99bade47.png',
+        'https://www.srisailadevasthanam.org/static/media/SD-gallery-04.63cfb6ad.png',
+        'https://www.srisailadevasthanam.org/static/media/SD-gallery-08.6ca65e76.png',
+        'https://www.srisailadevasthanam.org/static/media/SD-gallery-07.e7a6d323.png',
+        'https://www.srisailadevasthanam.org/static/media/SD-gallery-03.478a0f1b.png'
       ]
     }
   ];

@@ -378,10 +378,10 @@ const HomePage = () => {
                 <FaWineBottle className="text-4xl md:text-5xl text-yellow-300" />
                 <FaLeaf className="text-4xl md:text-5xl text-yellow-300" />
               </div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4 md:mb-6 leading-tight">
+              <h1 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold text-white mb-4 md:mb-6 leading-tight">
                 Experience Pilgrimage, the Divine Way
               </h1>
-              <p className="text-xl md:text-2xl lg:text-3xl text-yellow-100 mb-8 md:mb-12 font-light leading-relaxed px-4">
+              <p className="text-xl md:text-1xl lg:text-1xl text-yellow-100 mb-8 md:mb-12 font-light leading-relaxed px-4">
                 Explore sacred destinations with spiritual themes, curated stays, and guided devotion
               </p>
 
