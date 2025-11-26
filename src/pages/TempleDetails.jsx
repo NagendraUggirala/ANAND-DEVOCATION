@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   FaOm, 
@@ -19,8 +19,15 @@ import {
 
 const TempleDetails = () => {
   const { id } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Get the previous page from location state, default to home
+  const previousPage = location.state?.from || '/';
+  const previousPageName = location.state?.fromName || 'Home';
 
   // Complete temple data - in real app, fetch from API
+  // IMPORTANT: IDs must match TemplesList.jsx temples array
   const templesData = [
     {
       id: 1,
@@ -228,7 +235,7 @@ const TempleDetails = () => {
       location: 'Andhra Pradesh',
       deity: 'Lord Shiva',
       image: 'https://www.srisailadevasthanam.org/static/media/sd-banner-3.2d2249a6.jpg',
-      history: 'Srisailam is a census town in Nandyal district of the Indian state of Andhra Pradesh. It is the mandal headquarters of Srisailam mandal in Atmakur revenue division. It is located about 160 km from Kurnool and about 212 km from Hyderabad. The town is famous for the Mallikarjuna Jyotirlinga Temple and is one of the greatest Shaivite shrines in India.',
+      history: 'Srisailam is a census town in Nandyal district of the Indian state of Andhra Pradesh. It is the mandal headquarters of Srisailam mandal in Atmakur revenue division. It is located about 160 km from Kurnool and about 212 km from Hyderabad. The town is famous for the Mallikarjuna Jyotirlinga Temple and is one of the greatest Shaivite shrines in India. Ancient Jyotirlinga temple located in the Nallamala Hills, one of the twelve sacred Jyotirlingas.',
       rituals: [
         'Suprabhatam - Early morning awakening',
         'Abhishekam - Sacred bath',
@@ -249,33 +256,33 @@ const TempleDetails = () => {
     }
   ];
 
-  // Find the temple by ID
-  const templeId = parseInt(id);
-  const temple = templesData.find(t => t.id === templeId) || templesData[0];
+  // Find the temple by ID - use strict comparison
+  const templeId = parseInt(id, 10);
+  const temple = templesData.find(t => Number(t.id) === templeId);
 
   // If temple not found, show error message
-  if (!templesData.find(t => t.id === templeId)) {
+  if (!temple) {
     return (
       <div className="min-h-screen bg-gray-50 py-8 md:py-12">
         <div className="container mx-auto px-4">
-          <Link
-            to="/temples"
+          <button
+            onClick={() => navigate(previousPage)}
             className="inline-flex items-center text-orange-600 hover:text-orange-700 mb-6 transition-colors font-semibold"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Back to Temples
-          </Link>
+            Back to {previousPageName}
+          </button>
           <div className="text-center py-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Temple Not Found</h2>
             <p className="text-gray-600 mb-6">The temple you are looking for does not exist.</p>
-            <Link
-              to="/temples"
+            <button
+              onClick={() => navigate(previousPage)}
               className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all"
             >
-              Browse All Temples
-            </Link>
+              Back to {previousPageName}
+            </button>
           </div>
         </div>
       </div>
@@ -286,15 +293,15 @@ const TempleDetails = () => {
     <div className="min-h-screen bg-gray-50 py-8 md:py-12">
       <div className="container mx-auto px-4">
         {/* Back Button */}
-        <Link
-          to="/temples"
+        <button
+          onClick={() => navigate(previousPage)}
           className="inline-flex items-center text-orange-600 hover:text-orange-700 mb-6 transition-colors font-semibold"
         >
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to Temples
-        </Link>
+          Back to {previousPageName}
+        </button>
 
         {/* Hero Image */}
         <motion.div

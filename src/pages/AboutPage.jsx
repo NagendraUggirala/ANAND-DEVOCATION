@@ -98,7 +98,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* Enhanced Hero Section with Dharmo Rakshati Rakshitah */}
-      <section className="relative py-16 md:py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 overflow-hidden">
+      <section className="relative py-16 md:py-20 bg-gradient-to-br from-blue-500 via-orange-600 to-orange-500 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -left-24 -top-20 w-72 h-72 bg-orange-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
@@ -398,90 +398,7 @@ const About = () => {
       
 
       {/* Timeline Section - Mobile Optimized */}
-      <section className="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-gray-50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 md:mb-16"
-          >
-            <h2 className="text-2xl md:text-4xl font-bold text-blue-800 mb-4 md:mb-6">
-              Our Journey
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 px-2 sm:px-4">
-              Milestones that mark our path of growth and excellence
-            </p>
-          </motion.div>
-
-          {/* Improved Mobile Timeline */}
-          <div className="max-w-4xl mx-auto px-2 sm:px-0">
-            {/* Mobile Timeline - Vertical Stack */}
-            <div className="md:hidden space-y-8">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
-                  viewport={{ once: true }}
-                  className="flex flex-col items-center"
-                >
-                  {/* Year Circle */}
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-base sm:text-lg mb-4 shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300">
-                    {milestone.year}
-                  </div>
-                  
-                  {/* Content Card */}
-                  <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-lg border border-blue-100 w-full text-center hover:shadow-xl hover:border-blue-200 transition-all duration-300 group">
-                    <h3 className="text-lg sm:text-xl font-bold text-blue-800 mb-3 group-hover:text-blue-600 transition-colors">
-                      {milestone.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors">
-                      {milestone.description}
-                    </p>
-                  </div>
-                  
-                  {/* Connector Line (except for last item) */}
-                  {index < milestones.length - 1 && (
-                    <div className="w-1 h-6 sm:h-8 bg-blue-200 mt-4 rounded-full"></div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Desktop Timeline - Original Design */}
-            <div className="hidden md:block relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-blue-200 h-full top-0"></div>
-
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
-                  viewport={{ once: true }}
-                  className={`flex flex-col md:flex-row items-center mb-8 md:mb-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                >
-                  <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
-                    <div className="bg-white p-4 md:p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 group">
-                      <h3 className="text-lg md:text-xl font-bold text-blue-800 mb-2 group-hover:text-blue-600 transition-colors">{milestone.title}</h3>
-                      <p className="text-gray-600 text-sm md:text-base group-hover:text-gray-700 transition-colors">{milestone.description}</p>
-                    </div>
-                  </div>
-
-                  <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 bg-orange-500 rounded-full items-center justify-center text-white font-bold z-10 hover:scale-110 hover:bg-orange-600 transition-all duration-300 text-sm md:text-base">
-                    {milestone.year}
-                  </div>
-
-                  <div className="md:w-5/12"></div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Future Vision - Mobile Optimized */}
       <section ref={ref3} className="py-12 md:py-20 bg-white">

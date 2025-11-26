@@ -70,55 +70,55 @@ const HomePage = () => {
       id: 1,
       name: "Tirumala Tirupati",
       location: "Andhra Pradesh",
-      image: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Tirumala_090615.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTDSlIFONevEMRAsuR8nKaRYTSSul3kKKIYx_kB0aFFQEaJtGZknUDs9vdlCPDE7fH0AyDX_isC3ubGovaOk5gNIB8&s=19",
       deity: "Lord Venkateswara",
       history: "One of the richest and most visited temples in the world, attracting millions of devotees annually",
       significance: "Famous for its divine darshan and prasadam"
     },
     {
       id: 2,
-      name: "Srisailam",
-      location: "Andhra Pradesh",
-      image: "https://www.poojn.in/wp-content/uploads/2025/06/Srisailam-Online-Booking-Made-Easy-Your-2025-Guide-to-Simple-Darshan-Bookings.jpeg.jpg",
+      name: "Kashi Vishwanath",
+      location: 'Varanasi, Uttar Pradesh',
+      image: "https://d26dp53kz39178.cloudfront.net/media/uploads/Travel_Guide_Images/Kashi_Vishwanath_Temple_1-1750491872856.webp",
       deity: "Lord Shiva",
-      history: "Ancient Jyotirlinga temple located in the Nallamala Hills, one of the twelve sacred Jyotirlingas",
+      history: 'The Kashi Vishwanath Temple is one of the most famous Hindu temples dedicated to Lord Shiva. It is located in Vishwanath Gali, near Varanasi, the oldest living city in the world. The temple stands on the western bank of the holy river Ganga, and is one of the twelve Jyotirlingas, the holiest of Shiva temples.',
       significance: "Also a Shakti Peetha, making it doubly significant"
     },
     {
       id: 3,
-      name: "Yadadri",
-      location: "Telangana",
-      image: "https://www.deccanchronicle.com/h-upload/2024/11/11/1861538-untitleddesign19.webp",
-      deity: "Lord Narasimha",
-      history: "Recently renovated temple known for its magnificent architecture and spiritual significance",
+      name: 'Meenakshi Amman',
+      location: 'Madurai, Tamil Nadu',
+      deity: 'Goddess Meenakshi',
+      image: 'https://www.billiontrips.com/sites/default/files/2019-07/meenakshi-temple-banner.jpg',
+      history: 'The Meenakshi Amman Temple is a historic Hindu temple located on the southern bank of the Vaigai River in the temple city of Madurai, Tamil Nadu, India. It is dedicated to Meenakshi, a form of Parvati, and her consort, Sundareshwarar, a form of Shiva. The temple was originally built by the Pandyan dynasty in the 6th century CE.',
       significance: "One of the most beautiful modern temple complexes"
     },
     {
       id: 4,
-      name: "Kanaka Durga Temple",
-      location: "Vijayawada, Andhra Pradesh",
-      image: "https://www.poojn.in/wp-content/uploads/2025/02/Kanaka-Durga-Temple-A-Guide-to-Your-Visit.jpeg.jpg",
-      deity: "Goddess Kanaka Durga",
-      history: "Situated on Indrakeeladri Hill, overlooking the Krishna River",
+      name: 'Jagannath Puri',
+      location: 'Puri, Odisha',
+      deity: 'Lord Jagannath',
+      image: 'https://www.templedairy.in/wp-content/uploads/2020/11/Jagannath-Temple-banner.png',
+      history: 'The Jagannath Temple is an important Hindu temple dedicated to Jagannath, a form of Vishnu, in Puri in the state of Odisha on the eastern coast of India. The present temple was rebuilt from the 10th century onwards, on the site of an earlier temple, and begun by Anantavarman Chodaganga Deva, the first king of the Eastern Ganga dynasty.',
       significance: "Famous for Navratri celebrations and powerful Devi worship"
     },
     {
       id: 5,
-      name: "Annavaram",
-      location: "Andhra Pradesh",
-      image: "https://travellerkaka.com/wp-content/uploads/2024/09/Untitled-design-48-1024x536.png.webp",
-      deity: "Lord Satyanarayana",
-      history: "Dedicated to Lord Satyanarayana, known for Satyanarayana Vratam",
+      name: 'Somnath Temple',
+      location: 'Gujarat',
+      deity: 'Lord Shiva',
+      image: 'https://pravase.co.in/admin_pravase/uploads/yatradham/Sonath%20Temple_1558702865.JPG',
+      history: 'The Somnath temple, also called Somanātha temple or Deo Patan, is located in Prabhas Patan, Veraval in Gujarat, India. It is one of the most sacred pilgrimage sites for Hindus and is believed to be first among the twelve Jyotirlinga shrines of Shiva.',
       significance: "One of the most visited temples in Andhra Pradesh"
     },
     {
       id: 6,
-      name: "Rameswaram",
-      location: "Tamil Nadu",
-      image: "https://www.daiwikhotels.com/wp-content/uploads/2024/08/Bannerheader-1-1536x998.jpg",
-      deity: "Lord Shiva",
-      history: "One of the twelve Jyotirlingas and one of the Char Dham pilgrimage sites",
-      significance: "Famous for its sacred water tanks and architectural beauty"
+      name: 'Vaishno Devi',
+      location: 'Jammu & Kashmir',
+      deity: 'Goddess Vaishno Devi',
+      image: 'https://akm-img-a-in.tosshub.com/indiatoday/images/story/202110/Grand_Decorations_during_Navra_0_1200x768.jpeg?size=690:388',
+      history: 'Vaishno Devi, also known as Mata Rani, Trikuta, Ambe and Vaishnavi, is a manifestation of the Hindu Mother Goddess, Devi. The words "Maa" and "Mata" are commonly used in India for mother, and thus are often heavily used in connection with Vaishno Devi.',
+     significance: "Famous for its sacred water tanks and architectural beauty"
     }
   ];
 
@@ -483,7 +483,7 @@ const HomePage = () => {
                       to="/themes"
                       className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors"
                     >
-                      View Theme
+                      Special Pooja's
                       <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
@@ -516,8 +516,17 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {featuredTemples.map((temple, index) => {
+              const handleImageError = (e) => {
+                // Fallback to a generic temple image from Unsplash
+                e.target.src = 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800&q=80';
+              };
+
               return (
-                <Link to={`/temples/${temple.id}`} key={temple.id}>
+                <Link 
+                  to={`/temples/${temple.id}`} 
+                  key={temple.id}
+                  state={{ from: '/', fromName: 'Home' }}
+                >
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -527,11 +536,13 @@ const HomePage = () => {
                     className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
                   >
                     {/* Image Section */}
-                    <div className="relative h-56 md:h-64 overflow-hidden">
+                    <div className="relative h-56 md:h-64 overflow-hidden bg-gray-200">
                       <img
                         src={temple.image}
                         alt={temple.name}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                        onError={handleImageError}
+                        loading="lazy"
                       />
                     </div>
                     
@@ -801,7 +812,7 @@ const HomePage = () => {
               className="relative h-96 lg:h-[500px] rounded-xl overflow-hidden shadow-2xl"
             >
               <img
-                src="https://as2.ftcdn.net/jpg/04/97/81/35/1000_F_497813542_mhI42VozemjwmfbU0Dve7h0JN2VPtV7W.jpg"
+                src="https://insightuk.org/wp-content/uploads/2025/04/Hindutva-A-legacy-of-spiritual-resilience-and-global-harmony-1024x683.png"
                 alt="Temple and Lotus"
                 className="w-full h-full object-cover"
               />
@@ -835,7 +846,7 @@ const HomePage = () => {
                   </p>
                   <p className="text-gray-800 font-semibold text-lg mb-2 leading-relaxed">Laurence Freeman OSB</p>
                   <p className="text-orange-500 font-semibold text-sm md:text-base leading-relaxed">
-                    WCCM (The World Community for Christian Meditation)
+                    WCHM (The World Community for Hindu Meditation)
                   </p>
                   <div className="mt-6 flex justify-end">
                     <button className="px-6 py-2 border-2 border-orange-500 text-orange-500 font-semibold rounded-lg hover:bg-orange-500 hover:text-white transition-all">

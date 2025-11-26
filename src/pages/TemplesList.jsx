@@ -391,7 +391,10 @@ const TemplesList = () => {
                   whileHover={{ y: -8 }}
                   className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
                 >
-                  <Link to={`/temples/${temple.id}`}>
+                  <Link 
+                    to={`/temples/${temple.id}`}
+                    state={{ from: '/temples', fromName: 'Temples List' }}
+                  >
                     <div className="relative h-48 md:h-64 overflow-hidden">
                       <img
                         src={temple.image}
@@ -466,6 +469,7 @@ const TemplesList = () => {
 
                     <Link
                       to={`/temples/${temple.id}`}
+                      state={{ from: '/temples', fromName: 'Temples List' }}
                       className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 rounded-lg font-semibold text-center hover:from-blue-700 hover:to-blue-800 transition-all transform hover:scale-105 shadow-md"
                     >
                       View Details
@@ -507,7 +511,10 @@ const TemplesList = () => {
                 whileHover={{ scale: 1.05 }}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer"
               >
-                <Link to={`/temples/${temple.id}`}>
+                <Link 
+                  to={`/temples/${temple.id}`}
+                  state={{ from: '/temples', fromName: 'Temples List' }}
+                >
                   <div className="relative h-32 md:h-40">
                     <img
                       src={temple.image}
