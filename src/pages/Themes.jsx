@@ -679,7 +679,6 @@ const Themes = () => {
               Most popular and trending themes this week
             </p>
           </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {trendingThemes.map((theme, index) => (
               <motion.div
@@ -740,7 +739,6 @@ const Themes = () => {
               Explore our curated packages and start your divine pilgrimage
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              
               <Link
                 to="/book"
                 className="bg-white text-blue-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-2xl">
