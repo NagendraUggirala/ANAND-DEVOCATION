@@ -1,3 +1,4 @@
+// src/pages/ProjectsPage.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -435,8 +436,7 @@ const Projects = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 max-w-md w-full mx-4"
-          >
+            className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 max-w-md w-full mx-4">
             <div className="bg-white border-l-4 border-orange-500 text-orange-700 p-4 rounded-lg shadow-lg">
               <div className="flex items-center">
                 <div className="text-orange-500 mr-3">⚠️</div>
@@ -445,8 +445,7 @@ const Projects = () => {
                 </div>
                 <button
                   onClick={() => setShowToast(false)}
-                  className="text-orange-500 hover:text-orange-700"
-                >
+                  className="text-orange-500 hover:text-orange-700">
                   ✕
                 </button>
               </div>
@@ -467,8 +466,7 @@ const Projects = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="max-w-4xl mx-auto text-center"
-          >
+            className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-blue-800">
               Premium <span className="text-cyan-600">Land Properties</span>
             </h1>
@@ -491,8 +489,7 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center"
-              >
+                className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-cyan-600 mb-2">
                   {stat.number}{stat.suffix || '+'}
                 </div>
@@ -511,8 +508,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-6xl mx-auto text-center mb-12"
-          >
+            className="max-w-6xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-4">
               Strategic Locations Near Famous Landmarks
             </h2>
@@ -534,8 +530,7 @@ const Projects = () => {
                     ? 'border-cyan-500 border-2' 
                     : 'border-blue-100'
                 }`}
-                onClick={() => handleNearbyAreaClick(area)}
-              >
+                onClick={() => handleNearbyAreaClick(area)}>
                 <div className="text-4xl mb-4">{area.icon}</div>
                 <h3 className="text-xl font-semibold text-blue-800 mb-2">{area.name}</h3>
                 <p className="text-blue-700 mb-4">{area.description}</p>
@@ -557,8 +552,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="max-w-6xl mx-auto"
-          >
+            className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-blue-800 mb-4">
                 {landmarkFilter 
@@ -589,16 +583,14 @@ const Projects = () => {
                     activeFilter === filter.id && !landmarkFilter
                       ? 'bg-cyan-500 text-white shadow-lg'
                       : 'bg-blue-100 text-blue-700 hover:bg-blue-200'
-                  }`}
-                >
+                  }`}>
                   {filter.label}
                 </button>
               ))}
               {(activeFilter !== 'all' || landmarkFilter) && (
                 <button
                   onClick={handleClearFilters}
-                  className="px-6 py-3 rounded-full font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-300"
-                >
+                  className="px-6 py-3 rounded-full font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-300">
                   Clear All Filters
                 </button>
               )}
@@ -609,8 +601,7 @@ const Projects = () => {
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-center mb-6"
-              >
+                className="text-center mb-6">
                 <div className="inline-flex flex-wrap gap-2 justify-center">
                   {landmarkFilter && (
                     <span className="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-medium">
@@ -638,8 +629,7 @@ const Projects = () => {
                     whileHover="hover"
                     layout
                     className="bg-white rounded-2xl shadow-lg overflow-hidden group cursor-pointer border border-blue-100"
-                    onClick={() => setSelectedProject(project)}
-                  >
+                    onClick={() => setSelectedProject(project)}>
                     {/* Project Image */}
                     <div className="relative overflow-hidden">
                       <img
@@ -672,8 +662,7 @@ const Projects = () => {
                         {project.features.slice(0, 3).map((feature, index) => (
                           <span
                             key={index}
-                            className="px-2 py-1 bg-cyan-50 text-cyan-700 text-xs rounded"
-                          >
+                            className="px-2 py-1 bg-cyan-50 text-cyan-700 text-xs rounded">
                             {feature}
                           </span>
                         ))}
@@ -683,7 +672,6 @@ const Projects = () => {
                           </span>
                         )}
                       </div>
-
                       <button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-2 rounded-lg font-semibold transition-colors">
                         View Plot Details
                       </button>
@@ -698,8 +686,7 @@ const Projects = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-center py-12"
-              >
+                className="text-center py-12">
                 <div className="text-6xl mb-4 text-blue-400">🏗️</div>
                 <h3 className="text-2xl font-bold text-blue-800 mb-2">
                   {landmarkFilter 
@@ -713,8 +700,7 @@ const Projects = () => {
                 </p>
                 <button
                   onClick={handleClearFilters}
-                  className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-                >
+                  className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
                   View All Properties
                 </button>
               </motion.div>
@@ -731,15 +717,13 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-6xl mx-auto text-center"
-          >
+            className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-4">
               Why Choose Anand Devocation Plots?
             </h2>
             <p className="text-lg text-blue-700 mb-12 max-w-2xl mx-auto">
               We offer the most secure and profitable land investment opportunities with complete transparency
             </p>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
@@ -779,8 +763,7 @@ const Projects = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-md text-center border border-blue-100"
-                >
+                  className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-md text-center border border-blue-100">
                   <div className="text-4xl mb-4">{feature.icon}</div>
                   <h3 className="text-xl font-semibold text-blue-800 mb-3">{feature.title}</h3>
                   <p className="text-blue-700">{feature.description}</p>
@@ -798,8 +781,7 @@ const Projects = () => {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-    >
+      viewport={{ once: true }}>
       <h2 className="text-3xl md:text-4xl font-bold mb-6">
         Ready to Invest in Land?
       </h2>
@@ -809,15 +791,13 @@ const Projects = () => {
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Link 
           to="/contact" 
-          className="bg-white text-cyan-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors"
-        >
+          className="bg-white text-cyan-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors">
           Book Site Visit
         </Link>
         <a 
           href="./images/Brochure.png" 
           download="Anand-Devocation-Brochure.png"
-          className="border-2 border-white text-white hover:bg-white hover:text-cyan-600 px-8 py-3 rounded-lg font-semibold transition-colors"
-        >
+          className="border-2 border-white text-white hover:bg-white hover:text-cyan-600 px-8 py-3 rounded-lg font-semibold transition-colors">
           Download Brochure
         </a>
       </div>
@@ -833,16 +813,14 @@ const Projects = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
-            onClick={() => setSelectedProject(null)}
-          >
+            onClick={() => setSelectedProject(null)}>
             <motion.div
               variants={modalVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
               className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-              onClick={(e) => e.stopPropagation()}
-            >
+              onClick={(e) => e.stopPropagation()}>
               {/* Modal Header */}
               <div className="relative">
                 <img
@@ -852,8 +830,7 @@ const Projects = () => {
                 />
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-blue-700 hover:bg-white"
-                >
+                  className="absolute top-4 right-4 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-blue-700 hover:bg-white">
                   ✕
                 </button>
               </div>
@@ -863,7 +840,6 @@ const Projects = () => {
                 <h2 className="text-3xl font-bold text-blue-800 mb-4">{selectedProject.title}</h2>
                 <p className="text-blue-600 text-lg mb-2">{selectedProject.location}</p>
                 <p className="text-blue-700 mb-6">{selectedProject.description}</p>
-
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                   <div className="bg-cyan-50 p-4 rounded-lg">
                     <div className="text-sm text-blue-600 mb-1">Price Range</div>
@@ -930,8 +906,7 @@ const Projects = () => {
                       {selectedProject.highlights.map((highlight, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-medium"
-                        >
+                          className="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-medium">
                           {highlight}
                         </span>
                       ))}
@@ -942,14 +917,12 @@ const Projects = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     to="/contact"
-                    className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold text-center transition-colors"
-                  >
+                    className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold text-center transition-colors">
                     Book Site Visit
                   </Link>
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="border-2 border-blue-300 text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-lg font-semibold transition-colors"
-                  >
+                    className="border-2 border-blue-300 text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-lg font-semibold transition-colors">
                     Close
                   </button>
                 </div>
