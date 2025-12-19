@@ -1,3 +1,4 @@
+// src/pages/HomePage.jsx
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -273,8 +274,6 @@ const HomePage = () => {
     }
   ];
 
-
-
   // Auto-rotate hero slides
   useEffect(() => {
     const interval = setInterval(() => {
@@ -298,8 +297,7 @@ const HomePage = () => {
           <span
             key={index}
             className={`text-lg ${index < rating ? 'text-yellow-400' : 'text-gray-300'
-              }`}
-          >
+              }`}>
             ★
           </span>
         ))}
@@ -337,8 +335,7 @@ const HomePage = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
+              transition={{ duration: 0.8 }}>
               {/* Icons */}
               <div className="flex justify-center space-x-6 mb-6">
                 <FaOm className="text-4xl md:text-5xl text-yellow-300" />
@@ -351,7 +348,6 @@ const HomePage = () => {
               <h1 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold text-white mb-4 md:mb-6 leading-tight">
                 {heroSlides[currentHeroSlide].title}
               </h1>
-
               <p className="text-lg md:text-xl text-yellow-100 mb-10 max-w-3xl mx-auto leading-relaxed px-4">
                 {heroSlides[currentHeroSlide].subtitle}
               </p>
@@ -360,8 +356,7 @@ const HomePage = () => {
               <div className="flex justify-center">
                 <Link
                   to="/temples"
-                  className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition shadow-xl"
-                >
+                  className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition shadow-xl">
                   Explore Temples
                 </Link>
               </div>
@@ -384,7 +379,6 @@ const HomePage = () => {
         </div>
       </section>
 
-
       {/* Introduction Section */}
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -394,8 +388,7 @@ const HomePage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center mb-8 md:mb-12"
-            >
+              className="text-center mb-8 md:mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-blue-500 mb-4 leading-tight">
                 Welcome to  <span className="text-orange-500">Anand Devocation</span>
               </h2>
@@ -422,8 +415,7 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="px-2"
-              >
+                className="px-2">
                 <h3 className="text-xl md:text-2xl font-bold text-blue-800 mb-3 md:mb-4">Our Mission</h3>
                 <p className="text-gray-700 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">
                   "Satyam Shivam Sundaram" – Our mission is to make pilgrimage a transformative spiritual experience.
@@ -442,8 +434,7 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="bg-white p-4 md:p-6 rounded-xl shadow-lg mx-2"
-              >
+                className="bg-white p-4 md:p-6 rounded-xl shadow-lg mx-2">
                 <h4 className="text-lg md:text-xl font-semibold text-blue-800 mb-3 md:mb-4">What We Do</h4>
                 <ul className="space-y-2 md:space-y-3">
                   <li className="flex items-start">
@@ -469,8 +460,6 @@ const HomePage = () => {
         </div>
       </section>
 
-
-
       {/* 3️⃣ Featured Temples Section */}
       <section className="pt-5 pb-5 md:pb-24 bg-gray-100">
         <div className="container mx-auto px-4">
@@ -479,8 +468,7 @@ const HomePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12 md:mb-16"
-          >
+            className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-blue-500 mb-4 leading-tight">
               Popular Sacred <span className="text-orange-500">Temples</span>
             </h2>
@@ -500,16 +488,14 @@ const HomePage = () => {
                 <Link
                   to={`/temples/${temple.id}`}
                   key={temple.id}
-                  state={{ from: '/', fromName: 'Home' }}
-                >
+                  state={{ from: '/', fromName: 'Home' }}>
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ y: -8, scale: 1.02 }}
-                    className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
-                  >
+                    className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer">
                     {/* Image Section */}
                     <div className="relative h-56 md:h-64 overflow-hidden bg-gray-200">
                       <img
@@ -525,7 +511,6 @@ const HomePage = () => {
                     <div className="text-blue p-5 md:p-6 relative">
                       {/* Orange Strip at Top */}
                       <div className="absolute top-0 left-0 right-0 h-1 "></div>
-
                       <h3 className="text-xl md:text-2xl font-display font-bold mb-3 text-blue leading-tight">
                         {temple.name}
                       </h3>
@@ -544,8 +529,6 @@ const HomePage = () => {
         </div>
       </section>
 
-
-
       {/* 5️⃣ Why Choose Us Section */}
       <section className="py-5 md:py-5 bg-gradient-to-b from-white via-blue-50 to-white">
         <div className="container mx-auto px-4">
@@ -554,8 +537,7 @@ const HomePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12 md:mb-16"
-          >
+            className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-orange-600 mb-4 leading-tight">
               Why Devotees Love <span className="text-blue-500">Anand Devocation</span>
             </h2>
@@ -573,8 +555,7 @@ const HomePage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100"
-              >
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100">
                 <div className="mb-4">
                   {React.createElement(item.icon, { className: "text-4xl md:text-5xl text-blue-500" })}
                 </div>
@@ -594,8 +575,7 @@ const HomePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12 md:mb-16"
-          >
+            className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-blue-500 mb-4 leading-tight">
               Spiritual  <span className="text-orange-500">Tone</span>
             </h2>
@@ -612,8 +592,7 @@ const HomePage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl"
-              >
+                className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl">
                 <StarRating rating={testimonials[currentTestimonial].rating} />
                 <blockquote className="text-xl md:text-2xl text-gray-700 italic mb-8 text-center leading-relaxed mt-6 px-4">
                   "{testimonials[currentTestimonial].comment}"
@@ -653,9 +632,6 @@ const HomePage = () => {
         </div>
       </section>
 
-
-
-
       {/* 9️⃣ Additional Why Choose Us Cards Section */}
       <section className="py-5 md:py-24 bg-gradient-to-b from-white via-blue-50 to-white">
         <div className="container mx-auto px-4">
@@ -664,8 +640,7 @@ const HomePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12 md:mb-16"
-          >
+            className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-orange-500 mb-4 leading-tight">
               Why Choose <span className="text-blue-500">Anand Devocation</span>
             </h2>
@@ -681,8 +656,7 @@ const HomePage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all text-white"
-            >
+              className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all text-white">
               <div className="mb-4">
                 <FaOm className="text-5xl md:text-6xl text-yellow-300" />
               </div>
@@ -698,8 +672,7 @@ const HomePage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all text-white"
-            >
+              className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all text-white">
               <div className="mb-4">
                 <FaStar className="text-5xl md:text-6xl text-yellow-300" />
               </div>
@@ -715,8 +688,7 @@ const HomePage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all text-white"
-            >
+              className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all text-white">
               <div className="mb-4">
                 <FaCheckCircle className="text-5xl md:text-6xl text-yellow-300" />
               </div>
@@ -732,8 +704,7 @@ const HomePage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all text-white"
-            >
+              className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all text-white">
               <div className="mb-4">
                 <FaPrayingHands className="text-5xl md:text-6xl text-yellow-300" />
               </div>
@@ -758,8 +729,7 @@ const HomePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto"
-          >
+            className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 leading-tight">
               Begin Your Devotional Journey Today
             </h2>
@@ -769,11 +739,9 @@ const HomePage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/book"
-                className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-2xl"
-              >
+                className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-2xl">
                 Book a Temple Visit
               </Link>
-
             </div>
           </motion.div>
         </div>
