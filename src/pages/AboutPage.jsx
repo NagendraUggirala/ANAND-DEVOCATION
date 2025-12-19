@@ -1,3 +1,4 @@
+// src/pages/AboutPage.jsx
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
