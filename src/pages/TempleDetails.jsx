@@ -34,7 +34,7 @@ const TempleDetails = () => {
       name: 'Tirupati Balaji',
       location: 'Andhra Pradesh',
       deity: 'Lord Venkateswara',
-      image: 'https://media.istockphoto.com/id/1007659382/photo/the-tirupati-temple.jpg?s=612x612&w=0&k=20&c=wO069kCa1jUie6a-yBEJGErQ65L_RIwuEuwMEHosZxs=',
+      image: 'https://sreebalajidarshan.com/wp-content/uploads/2018/04/thirupathi-slider-800x350xc.jpg',
       history: 'The Tirumala Venkateswara Temple is a landmark Vaishnavite temple situated in the hill town of Tirumala at Tirupati in the Tirupati district of Andhra Pradesh, India. The temple is built on Venkata Hill, one of the seven peaks of the Tirumala Hills.',
       rituals: [
         'Suprabhatam - Early morning awakening',
