@@ -1,3 +1,4 @@
+// src/pages/TemplesList.jsx
 import React, { useState, useMemo, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -222,8 +223,7 @@ const TemplesList = () => {
             key={index}
             className={`text-sm ${
               index < Math.floor(rating) ? 'text-yellow-400' : 'text-gray-300'
-            }`}
-          >
+            }`}>
             ★
           </span>
         ))}
@@ -245,8 +245,7 @@ const TemplesList = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
-          >
+            className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-4">
               Explore Sacred <span className="text-yellow-400">Temples</span>
             </h1>
@@ -273,8 +272,7 @@ const TemplesList = () => {
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
@@ -287,9 +285,7 @@ const TemplesList = () => {
         <div className="container mx-auto px-4">
           {/* Region Filter */}
           <div className="mb-4">
-            
             <div className="flex flex-wrap justify-center gap-3">
-            
               {regions.map((region) => (
                 <button
                   key={region.value}
@@ -299,8 +295,7 @@ const TemplesList = () => {
                     regionFilter === region.value
                       ? 'bg-blue-600 text-white shadow-lg transform scale-105'
                       : 'bg-white text-blue-700 hover:bg-blue-100 border border-blue-200'
-                  }`}
-                >
+                  }`}>
                   {region.label}
                 </button>
               ))}
@@ -309,7 +304,6 @@ const TemplesList = () => {
 
           {/* Category Filter */}
           <div className="mb-4">
-            
             <div className="flex flex-wrap justify-center gap-3">
               {categories.map((category) => (
                 <button
@@ -320,8 +314,7 @@ const TemplesList = () => {
                     categoryFilter === category.value
                       ? 'bg-orange-500 text-white shadow-lg transform scale-105'
                       : 'bg-white text-orange-700 hover:bg-orange-100 border border-orange-200'
-                  }`}
-                >
+                  }`}>
                   {category.label}
                 </button>
               ))}
@@ -330,7 +323,6 @@ const TemplesList = () => {
 
           {/* Popularity Filter */}
           <div>
-          
             <div className="flex flex-wrap justify-center gap-3">
               {popularityOptions.map((option) => (
                 <button
@@ -341,8 +333,7 @@ const TemplesList = () => {
                     popularityFilter === option.value
                       ? 'bg-yellow-500 text-white shadow-lg transform scale-105'
                       : 'bg-white text-yellow-700 hover:bg-yellow-100 border border-yellow-200'
-                  }`}
-                >
+                  }`}>
                   {option.label}
                 </button>
               ))}
@@ -367,8 +358,7 @@ const TemplesList = () => {
                   setCategoryFilter('all');
                   setPopularityFilter('all');
                 }}
-                className="text-blue-600 hover:text-blue-700 font-semibold cursor-pointer"
-              >
+                className="text-blue-600 hover:text-blue-700 font-semibold cursor-pointer">
                 Clear All Filters
               </button>
             )}
@@ -389,12 +379,10 @@ const TemplesList = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ y: -8 }}
-                  className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
-                >
+                  className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
                   <Link 
                     to={`/temples/${temple.id}`}
-                    state={{ from: '/temples', fromName: 'Temples List' }}
-                  >
+                    state={{ from: '/temples', fromName: 'Temples List' }}>
                     <div className="relative h-48 md:h-64 overflow-hidden">
                       <img
                         src={temple.image}
@@ -410,8 +398,7 @@ const TemplesList = () => {
                           e.preventDefault();
                           toggleWishlist(temple.id);
                         }}
-                        className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-all shadow-lg z-10 cursor-pointer"
-                      >
+                        className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-all shadow-lg z-10 cursor-pointer">
                         {wishlist.includes(temple.id) ? (
                           <FaHeart className="text-xl text-red-500" />
                         ) : (
@@ -452,7 +439,6 @@ const TemplesList = () => {
                       <StarRating rating={temple.rating} />
                       <span className="text-xs text-gray-500 ml-2">{temple.reviews} reviews</span>
                     </div>
-
                     <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
                       {temple.description}
                     </p>
@@ -466,12 +452,10 @@ const TemplesList = () => {
                         {temple.region.toUpperCase()}
                       </span>
                     </div>
-
                     <Link
                       to={`/temples/${temple.id}`}
                       state={{ from: '/temples', fromName: 'Temples List' }}
-                      className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 rounded-lg font-semibold text-center hover:from-blue-700 hover:to-blue-800 transition-all transform hover:scale-105 shadow-md"
-                    >
+                      className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 rounded-lg font-semibold text-center hover:from-blue-700 hover:to-blue-800 transition-all transform hover:scale-105 shadow-md">
                       View Details
                     </Link>
                   </div>
@@ -490,8 +474,7 @@ const TemplesList = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-8 md:mb-12"
-          >
+            className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">
               Popular <span className="text-orange-600">Destinations</span>
             </h2>
@@ -509,12 +492,10 @@ const TemplesList = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer"
-              >
+                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer">
                 <Link 
                   to={`/temples/${temple.id}`}
-                  state={{ from: '/temples', fromName: 'Temples List' }}
-                >
+                  state={{ from: '/temples', fromName: 'Temples List' }}>
                   <div className="relative h-32 md:h-40">
                     <img
                       src={temple.image}
@@ -541,8 +522,7 @@ const TemplesList = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-white to-blue-50 p-8 md:p-12 rounded-2xl max-w-4xl mx-auto text-center shadow-xl border border-blue-100"
-          >
+            className="bg-gradient-to-br from-white to-blue-50 p-8 md:p-12 rounded-2xl max-w-4xl mx-auto text-center shadow-xl border border-blue-100">
             <FaOm className="text-5xl mb-4 text-blue-600 mx-auto" />
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-4 text-gray-800">
               Why Visit Sacred Temples?
@@ -586,8 +566,7 @@ const TemplesList = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto"
-          >
+            className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
               Begin Your Divine Journey Today
             </h2>
@@ -595,11 +574,9 @@ const TemplesList = () => {
               Experience the transformative power of pilgrimage with Anand Devocation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              
               <Link
                 to="/book"
-                className="bg-white text-blue-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-2xl"
-              >
+                className="bg-white text-blue-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-2xl">
                 Book a Temple Visit
               </Link>
             </div>
