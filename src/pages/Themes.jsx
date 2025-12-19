@@ -1,3 +1,4 @@
+// src/pages/Themes.jsx
 import React, { useState, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -355,8 +356,7 @@ const Themes = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -8, scale: 1.02 }}
-      className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-    >
+      className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
       <div className="relative h-48 md:h-64 overflow-hidden">
         <img
           src={theme.image}
@@ -386,8 +386,7 @@ const Themes = () => {
               {theme.temples.slice(0, 3).map((temple, idx) => (
                 <span
                   key={idx}
-                  className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold"
-                >
+                  className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
                   {temple}
                 </span>
               ))}
@@ -396,8 +395,7 @@ const Themes = () => {
         )}
         <Link
           to="/temples"
-          className="inline-block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all transform hover:scale-105"
-        >
+          className="inline-block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all transform hover:scale-105">
           Explore →
         </Link>
       </div>
@@ -415,8 +413,7 @@ const Themes = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto"
-          >
+            className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-4">
               Explore Your Devotional Journey by <span className="text-yellow-400">Special Poojas</span>
             </h1>
@@ -444,8 +441,7 @@ const Themes = () => {
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
@@ -460,8 +456,7 @@ const Themes = () => {
                     filterType === type.value
                       ? 'bg-blue-600 text-white shadow-lg transform scale-105'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
+                  }`}>
                   {type.label}
                 </button>
               ))}
@@ -479,8 +474,7 @@ const Themes = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-8 md:mb-12"
-          >
+            className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">
               Deity <span className="text-blue-600">Special Poojas</span>
             </h2>
@@ -506,8 +500,7 @@ const Themes = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-8 md:mb-12"
-          >
+            className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">
               Festival <span className="text-orange-600">Divisions</span>
             </h2>
@@ -525,8 +518,7 @@ const Themes = () => {
                 }
               }}
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-orange-50 transition-all hover:scale-110 border-2 border-orange-200"
-              aria-label="Scroll left"
-            >
+              aria-label="Scroll left">
               <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
@@ -540,8 +532,7 @@ const Themes = () => {
                 }
               }}
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-orange-50 transition-all hover:scale-110 border-2 border-orange-200"
-              aria-label="Scroll right"
-            >
+              aria-label="Scroll right">
               <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -555,8 +546,7 @@ const Themes = () => {
                 scrollbarWidth: 'none', 
                 msOverflowStyle: 'none',
                 WebkitOverflowScrolling: 'touch'
-              }}
-            >
+              }}>
               <style>{`
                 .scrollbar-hide::-webkit-scrollbar {
                   display: none;
@@ -575,8 +565,7 @@ const Themes = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     whileHover={{ scale: 1.05 }}
-                    className="min-w-[280px] md:min-w-[320px] bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
-                  >
+                    className="min-w-[280px] md:min-w-[320px] bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
                     <div className={`relative h-40 bg-gradient-to-br ${theme.color} p-6 text-white`}>
                       <div className="mb-2">
                         {React.createElement(theme.icon, { className: "text-4xl text-white" })}
@@ -587,8 +576,7 @@ const Themes = () => {
                       <p className="text-gray-600 text-sm mb-4">{theme.description}</p>
                       <Link
                         to="/temples"
-                        className="inline-block w-full text-center bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-2 rounded-lg font-semibold hover:from-orange-600 hover:to-yellow-600 transition-all"
-                      >
+                        className="inline-block w-full text-center bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-2 rounded-lg font-semibold hover:from-orange-600 hover:to-yellow-600 transition-all">
                         Explore →
                       </Link>
                     </div>
@@ -600,7 +588,6 @@ const Themes = () => {
         </div>
       </section>
 
-
       {/* 5️⃣ Ritual/Pooja Themes */}
       <section className="py-12 md:py-16 bg-gradient-to-br from-blue-50 to-orange-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920')] bg-cover bg-center opacity-5"></div>
@@ -610,8 +597,7 @@ const Themes = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-8 md:mb-12"
-          >
+            className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">
               Ritual & <span className="text-orange-600">Special Poojas</span>
             </h2>
@@ -629,8 +615,7 @@ const Themes = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all text-center"
-              >
+                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all text-center">
                 <div className={`bg-gradient-to-br ${theme.color} p-6 text-white`}>
                   <div className="mb-2 flex justify-center">
                     {React.createElement(theme.icon, { className: "text-4xl text-white" })}
@@ -641,8 +626,7 @@ const Themes = () => {
                   <p className="text-gray-600 text-xs mb-3">{theme.description}</p>
                   <Link
                     to="/temples"
-                    className="text-blue-600 font-semibold text-sm hover:text-blue-700"
-                  >
+                    className="text-blue-600 font-semibold text-sm hover:text-blue-700">
                     Learn More →
                   </Link>
                 </div>
@@ -661,8 +645,7 @@ const Themes = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-8 md:mb-12"
-          >
+            className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">
               Location <span className="text-blue-600">Themes</span>
             </h2>
@@ -688,8 +671,7 @@ const Themes = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-8 md:mb-12"
-          >
+            className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">
               Trending <span className="text-orange-600">Themes</span>
             </h2>
@@ -707,8 +689,7 @@ const Themes = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all relative"
-              >
+                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all relative">
                 <div className="relative h-48">
                   <img
                     src={theme.image}
@@ -733,8 +714,7 @@ const Themes = () => {
                   <p className="text-gray-600 text-sm mb-4">{theme.description}</p>
                   <Link
                     to="/temples"
-                    className="inline-block w-full text-center bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-2 rounded-lg font-semibold hover:from-orange-600 hover:to-yellow-600 transition-all"
-                  >
+                    className="inline-block w-full text-center bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-2 rounded-lg font-semibold hover:from-orange-600 hover:to-yellow-600 transition-all">
                     Explore →
                   </Link>
                 </div>
@@ -752,8 +732,7 @@ const Themes = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto"
-          >
+            className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
               Ready to Begin Your Spiritual Journey?
             </h2>
@@ -764,8 +743,7 @@ const Themes = () => {
               
               <Link
                 to="/book"
-                className="bg-white text-blue-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-2xl"
-              >
+                className="bg-white text-blue-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-2xl">
                 Book a Temple Visit
               </Link>
             </div>
