@@ -1,4 +1,3 @@
-// src/pages/Themes.jsx
 import React, { useState, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -601,56 +600,6 @@ const Themes = () => {
         </div>
       </section>
 
-      {/* 4️⃣ Purpose-Based Themes */}
-      <section className="py-12 md:py-16 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1920')] bg-cover bg-center opacity-5"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-8 md:mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">
-              Purpose-Based <span className="text-blue-600">Themes</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Find temples based on your life goals and aspirations
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {purposeThemes.map((theme, index) => (
-              <motion.div
-                key={theme.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
-              >
-                <div className={`bg-gradient-to-br ${theme.color} p-8 text-white text-center`}>
-                  <div className="mb-4 flex justify-center">
-                    {React.createElement(theme.icon, { className: "text-5xl text-white" })}
-                  </div>
-                  <h3 className="text-2xl font-display font-bold mb-2">{theme.title}</h3>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-600 mb-4">{theme.description}</p>
-                  <Link
-                    to="/temples"
-                    className="inline-block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all"
-                  >
-                    Explore →
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 5️⃣ Ritual/Pooja Themes */}
       <section className="py-12 md:py-16 bg-gradient-to-br from-blue-50 to-orange-50 relative overflow-hidden">
