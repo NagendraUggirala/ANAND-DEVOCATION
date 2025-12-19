@@ -1,3 +1,4 @@
+//` src/pages/TempleDetails.jsx
 import React from 'react';
 import { useParams, Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -26,8 +27,7 @@ const TempleDetails = () => {
   const previousPage = location.state?.from || '/';
   const previousPageName = location.state?.fromName || 'Home';
 
-  // Complete temple data - in real app, fetch from API
-  // IMPORTANT: IDs must match TemplesList.jsx temples array
+  // Complete temple data - in real app, fetch from API   // IMPORTANT: IDs must match TemplesList.jsx temples array
   const templesData = [
     {
       id: 1,
@@ -267,8 +267,7 @@ const TempleDetails = () => {
         <div className="container mx-auto px-4">
           <button
             onClick={() => navigate(previousPage)}
-            className="inline-flex items-center text-orange-600 hover:text-orange-700 mb-6 transition-colors font-semibold"
-          >
+            className="inline-flex items-center text-orange-600 hover:text-orange-700 mb-6 transition-colors font-semibold">
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
@@ -279,8 +278,7 @@ const TempleDetails = () => {
             <p className="text-gray-600 mb-6">The temple you are looking for does not exist.</p>
             <button
               onClick={() => navigate(previousPage)}
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all"
-            >
+              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all">
               Back to {previousPageName}
             </button>
           </div>
@@ -295,8 +293,7 @@ const TempleDetails = () => {
         {/* Back Button */}
         <button
           onClick={() => navigate(previousPage)}
-          className="inline-flex items-center text-orange-600 hover:text-orange-700 mb-6 transition-colors font-semibold"
-        >
+          className="inline-flex items-center text-orange-600 hover:text-orange-700 mb-6 transition-colors font-semibold">
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
@@ -307,8 +304,7 @@ const TempleDetails = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="relative h-64 md:h-96 rounded-2xl overflow-hidden mb-8 shadow-xl"
-        >
+          className="relative h-64 md:h-96 rounded-2xl overflow-hidden mb-8 shadow-xl">
           <img
             src={temple.image}
             alt={temple.name}
@@ -354,8 +350,7 @@ const TempleDetails = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-white p-6 md:p-8 rounded-xl shadow-lg mb-8 border-2 border-blue-100 relative overflow-hidden"
-          >
+            className="bg-white p-6 md:p-8 rounded-xl shadow-lg mb-8 border-2 border-blue-100 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-blue-600"></div>
             <div className="pl-4">
               <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-800 mb-4 flex items-center">
@@ -378,8 +373,7 @@ const TempleDetails = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-white p-6 md:p-8 rounded-xl shadow-lg mb-8 border-2 border-orange-100 relative overflow-hidden"
-          >
+            className="bg-white p-6 md:p-8 rounded-xl shadow-lg mb-8 border-2 border-orange-100 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-orange-500 to-orange-600"></div>
             <div className="pl-4">
               <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-800 mb-4 flex items-center">
@@ -404,8 +398,7 @@ const TempleDetails = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="mb-8"
-          >
+            className="mb-8">
             <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-800 mb-6 text-center">
               Attractions & Features
             </h2>
@@ -413,8 +406,7 @@ const TempleDetails = () => {
               {/* Scenic Views Card */}
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-4 text-center text-white shadow-lg cursor-pointer"
-              >
+                className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-4 text-center text-white shadow-lg cursor-pointer">
                 <FaEye className="text-3xl md:text-4xl mb-2 mx-auto" />
                 <h3 className="font-semibold text-sm md:text-base">Scenic Views</h3>
                 <p className="text-xs md:text-sm text-blue-100 mt-1">Panoramic</p>
@@ -423,8 +415,7 @@ const TempleDetails = () => {
               {/* Spiritual Vibes Card */}
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-gradient-to-br from-amber-500 to-yellow-500 rounded-xl p-4 text-center text-white shadow-lg cursor-pointer"
-              >
+                className="bg-gradient-to-br from-amber-500 to-yellow-500 rounded-xl p-4 text-center text-white shadow-lg cursor-pointer">
                 <FaOm className="text-3xl md:text-4xl mb-2 mx-auto" />
                 <h3 className="font-semibold text-sm md:text-base">Spiritual Vibes</h3>
                 <p className="text-xs md:text-sm text-yellow-100 mt-1">Divine Energy</p>
@@ -433,8 +424,7 @@ const TempleDetails = () => {
               {/* Save Journey Card */}
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-4 text-center text-white shadow-lg cursor-pointer"
-              >
+                className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-4 text-center text-white shadow-lg cursor-pointer">
                 <FaBookmark className="text-3xl md:text-4xl mb-2 mx-auto" />
                 <h3 className="font-semibold text-sm md:text-base">Save Journey</h3>
                 <p className="text-xs md:text-sm text-orange-100 mt-1">Bookmark</p>
@@ -443,8 +433,7 @@ const TempleDetails = () => {
               {/* Attractions Card */}
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-4 text-center text-white shadow-lg cursor-pointer"
-              >
+                className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-4 text-center text-white shadow-lg cursor-pointer">
                 <FaStar className="text-3xl md:text-4xl mb-2 mx-auto" />
                 <h3 className="font-semibold text-sm md:text-base">Attractions</h3>
                 <p className="text-xs md:text-sm text-purple-100 mt-1">Must See</p>
@@ -453,8 +442,7 @@ const TempleDetails = () => {
               {/* Photo Gallery Card */}
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-gradient-to-br from-gray-400 to-gray-500 rounded-xl p-4 text-center text-white shadow-lg cursor-pointer"
-              >
+                className="bg-gradient-to-br from-gray-400 to-gray-500 rounded-xl p-4 text-center text-white shadow-lg cursor-pointer">
                 <FaCamera className="text-3xl md:text-4xl mb-2 mx-auto" />
                 <h3 className="font-semibold text-sm md:text-base">Gallery</h3>
                 <p className="text-xs md:text-sm text-gray-100 mt-1">Photos</p>
@@ -463,8 +451,7 @@ const TempleDetails = () => {
               {/* Nearby Places Card */}
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl p-4 text-center text-white shadow-lg cursor-pointer"
-              >
+                className="bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl p-4 text-center text-white shadow-lg cursor-pointer">
                 <FaMapMarkerAlt className="text-3xl md:text-4xl mb-2 mx-auto" />
                 <h3 className="font-semibold text-sm md:text-base">Nearby</h3>
                 <p className="text-xs md:text-sm text-cyan-100 mt-1">Places</p>
@@ -477,14 +464,12 @@ const TempleDetails = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="mb-8"
-          >
+            className="mb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Best Experiences Card */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-400 rounded-xl p-6 text-white shadow-lg"
-              >
+                className="bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-400 rounded-xl p-6 text-white shadow-lg">
                 <div className="flex items-center mb-4">
                   <FaStar className="text-4xl mr-4" />
                   <div>
@@ -511,8 +496,7 @@ const TempleDetails = () => {
               {/* Accommodation & Services Card */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="bg-gradient-to-br from-blue-400 via-blue-500 to-indigo-500 rounded-xl p-6 text-white shadow-lg"
-              >
+                className="bg-gradient-to-br from-blue-400 via-blue-500 to-indigo-500 rounded-xl p-6 text-white shadow-lg">
                 <div className="flex items-center mb-4">
                   <FaHotel className="text-4xl mr-4" />
                   <div>
@@ -543,8 +527,7 @@ const TempleDetails = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="bg-white p-6 md:p-8 rounded-xl shadow-lg mb-8 border-2 border-purple-100 relative overflow-hidden"
-          >
+            className="bg-white p-6 md:p-8 rounded-xl shadow-lg mb-8 border-2 border-purple-100 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-purple-600"></div>
             <div className="pl-4">
               <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-800 mb-4 flex items-center">
@@ -572,8 +555,7 @@ const TempleDetails = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="text-center bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 p-8 rounded-xl shadow-xl text-white"
-          >
+            className="text-center bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 p-8 rounded-xl shadow-xl text-white">
             <h3 className="text-2xl md:text-3xl font-display font-bold mb-4">
               Experience This Sacred Journey
             </h3>
@@ -582,8 +564,7 @@ const TempleDetails = () => {
             </p>
             <Link
               to="/book"
-              className="inline-block bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-300 transform hover:scale-105"
-            >
+              className="inline-block bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-300 transform hover:scale-105">
               Book Your Pilgrimage
             </Link>
           </motion.div>
