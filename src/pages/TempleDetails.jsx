@@ -46,7 +46,7 @@ const TempleDetails = () => {
       significance: 'One of the richest and most visited temples in the world, attracting millions of devotees annually.',
       bestTime: 'September to March',
       gallery: [
-        'https://behindeverytemple.org/wp-content/uploads/2020/11/96723054_549291549094354_3335608607235375104_n.jpg',
+        'https://indiathrills.com/wp-content/uploads/2025/06/Tirupati-Balaji-Temple-history-location-timings-how-to-reach.webp',
         'https://i0.wp.com/www.rvatemples.com/wp-content/uploads/2018/03/Tirumala-Tirupati-Balaji-Temple-night-and-lights.jpg?fit=964%2C528&ssl=1',
         'https://i0.wp.com/www.rvatemples.com/wp-content/uploads/2018/03/tiru_0.jpg?fit=620%2C376&ssl=1',
         'https://i0.wp.com/www.rvatemples.com/wp-content/uploads/2018/03/tirupati-tirumala-purattasi-masam.jpg?fit=1040%2C689&ssl=1',
@@ -391,7 +391,7 @@ const TempleDetails = () => {
               <ul className="space-y-3">
                 {temple.rituals.map((ritual, index) => (
                   <li key={index} className="flex items-start bg-gradient-to-r from-orange-50 to-yellow-50 p-3 rounded-lg border-l-4 border-orange-500 hover:shadow-md transition-all">
-                    <span className="text-orange-600 mr-3 mt-1 font-bold text-xl">•</span>
+                    <span className="text-orange-600 mr-3 font-bold text-xl inline-block -translate-y-1">•</span>
                     <span className="text-gray-700 font-medium flex-1">{ritual}</span>
                   </li>
                 ))}
