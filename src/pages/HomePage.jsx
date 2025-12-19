@@ -13,7 +13,7 @@ import {
   FaCheckCircle,
   FaPhone,
   FaMoneyBillWave,
-  FaGopuram ,
+  FaGopuram,
   FaMosque,
   FaCalendar,
   FaPrayingHands,
@@ -49,20 +49,20 @@ const HomePage = () => {
   // Hero slides - Temple images
   const heroSlides = [
     {
-      image: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=1600&q=80",
+      image: "https://www.poojn.in/wp-content/uploads/2025/09/Temple-Architectures-of-India-Sacred-Designs-Divine-Symbolism-Explored.jpeg.jpg",
       title: "Experience Pilgrimage, the Divine Way",
       subtitle: "Explore sacred destinations with spiritual themes, curated stays, and guided devotion"
     },
     {
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1600&q=80",
+      image: "https://hinduvism.com/wp-content/uploads/2025/04/Mandir-Design-Elements-Exploring-Garbhagriha-Shikhara-Sacred-Architecture-in-Hindu-Temples.jpg",
       title: "Sacred Journeys, Divine Experiences",
       subtitle: "Where devotion becomes a beautiful journey of the heart and soul"
     },
     {
-      image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1600&q=80",
-      title: "Soulful Retreats for Devotees",
-      subtitle: "Thoughtfully curated journeys to India's holiest temples"
-    }
+    image: "https://static.vecteezy.com/system/resources/previews/059/581/222/non_2x/stunning-marble-carvings-of-ranakpur-jain-temple-shining-in-golden-sunset-light-photo.jpg",
+    title: "Walk the Path of Devotion",
+    subtitle: "Ancient temples, sacred rituals, and divine serenity"
+  }
   ];
 
   // Featured Temples with details
@@ -227,7 +227,7 @@ const HomePage = () => {
       description: "Round-the-clock assistance throughout your journey"
     },
     {
-      icon: FaGopuram ,
+      icon: FaGopuram,
       title: "Temple-Centric Journeys",
       description: "Every journey revolves around the temple, its rituals, and spiritual significance"
     }
@@ -308,69 +308,82 @@ const HomePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-orange-50">
+    <div className="min-h-screen bg-gradient-to-b from-orange-500 via-white to-orange-500">
       {/* 1️⃣ Hero Section */}
       <section className="relative h-screen md:h-[90vh] overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div
-            className="absolute top-1/2 left-1/2 w-full h-full"
-            style={{
-              transform: 'translate(-50%, -50%) scale(1.2)',
-              minWidth: '100%',
-              minHeight: '100%',
-              width: '177.77777778vh',
-              height: '56.25vw'
-            }}
-          >
 
-          </div>
-          {/* Fallback image if video doesn't load */}
-          <img
-            src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=1600&q=80"
-            alt="Temple background"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ zIndex: -1 }}
-          />
+        {/* 🔁 Hero Background Carousel */}
+        <div className="absolute inset-0 z-0">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentHeroSlide}
+              src={heroSlides[currentHeroSlide].image}
+              alt="Devotional background"
+              className="absolute inset-0 w-full h-full object-cover"
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.05 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+            />
+          </AnimatePresence>
+
+          {/* Dark Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30 z-10" />
         </div>
 
-        <div className="relative z-10 h-full flex items-center justify-center">
+        {/* 🌟 Hero Content */}
+        <div className="relative z-20 h-full flex items-center justify-center">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8 }}
             >
+              {/* Icons */}
               <div className="flex justify-center space-x-6 mb-6">
                 <FaOm className="text-4xl md:text-5xl text-yellow-300" />
                 <FaBell className="text-4xl md:text-5xl text-yellow-300" />
                 <FaWineBottle className="text-4xl md:text-5xl text-yellow-300" />
                 <FaLeaf className="text-4xl md:text-5xl text-yellow-300" />
               </div>
+
+              {/* Dynamic Text */}
               <h1 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold text-white mb-4 md:mb-6 leading-tight">
-                Experience Pilgrimage, the Divine Way
+                {heroSlides[currentHeroSlide].title}
               </h1>
-              <p className="text-xl md:text-1xl lg:text-1xl text-yellow-100 mb-8 md:mb-12 font-light leading-relaxed px-4">
-                Explore sacred destinations with spiritual themes, curated stays, and guided devotion
+
+              <p className="text-lg md:text-xl text-yellow-100 mb-10 max-w-3xl mx-auto leading-relaxed px-4">
+                {heroSlides[currentHeroSlide].subtitle}
               </p>
 
-
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* CTA */}
+              <div className="flex justify-center">
                 <Link
                   to="/temples"
-                  className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-600 hover:to-blue-700 transition-all transform hover:scale-105 shadow-xl"
+                  className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition shadow-xl"
                 >
                   Explore Temples
                 </Link>
-
               </div>
             </motion.div>
           </div>
         </div>
+
+        {/* 🔘 Slide Indicators */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentHeroSlide(index)}
+              className={`h-2 rounded-full transition-all ${index === currentHeroSlide
+                  ? "w-8 bg-yellow-400"
+                  : "w-2 bg-white/50"
+                }`}
+            />
+          ))}
+        </div>
       </section>
+
 
       {/* Introduction Section */}
       <section className="py-12 md:py-16 bg-gray-50">
@@ -384,8 +397,8 @@ const HomePage = () => {
               className="text-center mb-8 md:mb-12"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-blue-500 mb-4 leading-tight">
-              Welcome to  <span className="text-orange-500">Anand Devocation</span>
-            </h2>
+                Welcome to  <span className="text-orange-500">Anand Devocation</span>
+              </h2>
               <div className="w-16 md:w-20 h-1 mx-auto mb-4 md:mb-6 bg-blue-800 rounded"></div>
               <p className="text-base md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed px-2">
                 Anand Devocation is created for devotees who wish to experience pilgrimage in
@@ -413,13 +426,13 @@ const HomePage = () => {
               >
                 <h3 className="text-xl md:text-2xl font-bold text-blue-800 mb-3 md:mb-4">Our Mission</h3>
                 <p className="text-gray-700 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">
-                  "Satyam Shivam Sundaram" – Our mission is to make pilgrimage a transformative spiritual experience. 
-                  We guide devotees with compassion, knowledge, and support, ensuring that every journey nurtures faith, 
+                  "Satyam Shivam Sundaram" – Our mission is to make pilgrimage a transformative spiritual experience.
+                  We guide devotees with compassion, knowledge, and support, ensuring that every journey nurtures faith,
                   clarity, and inner peace.
                 </p>
                 <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                  By creating thoughtfully designed itineraries, thematic experiences, and serene accommodations, 
-                  we aim to immerse devotees in the sacred essence of each temple, fostering devotion, cultural 
+                  By creating thoughtfully designed itineraries, thematic experiences, and serene accommodations,
+                  we aim to immerse devotees in the sacred essence of each temple, fostering devotion, cultural
                   understanding, and a harmonious connection with the divine.
                 </p>
               </motion.div>
@@ -456,7 +469,7 @@ const HomePage = () => {
         </div>
       </section>
 
-    
+
 
       {/* 3️⃣ Featured Temples Section */}
       <section className="pt-5 pb-5 md:pb-24 bg-gray-100">
@@ -531,7 +544,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      
+
 
       {/* 5️⃣ Why Choose Us Section */}
       <section className="py-5 md:py-5 bg-gradient-to-b from-white via-blue-50 to-white">
@@ -760,7 +773,7 @@ const HomePage = () => {
               >
                 Book a Temple Visit
               </Link>
-              
+
             </div>
           </motion.div>
         </div>
