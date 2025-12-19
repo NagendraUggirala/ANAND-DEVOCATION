@@ -595,17 +595,12 @@ const TemplesList = () => {
               Experience the transformative power of pilgrimage with Anand Devocation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/packages"
-                className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-orange-600 hover:to-yellow-600 transition-all transform hover:scale-105 shadow-2xl"
-              >
-                Explore Packages →
-              </Link>
+              
               <Link
                 to="/book"
                 className="bg-white text-blue-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-2xl"
               >
-                Book Your Yatra
+                Book a Temple Visit
               </Link>
             </div>
           </motion.div>

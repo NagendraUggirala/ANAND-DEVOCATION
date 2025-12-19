@@ -27,7 +27,7 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/temples" element={<TemplesList />} />
           <Route path="/temples/:id" element={<TempleDetails />} />
-          <Route path="/themes" element={<Themes />} />
+          <Route path="/special-pooja" element={<Themes />} />
           <Route path="/packages" element={<Packages />} />
           <Route path="/book" element={<BookingPage />} />
           <Route path="/about" element={<AboutPage />} />

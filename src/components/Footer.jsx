@@ -9,7 +9,6 @@ const Footer = () => {
     { path: "/", label: "Home" },
     { path: "/temples", label: "Temples" },
     { path: "/themes", label: "Special Poojas" },
-    { path: "/packages", label: "Packages" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" }
   ];
@@ -232,7 +231,7 @@ const Footer = () => {
 
                     <div className="flex items-center space-x-2">
                       <i className="fas fa-envelope text-orange-400 text-sm" />
-                      <span className="text-gray-300">info@anandimportsexports.com</span>
+                      <span className="text-gray-300">divine@ananddevocation.com</span>
                     </div>
                   </div>
                 </div>

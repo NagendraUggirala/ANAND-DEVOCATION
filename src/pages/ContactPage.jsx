@@ -204,8 +204,7 @@ const ContactAdvancedWithMapBottom = () => {
                       Get In Touch
                     </h2>
                     <p className="text-slate-600 mb-6 text-sm leading-relaxed">
-                      Have questions about properties or need guidance? We&apos;re
-                      here to help you find your perfect home.
+                      Have questions about our spiritual journeys or need guidance? We&apos;re here to help you plan your sacred pilgrimage with ease and devotion.
                     </p>
 
                     <div className="space-y-4 mb-6">
@@ -229,7 +228,6 @@ const ContactAdvancedWithMapBottom = () => {
                                 <p
                                   key={idx}
                                   className="text-slate-700 font-medium text-sm break-all"
-
                                 >
                                   {detail}
                                 </p>
@@ -262,9 +260,7 @@ const ContactAdvancedWithMapBottom = () => {
                           Send Us a Message
                         </h2>
                         <p className="text-slate-600 text-sm md:text-base max-w-2xl">
-                          Fill out the form below with your requirements and
-                          we&apos;ll get back to you within 24 hours with
-                          personalized property recommendations.
+                          Fill out the form below with your pilgrimage preferences, devotional requirements, or questions, and our team will assist you in planning a spiritually fulfilling journey.
                         </p>
                       </div>
                     </div>
@@ -296,7 +292,7 @@ const ContactAdvancedWithMapBottom = () => {
                               Message Sent Successfully!
                             </h4>
                             <p className="text-emerald-600 text-xs md:text-sm">
-                              We&apos;ll contact you shortly with property options.
+                              We&apos;ll contact you shortly with guidance for your pilgrimage.
                             </p>
                           </div>
                         </div>
@@ -305,8 +301,7 @@ const ContactAdvancedWithMapBottom = () => {
 
                     {submitStatus === "error" && (
                       <div className="bg-rose-50 border border-rose-200 rounded-lg p-4 mb-3 text-rose-700 text-sm">
-                        Something went wrong. Please try again later or contact
-                        us directly.
+                        Something went wrong. Please try again later or contact us directly.
                       </div>
                     )}
 
@@ -329,7 +324,7 @@ const ContactAdvancedWithMapBottom = () => {
                           phone_number: values.phone,
                           message: values.message,
                           message_length: values.message.trim().length,
-                          ip_address: null, // backend can fill from request
+                          ip_address: null,
                           user_agent:
                             typeof navigator !== "undefined"
                               ? navigator.userAgent
@@ -352,7 +347,7 @@ const ContactAdvancedWithMapBottom = () => {
                           console.log("✅ Dummy backend response:", res.data);
 
                           setSubmitStatus("success");
-                          resetForm(); // form becomes empty
+                          resetForm();
                           setShowModal(true);
                           setTimeout(() => setShowModal(false), 2500);
                         } catch (err) {
@@ -428,12 +423,11 @@ const ContactAdvancedWithMapBottom = () => {
                               value={values.message}
                               onChange={handleChange}
                               onBlur={handleBlur}
-                              placeholder="Tell us about your specific requirements, preferred locations, amenities, and any other details that will help us find your perfect property..."
-                              className={`w-full px-3 md:px-4 py-2 md:py-3 bg-slate-50 border ${
-                                touched.message && errors.message
+                              placeholder="Tell us about your pilgrimage preferences, sacred destinations you want to visit, or any devotional support you need..."
+                              className={`w-full px-3 md:px-4 py-2 md:py-3 bg-slate-50 border ${touched.message && errors.message
                                   ? "border-rose-400"
                                   : "border-slate-300"
-                              } rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 resize-none text-sm md:text-base`}
+                                } rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 resize-none text-sm md:text-base`}
                               aria-invalid={!!(touched.message && errors.message)}
                             />
                             <div className="flex justify-between items-center mt-2">
@@ -443,8 +437,7 @@ const ContactAdvancedWithMapBottom = () => {
                                 </p>
                               ) : (
                                 <p className="text-slate-500 text-xs md:text-sm">
-                                  Please provide detailed information for better
-                                  assistance
+                                  Provide details to help us plan a perfect pilgrimage
                                 </p>
                               )}
                               <p className="text-slate-400 text-xs md:text-sm">
@@ -463,11 +456,10 @@ const ContactAdvancedWithMapBottom = () => {
                           <button
                             type="submit"
                             disabled={isSubmitting}
-                            className={`w-full py-3 md:py-4 rounded-lg font-bold text-white transition-all duration-300 text-sm md:text-base ${
-                              isSubmitting
+                            className={`w-full py-3 md:py-4 rounded-lg font-bold text-white transition-all duration-300 text-sm md:text-base ${isSubmitting
                                 ? "bg-slate-400 cursor-not-allowed"
                                 : "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg hover:shadow-xl"
-                            }`}
+                              }`}
                             aria-busy={isSubmitting}
                           >
                             {isSubmitting ? (
@@ -681,9 +673,8 @@ function FormField({
         onBlur={onBlur}
         placeholder={placeholder}
         required={required}
-        className={`w-full px-3 md:px-4 py-2 md:py-3 bg-slate-50 border ${
-          error ? "border-rose-400" : "border-slate-300"
-        } rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 text-sm md:text-base`}
+        className={`w-full px-3 md:px-4 py-2 md:py-3 bg-slate-50 border ${error ? "border-rose-400" : "border-slate-300"
+          } rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 text-sm md:text-base`}
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-error` : undefined}
       />

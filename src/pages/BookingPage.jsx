@@ -194,10 +194,7 @@ const BookingPage = () => {
                   {formik.values.date} - {formik.values.timeSlot}
                 </span>
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-gray-600 font-semibold">Total Amount:</span>
-                <span className="text-orange-600 font-bold text-lg">₹{price.total.toLocaleString()}</span>
-              </div>
+              
             </div>
           </div>
 
@@ -719,26 +716,7 @@ const BookingPage = () => {
                     </div>
                   )}
 
-                  <div className="border-t border-gray-200 pt-4 mt-4">
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-600">Base Price:</span>
-                      <span className="text-gray-800">₹{price.base.toLocaleString()}</span>
-                    </div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-600">GST (18%):</span>
-                      <span className="text-gray-800">₹{price.gst.toFixed(0)}</span>
-                    </div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-600">Service Charge:</span>
-                      <span className="text-gray-800">₹{price.serviceCharge}</span>
-                    </div>
-                    <div className="flex justify-between pt-4 border-t border-gray-200">
-                      <span className="text-lg font-bold text-gray-800">Total:</span>
-                      <span className="text-lg font-bold text-orange-600">
-                        ₹{price.total.toLocaleString()}
-                      </span>
-                    </div>
-                  </div>
+                 
                 </div>
               ) : (
                 <p className="text-gray-500 text-sm text-center py-8">

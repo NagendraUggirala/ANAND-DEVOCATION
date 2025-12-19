@@ -10,102 +10,49 @@ const About = () => {
   const isInView2 = useInView(ref2, { once: true, threshold: 0.3 });
   const isInView3 = useInView(ref3, { once: true, threshold: 0.3 });
 
-  const milestones = [
-    { year: "1998", title: "Foundation", description: "Anand Devocation established with vision of ethical real estate" },
-    { year: "2005", title: "Expansion", description: "Diversified into infrastructure and cinema production" },
-    { year: "2014", title: "Consolidation", description: "Unified all verticals under Anand Devocation brand" },
-    { year: "2025", title: "Innovation", description: "Launched future-ready real estate solutions" }
-  ];
-
   const values = [
     {
-      icon: "🤝",
-      title: "Trust & Transparency",
-      description: "Complete legal documentation and honest communication in every transaction"
+      icon: "🙏",
+      title: "Devotion & Faith",
+      description: "Every journey is guided with deep reverence and spiritual care."
     },
     {
-      icon: "⭐",
-      title: "Quality Excellence",
-      description: "Uncompromised construction standards using premium materials and techniques"
+      icon: "🌿",
+      title: "Cultural Immersion",
+      description: "Experience the rich heritage, rituals, and traditions of sacred sites."
     },
     {
-      icon: "⚖️",
-      title: "Vastu Science",
-      description: "Modern architecture harmonized with scientific Vastu principles for balanced living"
+      icon: "🛕",
+      title: "Authentic Pilgrimage",
+      description: "Thoughtfully curated trips to reflect the true spirit of each temple."
     },
     {
-      icon: "🌍",
-      title: "Accessible Luxury",
-      description: "Premium living experiences made accessible to everyone without compromise"
-    }
-  ];
-
-  const sectors = [
-    {
-      title: "Devocation Division",
-      description: "Creating dream spaces with legal transparency and Vastu compliance",
-      stats: "50+ Projects",
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      title: "Infrastructure",
-      description: "Building sustainable infrastructure with uncompromised quality standards",
-      stats: "15+ Major Projects",
-      color: "from-orange-500 to-orange-600"
-    },
-    {
-      title: "Cinema Production",
-      description: "Telling meaningful stories that reflect our creative vision and values",
-      stats: "Multiple Productions",
-      color: "from-purple-500 to-purple-600"
+      icon: "💛",
+      title: "Peace & Clarity",
+      description: "Our experiences nurture inner peace, mindfulness, and spiritual growth."
     }
   ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
   };
 
   const itemVariants = {
     hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const cardVariants = {
-    hidden: { scale: 0.9, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+    visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
-      {/* Enhanced Hero Section with Dharmo Rakshati Rakshitah */}
+
+      {/* Hero Section */}
       <section className="relative py-16 md:py-20 bg-gradient-to-br from-blue-500 via-orange-600 to-orange-500 overflow-hidden">
-        {/* Background Elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -left-24 -top-20 w-72 h-72 bg-orange-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
           <div className="absolute -right-24 -bottom-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
         </div>
-        
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -113,7 +60,6 @@ const About = () => {
             transition={{ duration: 1 }}
             className="max-w-6xl mx-auto text-center text-white"
           >
-            {/* Main Sanskrit Quote */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -121,37 +67,28 @@ const About = () => {
               className="mb-8 md:mb-10"
             >
               <div className="inline-block bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 border border-white/20 shadow-2xl mx-2">
-                {/* Sanskrit Text */}
                 <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-yellow-300 mb-4 md:mb-5 font-sans leading-tight">
                   धर्मो रक्षति रक्षितः
                 </div>
-                
-                {/* Transliteration */}
                 <div className="text-base sm:text-lg md:text-2xl text-blue-100 italic mb-4 md:mb-5">
                   "Dharmo Rakshati Rakshitah"
                 </div>
-                
-                {/* Separator */}
-                <div className="w-16 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto rounded-full mb-4 md:mb-5"></div>
-                
-                {/* Meaning */}
+                <div className="w-16 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto mb-4 md:mb-5 rounded-full"></div>
                 <div className="text-sm sm:text-base md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed px-2">
-                  Where righteousness protects the protector, and ethical practices build lasting legacies.
+                  Where devotion protects the devotee, and spiritual practice nurtures inner peace and clarity.
                 </div>
               </div>
             </motion.div>
 
-            {/* Main Title - Smaller Size */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-blue-100"
             >
-              Our <span className="text-orange-300">Story</span>
+              About <span className="text-orange-300">Us</span>
             </motion.h1>
 
-            {/* Philosophy Explanation */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -159,21 +96,22 @@ const About = () => {
               className="max-w-4xl mx-auto"
             >
               <p className="text-sm sm:text-base md:text-lg text-blue-100 leading-relaxed px-2 sm:px-4">
-                For over two decades, we've built not just properties, but trust. Our journey is guided by 
-                the timeless wisdom that when you protect Dharma (righteousness), Dharma protects you in return.
+                Anand Devocation guides devotees on carefully curated pilgrimages to sacred destinations.
+                Every journey is designed to immerse travelers in the rituals, history, and culture of holy sites,
+                creating an authentic and transformative spiritual experience.
               </p>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Founder Section - Enhanced for Mobile */}
+      {/* Founder Section */}
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
-              
-              {/* Left: Image card with responsive sizing */}
+
+              {/* Left Image Card */}
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -182,18 +120,14 @@ const About = () => {
                 className="flex justify-center w-full lg:justify-start order-2 lg:order-1"
               >
                 <div className="relative group w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto">
-                  {/* Responsive Image card */}
                   <div className="w-full h-[350px] sm:h-[400px] md:h-[500px] lg:h-[580px] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-100 bg-white transform transition-all duration-500 group-hover:shadow-3xl group-hover:scale-[1.02] group-hover:ring-2 group-hover:ring-orange-200">
                     <img
                       src="/images/image.png"
                       alt="Founder & Chairman"
                       className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
-                    
-                    {/* Shine effect on hover */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
 
-                    {/* Founder & Chairman Badge - On Image */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -208,7 +142,7 @@ const About = () => {
                     </motion.div>
                   </div>
 
-                  {/* Quote Section Under Image */}
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -218,17 +152,18 @@ const About = () => {
                   >
                     <div className="bg-gradient-to-r from-blue-50/50 to-orange-50/50 rounded-xl p-4 md:p-6 border-l-4 border-orange-500 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-orange-600 mx-2 sm:mx-0">
                       <p className="text-gray-700 italic text-sm sm:text-base md:text-lg leading-relaxed text-center">
-                        "We transform landscapes into legacies. Every plot we develop is backed by 
-                        complete legal documentation, premium amenities, and a vision for sustainable 
-                        community living. Our ventures aren't just investments; they're foundations 
-                        for generations to come."
+                        "We create spiritual journeys that inspire devotion and inner peace. Each pilgrimage is thoughtfully planned with guidance, care, and cultural immersion, allowing devotees to connect deeply with the divine."
                       </p>
                     </div>
                   </motion.div>
+
+
+
+
                 </div>
               </motion.div>
 
-              {/* Right: Content with improved mobile alignment */}
+              {/* Right Content */}
               <motion.div
                 initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -242,121 +177,41 @@ const About = () => {
 
                   <div className="mt-4 md:mt-6 text-gray-700 space-y-4 w-full">
                     <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-                      A visionary leader with an unwavering commitment to excellence, Anand founded
-                      Anand Devocation in 1998 with a simple yet powerful vision: to create sustainable
-                      businesses that transform communities and inspire generations.
+                      Anand is a visionary leader devoted to guiding spiritual journeys that nurture faith, mindfulness, and inner peace. He founded Anand Devocation with the mission to create meaningful pilgrimage experiences.
                     </p>
                     <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-                      With a background in engineering and an innate understanding of market dynamics,
-                      Mr. Anand has successfully steered the group through economic cycles, expanding
-                      from a single real estate venture to a diversified conglomerate with global presence.
+                      With a deep understanding of cultural and religious heritage, he ensures that every pilgrimage is authentic, enriching, and thoughtfully curated to inspire devotion in every participant.
                     </p>
-                    
-                    {/* Added Devocation Information */}
+
                     <div className="bg-blue-50 rounded-lg p-4 md:p-6 mt-4 border-l-4 border-blue-500">
                       <h4 className="font-bold text-blue-800 text-base sm:text-lg md:text-xl mb-2">About Anand Devocation</h4>
                       <p className="text-gray-700 text-xs sm:text-sm md:text-base">
-                        Under Anand's leadership, Anand Devocation has emerged as a trusted name in plot development, 
-                        transforming raw land into premium residential ventures. With 25+ years of expertise, 
-                        we specialize in creating sustainable, Vastu-compliant plotted communities that offer 
-                        complete legal transparency and exceptional value appreciation.
-                      </p>
+                        Anand Devocation is created for devotees who wish to experience pilgrimage in
+                        its purest and most meaningful form. We curate spiritually enriched journeys to
+                        sacred destinations, offering complete guidance, knowledge, and support so
+                        devotees can explore holy places with confidence, comfort, and peace of mind.  </p>
                     </div>
                   </div>
-
-                  {/* Stats Section on Right Side Below Content */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.9 }}
-                    viewport={{ once: true }}
-                    className="mt-8 w-full"
-                  >
-                    <div className="grid grid-cols-2 gap-3 md:gap-4 w-full max-w-md mx-auto lg:mx-0">
-                      <EnhancedStatCard title="100+" subtitle="Projects" delay={0} />
-                      <EnhancedStatCard title="1B+" subtitle="Assets" delay={0.1} />
-                      <EnhancedStatCard title="25+" subtitle="Years" delay={0.2} />
-                      <EnhancedStatCard title="500+" subtitle="Team" delay={0.3} />
-                    </div>
-                  </motion.div>
                 </div>
+                {/* Stats Section on Right Side Below Content */}
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.9 }} viewport={{ once: true }} className="mt-8 w-full" >
+                  <div className="bg-blue-50 rounded-lg p-4 md:p-6 mt-4 border-l-4 border-blue-500">
+                    <h4 className="font-bold text-blue-800 text-base sm:text-lg md:text-xl mb-2">Our Pilgrimage Philosophy</h4>
+                    <p className="text-gray-700 text-xs sm:text-sm md:text-base">
+                      Every tour is designed to reflect the authentic spirit of the temple from its
+                      history and rituals to its cultural significance. We recreate themes and
+                      experiences inspired by each sacred site, allowing devotees to immerse
+                      themselves fully in the divine atmosphere.</p>
+                  </div>
+                </motion.div>
               </motion.div>
+
             </div>
           </div>
         </div>
       </section>
 
-      {/* Company Profile Section - Mobile Optimized */}
-      <section ref={ref1} className="py-12 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView1 ? "visible" : "hidden"}
-            className="max-w-6xl mx-auto"
-          >
-            <motion.div variants={itemVariants} className="text-center mb-12 md:mb-16">
-              <h2 className="text-2xl md:text-4xl font-bold text-blue-800 mb-4 md:mb-6">
-                About Anand Devocation
-              </h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-4">
-                Transforming raw land into premium residential plots with 25+ years of expertise
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-stretch px-2 sm:px-0">
-              <motion.div variants={itemVariants} className="flex">
-                <div className="bg-gradient-to-br from-blue-50 to-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-blue-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col h-full w-full">
-                  <div className="flex flex-col h-full justify-between">
-                    <div>
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-blue-800 mb-4 md:mb-6 text-left">
-                        Plot Development Excellence
-                      </h3>
-                      <div className="space-y-4 text-left">
-                        <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-                          <span className="font-semibold text-blue-800">
-                            Anand Devocation specializes in plotted ventures that offer:
-                          </span>{" "}
-                          Complete legal transparency, premium infrastructure, Vastu-compliant layouts, 
-                          and exceptional value appreciation potential for every investor.
-                        </p>
-                        <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-                          Our plotted communities are designed with modern amenities, green spaces, 
-                          and sustainable features that create ideal living environments while ensuring 
-                          maximum returns on investment.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div variants={itemVariants} className="flex">
-                <div className="bg-gradient-to-br from-orange-50 to-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-orange-100 hover:shadow-xl hover:border-orange-200 transition-all duration-300 flex flex-col h-full w-full">
-                  <div className="flex flex-col h-full justify-between">
-                    <div>
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-blue-800 mb-4 md:mb-6 text-left">
-                        Our Evolution in Real Estate
-                      </h3>
-                      <div className="space-y-4 text-left">
-                        <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-                          What began with single plot developments has now evolved into large-scale 
-                          residential ventures and townships. Yet, our core principles remain unchanged: 
-                          delivering genuine properties with transparent documentation, creating 
-                          infrastructure with uncompromised quality, and offering plotted solutions 
-                          that remain accessible to all investors.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Values Section - Mobile Optimized */}
+      {/* About Values Section */}
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
@@ -366,11 +221,9 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-2xl md:text-4xl font-bold text-blue-800 mb-4 md:mb-6">
-              Our Guiding Principles
-            </h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-blue-800 mb-4 md:mb-6">Our Core Values</h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-4">
-              The values that define our approach and differentiate us in the market
+              The guiding principles of every spiritual journey we organize.
             </p>
           </motion.div>
 
@@ -395,76 +248,38 @@ const About = () => {
           </div>
         </div>
       </section>
-      
 
-      {/* Timeline Section - Mobile Optimized */}
-      
-
-      {/* Future Vision - Mobile Optimized */}
+      {/* Future Vision Section */}
       <section ref={ref3} className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView3 ? "visible" : "hidden"}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <motion.div variants={itemVariants}>
-              <h2 className="text-2xl md:text-4xl font-bold text-blue-800 mb-4 md:mb-6">
-                Building Tomorrow, Today
-              </h2>
-              <div className="w-20 h-1 md:w-24 md:h-1 bg-gradient-to-r from-blue-500 to-orange-500 mx-auto mb-6 md:mb-8 rounded-full"></div>
-              <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6 md:mb-8 px-2 sm:px-4">
-                With expanding ventures in plotted developments, township projects, infrastructure, 
-                and several future-ready sectors, Anand Devocation stands for responsible growth, 
-                transparent operations, and a vision to build assets, experiences, and opportunities 
-                that last for generations.
-              </p>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="inline-block"
-              >
-                <Link
-                  to="/contact"
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 text-sm sm:text-base"
-                >
-                  Join Our Journey
-                </Link>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA - Mobile Optimized */}
-      <section className="py-12 md:py-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white">
-        <div className="container mx-auto px-4 sm:px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">
-              Ready to Be Part of Our Story?
+            <h2 className="text-2xl md:text-4xl font-bold text-blue-800 mb-4 md:mb-6">
+              Our Vision
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-blue-200 mb-6 md:mb-8 max-w-2xl mx-auto px-2 sm:px-4">
-              Discover how Anand Devocation's commitment to quality and trust can transform your real estate dreams into reality.
+            <div className="w-20 h-1 md:w-24 md:h-1 bg-gradient-to-r from-blue-500 to-orange-500 mx-auto mb-6 md:mb-8 rounded-full"></div>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6 md:mb-8 px-2 sm:px-4">
+              At our stay locations, devotees will find complete information about the temple,
+              along with natural, culturally inspired amenities that allow them to experience the
+              true spirit and ambiance of the region. This creates a serene environment that
+              enhances devotion and inner peace.
+              With Anand Devocation, pilgrimage becomes a soulful retreat a sacred
+              vacation where the heart finds purity, the mind finds clarity, and devotion
+              becomes a beautiful journe
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-              <Link
-                to="/projects"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 sm:px-6 sm:py-2 md:px-8 md:py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 text-sm sm:text-base"
-              >
-                Explore Properties
-              </Link>
+            <motion.div whileHover={{ scale: 1.05 }} className="inline-block">
               <Link
                 to="/contact"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-800 px-4 py-2 sm:px-6 sm:py-2 md:px-8 md:py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 text-sm sm:text-base"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 text-sm sm:text-base"
               >
-                Get In Touch
+                Join a Spiritual Journey
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -482,8 +297,8 @@ function EnhancedStatCard({ title, subtitle, delay = 0 }) {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
-      whileHover={{ 
-        y: -4, 
+      whileHover={{
+        y: -4,
         scale: 1.05,
         transition: { duration: 0.3 }
       }}
@@ -496,7 +311,7 @@ function EnhancedStatCard({ title, subtitle, delay = 0 }) {
         <div className="text-xs text-gray-400 mt-1 group-hover:text-gray-600 transition-colors duration-300">
           {subtitle}
         </div>
-        
+
         {/* Hover effect background */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-orange-50/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
       </div>
