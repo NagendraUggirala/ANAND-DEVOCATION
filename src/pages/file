@@ -1,0 +1,1116 @@
+import React, { useState, useEffect } from "react";
+import { api } from "./api";
+
+
+const GST_RATE = 0.18;
+
+function calculateTotals(
+  items,
+  discountEnabled = false,
+  discountType = "percent",
+  discountValue = 0
+) {
+  const subtotal = items.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  let discountAmount = 0;
+  if (discountEnabled) {
+    const dv = Number(discountValue) || 0;
+    if (discountType === "percent") {
+      discountAmount = (subtotal * dv) / 100;
+    } else {
+      discountAmount = dv;
+    }
+    if (discountAmount > subtotal) discountAmount = subtotal;
+    discountAmount = Number(discountAmount.toFixed(2));
+  }
+
+  const taxable = +(subtotal - discountAmount).toFixed(2);
+  const gst = +(taxable * GST_RATE).toFixed(2);
+  const total = +(taxable + gst).toFixed(2);
+
+  return { subtotal: +subtotal.toFixed(2), discountAmount, taxable, gst, total };
+}
+
+/* ====================== AUTH (LOGIN / SIGNUP) ====================== */
+
+function AuthPage({ onAuthSuccess }) {
+  const [mode, setMode] = useState("login");
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [info, setInfo] = useState("");
+
+  const LOGIN_ENDPOINT = "/api/auth/login";
+  const REGISTER_ENDPOINT = "/api/auth/register";
+
+  const switchMode = (nextMode) => {
+    setMode(nextMode);
+    setError("");
+    setInfo("");
+    setFormData((prev) => ({
+      ...prev,
+      password: "",
+      confirmPassword: "",
+    }));
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setInfo("");
+
+    if (mode === "register" && formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      if (mode === "login") {
+        const res = await api.post(LOGIN_ENDPOINT, {
+          username: formData.username,
+          password: formData.password,
+        });
+
+        const token = res.data.access_token;
+        const user = res.data.user;
+
+        if (!token || !user) {
+          throw new Error(
+            "Unexpected response from server. Expected access_token and user."
+          );
+        }
+
+        onAuthSuccess(token, user);
+      } else {
+        await api.post(REGISTER_ENDPOINT, {
+          username: formData.username,
+          email: formData.email || null,
+          password: formData.password,
+        });
+
+        setInfo("Account created successfully. Please log in.");
+        setMode("login");
+        setFormData((prev) => ({
+          ...prev,
+          password: "",
+          confirmPassword: "",
+        }));
+      }
+    } catch (err) {
+      console.error(err);
+      const data = err.response?.data;
+      const detail =
+        (typeof data === "string" && data) ||
+        data?.detail ||
+        data?.error ||
+        data?.non_field_errors?.[0];
+      setError(detail || "Authentication failed. Check details and try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <section className="card auth-card">
+      <div className="auth-tabs">
+        <button
+          type="button"
+          className={`auth-tab ${mode === "login" ? "active" : ""}`}
+          onClick={() => switchMode("login")}
+        >
+          Login
+        </button>
+        <button
+          type="button"
+          className={`auth-tab ${mode === "register" ? "active" : ""}`}
+          onClick={() => switchMode("register")}
+        >
+          Sign Up
+        </button>
+      </div>
+
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Username</label>
+          <input
+            name="username"
+            type="text"
+            required
+            value={formData.username}
+            onChange={handleChange}
+            placeholder="Enter username"
+          />
+        </div>
+
+        
+
+        <div className="form-group">
+          <label>Password</label>
+          <input
+            name="password"
+            type="password"
+            required
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="Enter password"
+          />
+        </div>
+
+        {mode === "register" && (
+          <div className="form-group">
+            <label>Confirm Password</label>
+            <input
+              name="confirmPassword"
+              type="password"
+              required
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              placeholder="Re-enter password"
+            />
+          </div>
+        )}
+
+        <button type="submit" disabled={loading}>
+          {loading
+            ? "Please wait..."
+            : mode === "login"
+            ? "Login"
+            : "Create Account"}
+        </button>
+
+        {error && <div className="auth-error">{error}</div>}
+        {info && <div className="auth-info">{info}</div>}
+      </form>
+
+      <p className="auth-footer-text">
+        {mode === "login"
+          ? "Don't have an account? Click 'Sign Up' to create one."
+          : "Already registered? Click 'Login' to sign in."}
+      </p>
+    </section>
+  );
+}
+
+/* ====================== MAIN APP ====================== */
+
+function App() {
+  const [authToken, setAuthToken] = useState(() =>
+    localStorage.getItem("authToken")
+  );
+  const [currentUser, setCurrentUser] = useState(() => {
+    try {
+      const saved = localStorage.getItem("currentUser");
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  });
+
+  useEffect(() => {
+    if (authToken) {
+      api.defaults.headers.common["Authorization"] = `Bearer ${authToken}`;
+      localStorage.setItem("authToken", authToken);
+    } else {
+      delete api.defaults.headers.common["Authorization"];
+      localStorage.removeItem("authToken");
+    }
+  }, [authToken]);
+
+  useEffect(() => {
+    if (currentUser) {
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    } else {
+      localStorage.removeItem("currentUser");
+    }
+  }, [currentUser]);
+
+  const handleAuthSuccess = (token, user) => {
+    setAuthToken(token);
+    setCurrentUser(user);
+  };
+
+  const handleLogout = () => {
+    setAuthToken(null);
+    setCurrentUser(null);
+  };
+
+  const isAuthenticated = !!authToken;
+
+  // Billing state
+  const [code, setCode] = useState("");
+  const [multiCodes, setMultiCodes] = useState("");
+  const [product, setProduct] = useState(null);
+  const [cart, setCart] = useState([]);
+  const [qty, setQty] = useState(1);
+  const [customerName, setCustomerName] = useState("");
+  const [customerPhone, setCustomerPhone] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("cash");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const [lastBillCart, setLastBillCart] = useState([]);
+  const [lastBillInfo, setLastBillInfo] = useState(null);
+
+  const [discountEnabled, setDiscountEnabled] = useState(false);
+  const [discountType, setDiscountType] = useState("percent");
+  const [discountValue, setDiscountValue] = useState(0);
+
+  // New product creation fields (use same 'code' input for product code)
+  const [newProductName, setNewProductName] = useState("");
+  const [newProductPrice, setNewProductPrice] = useState("");
+  const [newProductStock, setNewProductStock] = useState("");
+
+  // Products list (for "Products in Store")
+  const [products, setProducts] = useState([]);
+  const [productsLoading, setProductsLoading] = useState(false);
+  const [productsError, setProductsError] = useState("");
+
+  // Stock checker
+  const [stockCode, setStockCode] = useState("");
+  const [stockProduct, setStockProduct] = useState(null);
+  const [stockLoading, setStockLoading] = useState(false);
+  const [stockMessage, setStockMessage] = useState("");
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
+
+    const loadProducts = async () => {
+      setProductsLoading(true);
+      setProductsError("");
+      try {
+        const res = await api.get("/api/products/");
+        setProducts(res.data);
+      } catch (err) {
+        console.error(err);
+        setProductsError("Failed to load products.");
+      } finally {
+        setProductsLoading(false);
+      }
+    };
+
+    loadProducts();
+  }, [isAuthenticated]);
+
+  // Single product lookup
+  const handleFetchProduct = async () => {
+    if (!code) {
+      setMessage("Please enter product ID/QR code.");
+      return;
+    }
+    setMessage("");
+    setLoading(true);
+    try {
+      const res = await api.get(`/api/products/${code}`);
+      setProduct(res.data);
+    } catch (err) {
+      console.error(err);
+      setProduct(null);
+      setMessage("Product not found.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Create new product and save to backend
+  const handleCreateProduct = async () => {
+    if (!code.trim()) {
+      setMessage("Enter a product code in 'Product Code' to save new product.");
+      return;
+    }
+    if (!newProductName.trim()) {
+      setMessage("Enter product name.");
+      return;
+    }
+    if (!newProductPrice || Number(newProductPrice) <= 0) {
+      setMessage("Enter a valid product price.");
+      return;
+    }
+
+    setLoading(true);
+    setMessage("");
+    try {
+      const payload = {
+        code: code.trim(),
+        name: newProductName.trim(),
+        price: Number(newProductPrice),
+        stock: newProductStock === "" ? 0 : Number(newProductStock),
+      };
+
+      const res = await api.post("/api/products", payload);
+
+      setMessage(
+        `Product saved: ${res.data.name} (code: ${res.data.code}). You can now add it to the cart.`
+      );
+
+      // Update products list
+      setProducts((prev) => [...prev, res.data]);
+
+      // Set as current product so it can be added to cart immediately
+      setProduct(res.data);
+      setQty(1);
+
+      // Clear only the extra fields; keep 'code' so user knows what was saved
+      setNewProductName("");
+      setNewProductPrice("");
+      setNewProductStock("");
+    } catch (err) {
+      console.error(err);
+      const detail = err.response?.data?.detail || err.response?.data;
+      setMessage(
+        detail ? `Error saving product: ${detail}` : "Error saving product."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Add current product to cart
+  const handleAddToCart = () => {
+    if (!product) {
+      setMessage("No product selected.");
+      return;
+    }
+    if (qty <= 0) {
+      setMessage("Quantity must be at least 1.");
+      return;
+    }
+
+    setCart((prev) => {
+      const existingIndex = prev.findIndex((item) => item.id === product.id);
+      if (existingIndex !== -1) {
+        const updated = [...prev];
+        updated[existingIndex] = {
+          ...updated[existingIndex],
+          quantity: updated[existingIndex].quantity + qty,
+        };
+        return updated;
+      }
+      return [...prev, { ...product, quantity: qty }];
+    });
+
+    setMessage("Item added to cart.");
+    setQty(1);
+    setCode("");
+    setProduct(null);
+  };
+
+  // Add multiple products
+  const handleAddMultipleProducts = async () => {
+    if (!multiCodes.trim()) {
+      setMessage("Enter one or more product codes separated by commas.");
+      return;
+    }
+
+    const codesArray = multiCodes
+      .split(",")
+      .map((c) => c.trim())
+      .filter((c) => c.length > 0);
+
+    if (codesArray.length === 0) {
+      setMessage("No valid codes found.");
+      return;
+    }
+
+    setLoading(true);
+    setMessage("");
+    try {
+      const requests = codesArray.map((c) =>
+        api
+          .get(`/api/products/${c}`)
+          .then((res) => res.data)
+          .catch((err) => {
+            console.error("Error fetching code", c, err);
+            return null;
+          })
+      );
+
+      const results = await Promise.all(requests);
+      const foundProducts = results.filter((p) => p !== null);
+
+      if (foundProducts.length === 0) {
+        setMessage("No products found for given codes.");
+        return;
+      }
+
+      setCart((prev) => {
+        let updated = [...prev];
+        for (const p of foundProducts) {
+          const idx = updated.findIndex((item) => item.id === p.id);
+          if (idx !== -1) {
+            updated[idx] = {
+              ...updated[idx],
+              quantity: updated[idx].quantity + 1,
+            };
+          } else {
+            updated.push({ ...p, quantity: 1 });
+          }
+        }
+        return updated;
+      });
+
+      const missingCodes = codesArray.filter((c, i) => !results[i]);
+
+      if (missingCodes.length > 0) {
+        setMessage(
+          `Added ${foundProducts.length} products to cart. Not found: ${missingCodes.join(
+            ", "
+          )}`
+        );
+      } else {
+        setMessage(`Added ${foundProducts.length} products to cart.`);
+      }
+
+      setMultiCodes("");
+    } catch (err) {
+      console.error(err);
+      setMessage("Error while adding multiple products.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleClearCart = () => {
+    setCart([]);
+    setMessage("Cart cleared.");
+  };
+
+  const cartTotals = calculateTotals(
+    cart,
+    discountEnabled,
+    discountType,
+    discountValue
+  );
+
+  // Save bill
+  const handleSubmitBill = async () => {
+    if (cart.length === 0) {
+      setMessage("Cart is empty.");
+      return;
+    }
+    if (!customerName) {
+      setMessage("Enter customer name.");
+      return;
+    }
+
+    setLoading(true);
+    setMessage("");
+    try {
+      const payload = {
+        customer_name: customerName,
+        payment_method: paymentMethod,
+        customer_phone: customerPhone || null,
+        items: cart.map((item) => ({
+          product_id: item.id,
+          quantity: item.quantity,
+          price: item.price,
+        })),
+        discount_enabled: discountEnabled,
+        discount_type: discountType,
+        discount_value: Number(discountValue) || 0,
+        discount_amount: cartTotals.discountAmount,
+        subtotal: cartTotals.subtotal,
+        taxable_value: cartTotals.taxable,
+        gst: cartTotals.gst,
+        grand_total: cartTotals.total,
+      };
+
+      const res = await api.post("/api/bills", payload);
+
+      const lowStock = res.data.low_stock_items || [];
+      if (lowStock.length > 0) {
+        const names = lowStock
+          .map((item) => `${item.name} (left: ${item.stock})`)
+          .join(", ");
+        setMessage(
+          `Bill saved successfully. Bill ID: ${res.data.id ?? "N/A"}. Low stock alert: ${names}`
+        );
+        alert(`⚠️ Low stock alert:\n${names}`);
+      } else {
+        setMessage(`Bill saved successfully. Bill ID: ${res.data.id ?? "N/A"}`);
+      }
+
+      setLastBillCart(cart);
+      setLastBillInfo({
+        id: res.data.id ?? null,
+        customerName,
+        customer_phone: res.data.customer_phone || customerPhone || null,
+        paymentMethod,
+        discount_enabled: discountEnabled,
+        discount_type: discountType,
+        discount_value: discountValue,
+        totals: cartTotals,
+      });
+
+      setCart([]);
+      setCustomerName("");
+      setCustomerPhone("");
+      setPaymentMethod("cash");
+      setDiscountEnabled(false);
+      setDiscountType("percent");
+      setDiscountValue(0);
+    } catch (err) {
+      console.error(err);
+      const detail = err.response?.data?.detail;
+      setMessage(
+        detail ? `Error saving bill: ${detail}` : "Error saving bill."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
+
+  const handleSendWhatsApp = async () => {
+    if (!lastBillInfo?.id) {
+      alert("No bill to send.");
+      return;
+    }
+
+    const rawPhone =
+      lastBillInfo.customer_phone || customerPhone || "";
+    const cleanedPhone = rawPhone.replace(/[^0-9]/g, "");
+
+    if (!cleanedPhone) {
+      alert("Please enter a valid customer WhatsApp number.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      await api.post("/api/whatsapp/send", {
+        bill_id: lastBillInfo.id,
+        phone_number: cleanedPhone,
+      });
+
+      setMessage("WhatsApp message sent successfully.");
+      setLastBillInfo((prev) =>
+        prev ? { ...prev, customer_phone: cleanedPhone } : prev
+      );
+    } catch (err) {
+      console.error(err);
+      alert(
+        err.response?.data?.detail ||
+          "Failed to send WhatsApp message. Check server logs."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Stock checker
+  const handleCheckStock = async () => {
+    if (!stockCode.trim()) {
+      setStockMessage("Enter product code to check stock.");
+      setStockProduct(null);
+      return;
+    }
+    setStockMessage("");
+    setStockProduct(null);
+    setStockLoading(true);
+    try {
+      const res = await api.get(`/api/products/${stockCode.trim()}`);
+      setStockProduct(res.data);
+    } catch (err) {
+      console.error(err);
+      setStockProduct(null);
+      setStockMessage("Product not found. Check code in the database.");
+    } finally {
+      setStockLoading(false);
+    }
+  };
+
+  const lastBillTotals = calculateTotals(
+    lastBillCart,
+    lastBillInfo?.discount_enabled,
+    lastBillInfo?.discount_type,
+    lastBillInfo?.discount_value
+  );
+
+  // If not logged in: show auth screen
+  if (!isAuthenticated) {
+    return (
+      <div className="app-container">
+        <header className="app-header">
+          <img src="/assets/logo.png" alt="OWN CREW Logo" className="store-logo" />
+          <h1>OWN CREW BILLING</h1>
+          <p>Please sign in to continue.</p>
+        </header>
+
+        <AuthPage onAuthSuccess={handleAuthSuccess} />
+      </div>
+    );
+  }
+
+  // Logged in: main UI
+  return (
+    <div className="app-container">
+      <header className="app-navbar no-print">
+  <div className="nav-left">
+    <img
+      src="/assets/logo.png"
+      alt="OWN CREW Logo"
+      className="store-logo"
+    />
+  </div>
+
+  <div className="nav-center">
+    <h1>OWN CREW BILLING</h1>
+  </div>
+
+  <div className="nav-right">
+    <span className="user-text">
+      Signed in as{" "}
+      <strong>
+        {currentUser?.username || currentUser?.email || "User"}
+      </strong>
+    </span>
+
+    <button className="logout-btn" onClick={handleLogout}>
+      Logout
+    </button>
+  </div>
+</header>
+
+      <main className="main-grid no-print">
+        {/* Product Lookup + Create Product */}
+        <section className="card">
+          <h2>1. Product Lookup / Create</h2>
+
+          {/* Single product code */}
+          <label>Single Code / QR</label>
+          <input
+            type="text"
+            placeholder="Enter code / scan"
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
+          />
+          <button onClick={handleFetchProduct} disabled={loading}>
+            {loading ? "Loading..." : "Fetch Product"}
+          </button>
+
+          {/* Multiple products */}
+          <hr />
+          <label>Multiple Codes (comma separated)</label>
+          <input
+            type="text"
+            placeholder="e.g. OC101, OC102, OC205"
+            value={multiCodes}
+            onChange={(e) => setMultiCodes(e.target.value)}
+          />
+          <button onClick={handleAddMultipleProducts} disabled={loading}>
+            {loading ? "Adding..." : "Add All to Cart"}
+          </button>
+
+          {/* Current product details (from DB) */}
+          {product && (
+            <div className="product-details">
+              <p>
+                <b>Code:</b> {product.code}
+              </p>
+              <p>
+                <b>Name:</b> {product.name}
+              </p>
+              <p>
+                <b>Price:</b> ₹{product.price}
+              </p>
+              <p>
+                <b>Stock:</b> {product.stock}
+              </p>
+
+              <input
+                type="number"
+                value={qty}
+                min="1"
+                onChange={(e) =>
+                  setQty(parseInt(e.target.value || "1", 10))
+                }
+              />
+
+              <button onClick={handleAddToCart}>Add to Cart</button>
+            </div>
+          )}
+
+          {/* Create new product */}
+          <hr />
+          <h3>Create New Product</h3>
+          <p style={{ fontSize: "0.85rem", color: "#555" }}>
+            Enter a new product code and details below to save it to the database.
+          </p>
+
+          <div className="form-group">
+            <label>Product Code</label>
+            <input
+              type="text"
+              placeholder="e.g. OC101"
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Product Name</label>
+            <input
+              type="text"
+              placeholder="Product name"
+              value={newProductName}
+              onChange={(e) => setNewProductName(e.target.value)}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Price (₹)</label>
+            <input
+              type="number"
+              min="0"
+              step="0.01"
+              placeholder="Price"
+              value={newProductPrice}
+              onChange={(e) => setNewProductPrice(e.target.value)}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Initial Stock</label>
+            <input
+              type="number"
+              min="0"
+              placeholder="Stock (e.g. 10)"
+              value={newProductStock}
+              onChange={(e) => setNewProductStock(e.target.value)}
+            />
+          </div>
+
+          <button onClick={handleCreateProduct} disabled={loading}>
+            {loading ? "Saving..." : "Save New Product"}
+          </button>
+        </section>
+
+        {/* Cart */}
+        <section className="card">
+          <h2>2. Cart</h2>
+          {cart.length === 0 ? (
+            <p>Cart Empty</p>
+          ) : (
+            <>
+              <table className="cart-table">
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Amt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {cart.map((item) => (
+                    <tr key={item.id}>
+                      <td>{item.name}</td>
+                      <td>{item.quantity}</td>
+                      <td>₹{item.price}</td>
+                      <td>₹{item.price * item.quantity}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
+              <p>Subtotal: ₹{cartTotals.subtotal.toFixed(2)}</p>
+
+              <div className="discount-controls">
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={discountEnabled}
+                    onChange={(e) => setDiscountEnabled(e.target.checked)}
+                  />{" "}
+                  Apply Discount
+                </label>
+
+                {discountEnabled && (
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: 8,
+                      alignItems: "center",
+                      marginTop: 6,
+                    }}
+                  >
+                    <select
+                      value={discountType}
+                      onChange={(e) => setDiscountType(e.target.value)}
+                    >
+                      <option value="percent">Percent (%)</option>
+                      <option value="fixed">Fixed (₹)</option>
+                    </select>
+                    <input
+                      type="number"
+                      min="0"
+                      value={discountValue}
+                      onChange={(e) => setDiscountValue(e.target.value)}
+                      placeholder={
+                        discountType === "percent"
+                          ? "e.g. 10 for 10%"
+                          : "e.g. 100"
+                      }
+                    />
+                  </div>
+                )}
+              </div>
+
+              <p>Discount: ₹{cartTotals.discountAmount.toFixed(2)}</p>
+              <p>Taxable Value: ₹{cartTotals.taxable.toFixed(2)}</p>
+              <p>GST (18%): ₹{cartTotals.gst.toFixed(2)}</p>
+              <h3>Total: ₹{cartTotals.total.toFixed(2)}</h3>
+
+              <button className="secondary" onClick={handleClearCart}>
+                Clear Cart
+              </button>
+            </>
+          )}
+        </section>
+
+        {/* Billing */}
+        <section className="card full-width">
+          <h2>3. Billing Details</h2>
+
+          <input
+            type="text"
+            placeholder="Customer Name"
+            value={customerName}
+            onChange={(e) => setCustomerName(e.target.value)}
+          />
+
+          <input
+            type="tel"
+            placeholder="Customer WhatsApp (e.g. 919876543210)"
+            value={customerPhone}
+            onChange={(e) => setCustomerPhone(e.target.value)}
+          />
+
+          <select
+            value={paymentMethod}
+            onChange={(e) => setPaymentMethod(e.target.value)}
+          >
+            <option value="cash">Cash</option>
+            <option value="upi">UPI</option>
+            <option value="card">Card</option>
+          </select>
+
+          <button onClick={handleSubmitBill} disabled={loading}>
+            {loading ? "Saving..." : "Save Bill"}
+          </button>
+
+          {message && <p className="message">{message}</p>}
+        </section>
+
+        {/* Dashboard — current bill */}
+        <aside className="card dashboard">
+          <h3>Dashboard — Current Bill</h3>
+          <p>
+            <strong>Items:</strong> {cart.length}
+          </p>
+          <ul>
+            {cart.map((it) => (
+              <li key={it.id}>
+                {it.name} × {it.quantity} = ₹
+                {(it.price * it.quantity).toFixed(2)}
+              </li>
+            ))}
+          </ul>
+
+          <div style={{ marginTop: 8 }}>
+            <div>Subtotal: ₹{cartTotals.subtotal.toFixed(2)}</div>
+            <div>Discount: ₹{cartTotals.discountAmount.toFixed(2)}</div>
+            <div>Taxable: ₹{cartTotals.taxable.toFixed(2)}</div>
+            <div>GST: ₹{cartTotals.gst.toFixed(2)}</div>
+            <hr />
+            <div style={{ fontWeight: 700 }}>
+              Grand Total: ₹{cartTotals.total.toFixed(2)}
+            </div>
+          </div>
+        </aside>
+
+        {/* Stock Checker */}
+        <aside className="card dashboard">
+          <h3>Stock Checker</h3>
+          <p>Check current stock for a product code.</p>
+          <input
+            type="text"
+            placeholder="Enter product code (e.g. OC101)"
+            value={stockCode}
+            onChange={(e) => setStockCode(e.target.value)}
+          />
+          <button onClick={handleCheckStock} disabled={stockLoading}>
+            {stockLoading ? "Checking..." : "Check Stock"}
+          </button>
+
+          {stockMessage && <p className="message">{stockMessage}</p>}
+
+          {stockProduct && (
+            <div style={{ marginTop: 8 }}>
+              <p>
+                <strong>Code:</strong> {stockProduct.code}
+              </p>
+              <p>
+                <strong>Name:</strong> {stockProduct.name}
+              </p>
+              <p>
+                <strong>Price:</strong> ₹{stockProduct.price}
+              </p>
+              <p>
+                <strong>Current Stock:</strong> {stockProduct.stock}
+              </p>
+            </div>
+          )}
+        </aside>
+      </main>
+
+      {/* PRODUCTS FROM DB */}
+      <section className="card no-print" style={{ marginTop: "1rem" }}>
+        <h2>Products in Store</h2>
+        {productsLoading && <p>Loading products...</p>}
+        {productsError && <p className="message">{productsError}</p>}
+        {!productsLoading && !productsError && products.length === 0 && (
+          <p>No products found.</p>
+        )}
+        {!productsLoading && !productsError && products.length > 0 && (
+          <table className="cart-table">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Price (₹)</th>
+                <th>Stock</th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((p) => (
+                <tr key={p.id}>
+                  <td>{p.code}</td>
+                  <td>{p.name}</td>
+                  <td>{p.price}</td>
+                  <td>{p.stock}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </section>
+
+      {/* EXPORT BILLS TO EXCEL */}
+      <section className="card no-print" style={{ marginTop: "1rem" }}>
+        <h2>Export Bills to Excel</h2>
+        <p>You can download daily or monthly bill reports as Excel files.</p>
+        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+          <a
+            href="http://127.0.0.1:8000/api/reports/bills/daily"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button type="button">Download Today&apos;s Bills (Excel)</button>
+          </a>
+          <a
+            href="http://127.0.0.1:8000/api/reports/bills/monthly"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button type="button">Download This Month&apos;s Bills (Excel)</button>
+          </a>
+        </div>
+      </section>
+
+      {/* RECEIPT / PRINT SECTION */}
+      {lastBillInfo && lastBillCart.length > 0 && (
+        <section className="print-receipt">
+          <img src={logo} alt="LOGO" className="store-logo-print" />
+          <h2>OWN CREW - TAX INVOICE</h2>
+
+          <p>
+            <b>Bill ID:</b> {lastBillInfo.id}
+          </p>
+          <p>
+            <b>Customer:</b> {lastBillInfo.customerName}
+          </p>
+          {lastBillInfo.customer_phone && (
+            <p>
+              <b>Phone:</b> {lastBillInfo.customer_phone}
+            </p>
+          )}
+          <p>
+            <b>Payment:</b> {lastBillInfo.paymentMethod}
+          </p>
+          <p>
+            <b>Date:</b> {new Date().toLocaleString()}
+          </p>
+
+          <table className="cart-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {lastBillCart.map((item, i) => (
+                <tr key={item.id}>
+                  <td>{i + 1}</td>
+                  <td>{item.name}</td>
+                  <td>{item.quantity}</td>
+                  <td>₹{(item.quantity * item.price).toFixed(2)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <h4>Subtotal: ₹{lastBillTotals.subtotal.toFixed(2)}</h4>
+          {lastBillInfo.discount_enabled ? (
+            <h4>
+              Discount (
+              {lastBillInfo.discount_type === "percent"
+                ? `${lastBillInfo.discount_value}%`
+                : `₹${lastBillInfo.discount_value}`}
+              ): ₹{lastBillTotals.discountAmount.toFixed(2)}
+            </h4>
+          ) : null}
+          <h4>Taxable: ₹{lastBillTotals.taxable.toFixed(2)}</h4>
+          <h4>GST: ₹{lastBillTotals.gst.toFixed(2)}</h4>
+          <h2>Total: ₹{lastBillTotals.total.toFixed(2)}</h2>
+
+          <p>Thanks for shopping with OWN CREW!</p>
+
+          <button className="no-print" onClick={handlePrint}>
+            Print Receipt
+          </button>
+          <button
+            className="no-print"
+            style={{ marginLeft: 8 }}
+            onClick={handleSendWhatsApp}
+            disabled={loading}
+          >
+            {loading ? "Sending..." : "Send via WhatsApp"}
+          </button>
+        </section>
+      )}
+    </div>
+  );
+}
+
+export default App;

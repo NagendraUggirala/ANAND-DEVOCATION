@@ -167,11 +167,11 @@ const Footer = () => {
                         className="w-full h-full object-cover object-top"
                       />
                     </div>
-                    <div className="w-16 h-16 ">
+                    <div className="w-14 h-14 ">
                       <img
                         src="/images/Anandhlogo.png"
                         alt="Anand Imports & Exports"
-                        className="w-full h-full object-contain  rounded-full border-2  border-orange-200 "
+                        className="w-full h-full object-contain  "
                       />
                     </div>
                   </div>
@@ -232,7 +232,10 @@ const Footer = () => {
 
                     <div className="flex items-center space-x-2">
                       <i className="fas fa-envelope text-orange-400 text-sm" />
-                      <span className="text-gray-300">divine@ananddevocation.com</span>
+                      <span className="text-gray-300"></span>
+                      <Link to="https://designcareermetrics.com" className="text-orange-400 hover:underline font-medium">
+                    divine@ananddevocation.com
+                  </Link>
                     </div>
                   </div>
                 </div>
@@ -342,3 +345,21 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
