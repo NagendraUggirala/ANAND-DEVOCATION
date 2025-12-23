@@ -159,7 +159,7 @@ const Footer = () => {
               <div className="text-left md:col-span-4">
                 <div className="flex items-center space-x-3 mb-4">
                   {/* Founder Image and Logo */}
-                  <div className="flex items-center space-x-2 flex-shrink-0">
+                 <div className="flex items-center space-x-2 flex-shrink-0">
                     <div className="w-16 h-16 rounded-full border-2 border-orange-200 overflow-hidden shadow-lg">
                       <img
                         src="/images/image.png"
@@ -167,11 +167,11 @@ const Footer = () => {
                         className="w-full h-full object-cover object-top"
                       />
                     </div>
-                    <div className="w-14 h-14 ">
+                    <div className="w-16 h-18 ">
                       <img
                         src="/images/Anandhlogo.png"
                         alt="Anand Imports & Exports"
-                        className="w-full h-full object-contain  "
+                        className="w-full h-full object-contain  rounded-full border-2  border-orange-200 "
                       />
                     </div>
                   </div>
